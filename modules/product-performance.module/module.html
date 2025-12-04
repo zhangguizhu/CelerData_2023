@@ -1,0 +1,77 @@
+{% if module.item_groups or module.section_title %}
+  <div class="product-performance {{ module.title_style }} {% if module.item_hover_effect %} feature-hover-effect-area {% endif %} {% if module.item_content_fold %} feature-can-fold {% endif %}" style="background-color:{{ module.background_color.color }}; opacity:{{ module.background_color.opacity * 0.01 }};">
+    <div class="content-wrapper hs-col-flex">
+    {% if module.title_style == "normal" or module.title_style == "normal-left" %}
+      {% if module.section_title or module.section_content %}
+        <div class="hs-col-flex hs-align-center {% if module.title_style == "normal-left" %} hs-align-start title-left-wrap {% endif %}">
+          <h3 class="sec-title">{{ module.section_title }}</h3>
+          <div class="sec-content">{{ module.section_content }}</div>
+        </div>
+      {% endif%}
+    {% endif%}
+      <div class="performance-row hs-row-flex hs-jus-between {{ module.number_of_columns }} {% if module.nogap_filed %} no-gap {% endif %}" style="justify-content: {{ module.align }};">
+      {% if module.title_style == "card" %}
+        {% if module.section_title or module.section_content %}
+          <div class="performance-item performance-item-title-card hs-col-flex hs-jus-center">
+            <h3 class="sec-title">{{ module.section_title }}</h3>
+            <div class="sec-content">{{ module.section_content }}</div>
+          </div>
+        {% endif%}
+      {% endif%}
+        {% for item in module.item_groups %}
+          <div class="performance-item hs-col-flex hs-jus-start {{ item.item_theme }} {% if module.item_content_fold  %} fold {% endif %}" style="background-color:{{ item.background_color.color }}; opacity:{{ item.background_color.opacity * 0.01 }};">
+            <div class="performance-item-content hs-col-flex hs-jus-between {% if module.item_center %} hs-align-center item-center-theme {% endif %}">
+              <div class="hs-col-flex hs-jus-center {% if module.item_center %} hs-align-center  {% endif %} {% if !item.icon_img.src %} more-mt {% endif %}">
+                {% if item.icon_img.src %}
+                  <div class="item-img-box hs-col-flex hs-jus-center {% if item.big_icon  %} big-icon {% endif %}">
+                    <img src="{{ item.icon_img.src }}" alt="{{ item.icon_img.alt }}">
+                  </div>
+                {% endif %}
+                <p class="title">{{ item.title }}</p>
+                {% if item.content %}
+                  <div class="content">
+                    {% if module.item_content_fold  %}
+                      <div class="mask" style="background-image: linear-gradient(0deg,{{item.background_color.color}} -10%, rgba(255,255,255,0) 200%);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M24 1.26495L22.7351 0L12 10.7351L1.26495 0L0 1.26495L11.3666 12.6334H12.6334L24 1.26495ZM24 12L22.7351 10.7351L12 21.4701L1.26495 10.7351L0 12L11.3666 23.3684H12.6334L24 12Z" fill="#65DAFF"/>
+                        </svg>
+                      </div>
+                    {% endif %}
+                    {{ item.content }}
+                  </div>
+                {% endif %}
+              </div>
+              <div class="buttons-wrap row-flex {% if item.buttons_align_center %} hs-jus-center {% else %} hs-jus-end {% endif %} full-width">
+                {% for btnItem in item.buttons %}
+                  <div class="button button-{{ btnItem.style }}">
+                    {% if btnItem.type == "std" %}
+                    {% set href = btnItem.link.url.href %}
+                    {% if btnItem.link.url.type is equalto "EMAIL_ADDRESS" %}
+                    {% set href = "mailto:" + href %}
+                    {% endif %}
+                    <a href="{{ href }}"
+                      {% if btnItem.link.open_in_new_tab %}target="_blank"{% endif %}
+                      {% if btnItem.link.rel %}rel="{{ btnItem.link.rel }}"{% endif %}
+                      >
+                      <span> {{ btnItem.text }}
+                      {% if btnItem.show_narrow %}
+                          <svg height="18" version="1.1" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M826.24 535.893333l-212.48 213.333334a33.706667 33.706667 0 0 1-23.893333 10.24c-8.533333 0-17.066667-3.413333-23.893334-10.24a34.005333 34.005333 0 0 1 0-48.64l154.453334-155.306667H222.08c-18.773333 0-34.133333-15.36-34.133333-34.133333 0-18.773333 15.36-34.133333 34.133333-34.133334h498.346667l-154.453334-155.306666a34.005333 34.005333 0 0 1 0-48.64c13.653333-13.653333 34.986667-13.653333 48.64 0l212.48 213.333333c12.8 14.506667 12.8 36.693333-0.853333 49.493333z" p-id="4717"></path>
+                          </svg>
+                        {% endif %}
+                        </span>
+                    </a>
+                    {% endif %}
+                    {% if btnItem.type == "cta" %}
+                    {% cta guid="{{ btnItem.cta }}" %}
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endif %}

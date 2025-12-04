@@ -1,0 +1,60 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Celerdata career
+  screenshotPath: ../images/template-previews/career.png
+-->
+
+{% extends './layouts/base.html' %}
+
+{% block body %}
+<main class="body-container-wrapper career">
+  <div class="body-container body-container--career-index">
+
+    {# Career Header #}
+    {% dnd_area 'Banner' class="career-banner-area" label='Header Section' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/resource-banner' %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}
+    {% end_dnd_area %}
+    {# End Career Header #}
+
+    {# Career Overview #}
+      {% dnd_area 'Overview' label='Overview Section' %}
+        {% dnd_section full_width=true %}
+          {% dnd_module path='../modules/career-overview' %}
+          {% end_dnd_module %}
+        {% end_dnd_section %}
+      {% end_dnd_area %}
+    {# End Career Overview #}
+
+    {# Career Values #}
+      {% dnd_area 'Values' label='Values Section' %}
+        {% dnd_section full_width=true %}
+          {% dnd_module path='../modules/career-our-value' %}
+          {% end_dnd_module %}
+        {% end_dnd_section %}
+      {% end_dnd_area %}
+    {# End Career Values #}
+
+    {# Career Join Us #}
+      {% dnd_area 'JoinUs' label='JoinUs Section' %}
+        {% dnd_section full_width=true %}
+          {% dnd_module path='../modules/career-join-us' %}
+          {% end_dnd_module %}
+        {% end_dnd_section %}
+      {% end_dnd_area %}
+    {# End Career Join Us #}
+
+    {# Career Footer #}
+      {% dnd_area 'Footer' label='Footer Section' %}
+        {% dnd_section full_width=true %}
+          {% dnd_module path='../modules/career-footer' %}
+          {% end_dnd_module %}
+        {% end_dnd_section %}
+      {% end_dnd_area %}
+    {# End Career Footer #}
+  </div>
+</main>
+{% endblock body %}

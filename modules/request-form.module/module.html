@@ -1,0 +1,22 @@
+<div class="request-form">
+  <div class="content-wrapper hs-row-flex hs-jus-between hs-align-center">
+    <div class="desc hs-col-flex hs-jus-start hs-align-start">
+      <p>{{ module.form_desc }}</p>
+    </div>
+    <div class="form hs-col-flex hs-jus-start hs-align-start">
+      {% if module.form_title %}
+      <h4>{{ module.form_title }}</h4>
+      {% endif %}
+      <div class="fields hs-width-fill">
+        {% form
+          form_key="{{ module.form.form_key }}"
+          form_to_use="{{ module.form.form_id }}"
+          response_response_type="{{ module.form.response_type }}"
+          response_message="{{ module.form.message }}"
+          response_redirect_id="{{ module.form.redirect_id }}"
+          response_redirect_url="{{module.form.redirect_url}}"
+        %}
+      </div>
+    </div>
+  </div>
+</div>

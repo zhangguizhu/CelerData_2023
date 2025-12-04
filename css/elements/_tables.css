@@ -1,0 +1,31 @@
+/* Table */
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 1.4rem;
+  overflow-wrap: break-word;
+  width: 100% !important;
+}
+table, td, th {
+  border-color: #ebeef5 !important;
+}
+
+/* Table cells */
+
+td, th {
+  vertical-align: middle;
+  padding: 18px 16px;
+}
+table tbody tr:nth-child(odd) td, table tbody tr:nth-child(odd) th{
+  background: #fcfcfc;
+}
+
+table tbody tr:nth-child(1) td, table tbody tr:nth-child(1) th{
+  font-weight: 600;
+  padding: 26px 18px;
+  background: #f9f9f9;
+}
+/* Table header */
+thead th {
+  vertical-align: middle;
+}

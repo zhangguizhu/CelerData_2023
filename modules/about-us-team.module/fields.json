@@ -1,0 +1,139 @@
+[ {
+  "id" : "5eb0f40c-63f7-99ec-d7a1-1de763a9307c",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Our Team"
+}, {
+  "id" : "4bc88696-a2b7-3acf-2ef2-82d4a8b1358b",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<div style=\"text-align: center;\">From the founders of the StarRocks project to leaders in the data and analytics space, meet the team that's helping to drive CelerData forward.</div>"
+}, {
+  "id" : "101648c7-2773-7959-297f-9a8f0ce61073",
+  "name" : "main_founder",
+  "label" : "MainFounder",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "1fdec023-a6d7-ad43-d6a3-6e229366f813",
+    "name" : "avatar",
+    "label" : "Avatar",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "57eafacf-a329-4541-49a0-a62e183e6447",
+    "name" : "full_name",
+    "label" : "Full Name",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Full Name"
+  }, {
+    "id" : "aa6c79e0-3af5-6452-865f-4e72a9873d3c",
+    "name" : "position",
+    "label" : "position",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "1e5a9625-080a-3d1e-fc03-dfda8acf0948",
+  "name" : "teammate_card",
+  "label" : "Teammate Card",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "d137c3a7-7231-cc4b-a2f7-1a544152f8c3",
+    "name" : "avatar",
+    "label" : "Avatar",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "8be73332-351c-0410-cda8-48187e1ce7b1",
+    "name" : "full_name",
+    "label" : "Full Name",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Full Name"
+  }, {
+    "id" : "8179a665-3cfb-53df-7502-71e9b4ebb2e3",
+    "name" : "position",
+    "label" : "position",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "b1793646-829f-7564-b747-23bf465c2d63",
+  "name" : "cta",
+  "label" : "CTA",
+  "required" : false,
+  "locked" : false,
+  "type" : "cta",
+  "display_width" : null,
+  "default" : "cded85a2-39fa-4cfb-bfa2-efd692b0c533"
+} ]

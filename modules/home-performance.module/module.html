@@ -1,0 +1,70 @@
+{% if module.section_title or module.items_group %}
+  <div class="performance-temp-wrapper {% if module.has_decorated%} decorated-line {%endif%}">
+  {% if module.background_image.src %}
+    <!-- <div class="performance-bg" style="background-image: url({{ module.background_image.src }});"></div> -->
+  {% endif %}
+    <div class="content-wrapper hs-col-flex">
+      <div class="hs-col-flex performance-top">
+        {% if module.section_title %}
+          <div class="hs-row-flex sec-title-wrap hs-jus-start hs-align-center" style="flex-wrap: wrap;">
+            <span class="title-decorate row-flex">
+              <img class="title-decorate-img" src="{{ get_asset_url('../../images/title-decorate.png') }}" alt="title" />
+            </span>
+            <p class="sec-title">{{ module.section_title }}</p>
+            <img class="sec-img-icon" src="{{ module.performance_icon.src }}" alt="{{ module.performance_icon.alt }}">
+          </div>
+        {% endif %}
+        <div class="sec-content">{{ module.section_content }}</div>
+      </div>
+      <div class="product-performance-row hs-row-flex hs-jus-evenly">
+        {% for item in module.items_group %}
+          <div class="feature-item">
+            <div class="feature-item-bg" style="background-color:rgb(247, 250, 254);"">
+              <div class="vs-container hs-row-flex hs-jus-center hs-align-center" style="background-image: url({{ get_asset_url('../../images/home/dot-vs-bg.png') }})">
+                <img class="vs-icon" src="{{ item.vs_icon_left.src }}" alt="{{ item.vs_icon_left.alt }}">
+                <span class="vs-text">VS</span>
+                <img class="vs-icon" src="{{ item.vs_icon_right.src }}" alt="{{ item.vs_icon_right.alt }}">
+              </div>
+            </div>
+            <div class="feature-item-content hs-col-flex hs-align-start">
+              {% if item.icon.src %}
+                <!-- <img class="item-icon" src="{{ item.icon.src }}" alt="{{ item.icon.alt }}"> -->
+              {% endif %}
+              <p class="title">{{ item.title }}</p>
+              {% if item.content %}
+                <p class="content">{{ item.content }}</p>
+              {% endif %}
+              {% if item.buttons %}
+                <div class="performance-buttons col-flex">
+                  {% for itemButton in item.buttons %}
+                  <div class="button button-{{ itemButton.style }}">
+                    {% if itemButton.type == "std" %}
+                    {% set href = itemButton.link.url.href %}
+                    {% if itemButton.link.url.type is equalto "EMAIL_ADDRESS" %}
+                    {% set href = "mailto:" + href %}
+                    {% endif %}
+                    <a href="{{ href }}"
+                        {% if itemButton.link.open_in_new_tab %}target="_blank"{% endif %}
+                        {% if itemButton.link.rel %}rel="{{ itemButton.link.rel }}"{% endif %}
+                        >
+                        <span> {{ itemButton.text }} 
+                        <svg height="18" version="1.1" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M826.24 535.893333l-212.48 213.333334a33.706667 33.706667 0 0 1-23.893333 10.24c-8.533333 0-17.066667-3.413333-23.893334-10.24a34.005333 34.005333 0 0 1 0-48.64l154.453334-155.306667H222.08c-18.773333 0-34.133333-15.36-34.133333-34.133333 0-18.773333 15.36-34.133333 34.133333-34.133334h498.346667l-154.453334-155.306666a34.005333 34.005333 0 0 1 0-48.64c13.653333-13.653333 34.986667-13.653333 48.64 0l212.48 213.333333c12.8 14.506667 12.8 36.693333-0.853333 49.493333z" p-id="4717"></path>
+                        </svg>
+                      </span>
+                    </a>
+                    {% endif %}
+                    {% if itemButton.type == "cta" %}
+                    {% cta guid="{{ itemButton.cta }}" %}
+                    {% endif %}
+                  </div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endif %}

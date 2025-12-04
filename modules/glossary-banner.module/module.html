@@ -1,0 +1,26 @@
+<div class="glossary-banner hs-row-flex hs-jus-center hs-align-start">
+  <div class="content-wrapper hs-col-flex hs-jus-center hs-align-center">
+    <div class="intro">
+      <img class="glossary-banner-img" src="{{ get_asset_url('../../images/letter.png') }}" alt="letter"/>
+      <h1><div class="title">{{ module.section_title }}</div></h1>
+      <div class="character-list">
+       {% set my_tags = blog_tags(module.select_blog, 30) %}
+       {% set sortTags = my_tags|sort("name")  %}
+       {% set characterList =  ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"] %}
+        {% for content in characterList %}
+          {% set flag = sortTags|first == content %}
+          {% if flag %}
+            {% do sortTags.pop(0) %}
+            <span class="glossary-blog-item active">
+              {{ content }}
+            </span>
+          {% else %}
+            <span class="glossary-blog-item">
+              {{ content }}
+            </span>
+          {% endif %}
+        {% endfor %}
+     </div>
+    </div>
+  </div>
+</div>

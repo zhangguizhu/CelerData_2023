@@ -1,0 +1,200 @@
+[ {
+  "id" : "76bb64a6-43ea-1291-496c-5dacd822f53",
+  "name" : "background_color",
+  "label" : "Background Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#0061FF",
+    "opacity" : 100
+  }
+}, {
+  "id" : "0a4ed21d-b545-573a-c672-ba41f6ceb36d2",
+  "name" : "number_of_columns",
+  "label" : "Number Of Columns",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "two_column", "Two Column" ], [ "three_column", "Three Column" ], [ "four_column", "Four Column" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "three_column"
+}, {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa36",
+  "name" : "section_title",
+  "label" : "Section Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "StarRocks vs. ClickHouse"
+}, {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa361",
+  "name" : "section_content",
+  "label" : "Section Content",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa362",
+  "name" : "bottom_content",
+  "label" : "Bottom Content",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "a38ce86c-0093-ba22-601d-c9b91ad7cf52822",
+  "name" : "item_groups",
+  "label" : "VS Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "c95b4e9b-fa12-d9bc-61af-0c5a0f2d12c5",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "3975476d-dfd1-89c7-7797-55ab4fe8062e",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://celerdata.com/hubfs/celerdata_2023/vs-card-bg.png",
+      "alt" : "Card",
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "76bb64a6-43ea-1291-496c-5dacd822f533",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#1539BA",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "8f56a11d-2fb1-d81a-c6c7-fabace032e53",
+    "name" : "increasing_filed",
+    "label" : "Number Increasing Effect",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "c95b4e9b-fa12-d9bc-61af-0c5a0f2d12c5",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "8f56a11d-2fb1-d81a-c6c7-fabace032e53",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "1.7x"
+  }, {
+    "id" : "c95b4e9b-fa12-d9bc-61af-0c5a0f2d12c50",
+    "name" : "title_number",
+    "label" : "Title Number",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "8f56a11d-2fb1-d81a-c6c7-fabace032e53",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "1.7"
+  }, {
+    "id" : "c95b4e9b-fa12-d9bc-61af-0c5a0f2d12c51",
+    "name" : "title_pre",
+    "label" : "Preceding symbol",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "8f56a11d-2fb1-d81a-c6c7-fabace032e53",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "c95b4e9b-fa12-d9bc-61af-0c5a0f2d12c52",
+    "name" : "title_following",
+    "label" : "Following symbol",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "8f56a11d-2fb1-d81a-c6c7-fabace032e53",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "x"
+  }, {
+    "id" : "c30bc71d-5e3f-d89e-eddb-65ea4f42e80a",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "GREATER PERFORMANCE IN SINGLE-TABLESCENARIOS."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "content" : "",
+    "title" : "",
+    "icon_img" : ""
+  }
+} ]

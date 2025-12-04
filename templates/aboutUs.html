@@ -1,0 +1,103 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Celerdata About us
+  screenshotPath: ../images/template-previews/career.png
+-->
+
+{% extends './layouts/base-about-us.html' %}
+
+{% block body %}
+<main class="body-container-wrapper about-us">
+  <!-- Banner -->
+  <div class="banner-section">
+    {% dnd_area 'Banner' class="banner-area" label='Banner Section' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/about-us-banner' %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}
+    {% end_dnd_area %}
+  </div>
+  <!-- Solutions -->
+  <div class="solution-section">
+    {% dnd_area 'Solution' class="solution-area" label='Solution Section' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/about-us-solutions' %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}
+    {% end_dnd_area %}
+  </div>
+  <!-- Powered by StarRocks -->
+  <div class="powered-section">
+    {% dnd_area 'Powered' class="powered-area" label='Powered Section' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/about-us-powered-by' %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}
+    {% end_dnd_area %}
+  </div>
+  <!-- Our Team -->
+  <div class="team-section">
+    {% dnd_area 'Team' class="team-area" label='Team Section' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/about-us-team' %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}
+    {% end_dnd_area %}
+  </div>
+  <!-- Our Journey -->
+  <div class="journey-section">
+    {% dnd_area 'Journey' class="journey-area" label='Journey Section' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/about-us-journey' %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}
+    {% end_dnd_area %}
+  </div>
+  <!-- Our Values -->
+  <div class="values-section">
+    {% dnd_area 'Values' class="values-area" label='Values Section' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/career-our-value' %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}
+    {% end_dnd_area %}
+  </div>
+  <!-- Slide Customer -->
+  <div class="customer-section">
+    {% dnd_area 'Customer' class="customer-area" label='Customer Section' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/slide-customers' %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}
+    {% end_dnd_area %}
+  </div>
+  <!-- Our Investors -->
+  <div class="investors-section">
+    {% dnd_area 'Investors' class="investors-area" label='Investors Section' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/about-us-investors' %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}
+    {% end_dnd_area %}
+  </div>
+  <!-- Latest News -->
+  <div class="latest-news">
+    {% dnd_area 'News' class="news-area" label='News Section' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/about-us-news' %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}
+    {% end_dnd_area %}
+  </div>
+  <!-- Contact Us -->
+  <div class="contact-us">
+    {% dnd_area 'Contact' class="contact-area" label='Contact Section' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/about-us-contact' %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}
+    {% end_dnd_area %}
+  </div>
+</main>
+{% endblock body %}

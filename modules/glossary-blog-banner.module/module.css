@@ -1,0 +1,121 @@
+.glossary-post-banner {
+  height: 580px;
+  position: relative;
+  width: 100%;
+  background: #65DAFF;
+}
+.glossary-post-banner .glossary-post-banner-bg {
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.glossary-post-banner .post-tag {
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+  font-weight: 700;
+  font-size: 450px;
+  line-height: 545px;
+  color: #92E5FF;
+  z-index: 0;
+}
+.glossary-post-banner .glossary-post-banner-img {
+  width: 218px;
+  margin-bottom: 40px;
+  margin-left: 6px;
+}
+.glossary-post-banner .content-wrapper {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 1596px;
+  height: 100%;
+  margin: 0 auto;
+  top: 0;
+  position: absolute;
+  padding: 10px;
+  width: 100%;
+
+}
+.glossary-post-banner .intro {
+  max-width: 920px;
+  width: 100%;
+  margin-bottom: 90px;
+  box-sizing: content-box;
+  position: relative;
+  z-index: 1;
+}
+.glossary-post-banner .title {
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 77px;
+  margin-bottom: 20px;
+}
+.glossary-post-banner p.desc {
+  font-size: 16px;
+  opacity: .8;
+  line-height: 42px;
+}
+
+@media (max-width: 1200px){
+  .glossary-post-banner .intro {
+    padding: 0;
+    width: 90%;
+    margin-bottom: 30px;
+  }
+  .glossary-post-banner .title {
+    font-size: 46px;
+    line-height: 65px;
+  }
+}
+
+
+@media (max-width: 767px){
+  .glossary-post-banner {
+    height: 360px;
+  }
+  .glossary-post-banner .glossary-post-banner-img {
+    max-width: 40%;
+    margin-bottom: 10px;
+  }
+  .glossary-post-banner .title {
+    font-size: 36px;
+    line-height: 48px;
+  }
+  .glossary-post-banner p.desc {
+    font-size: .87rem;
+  }
+  .glossary-post-banner .content-wrapper {
+    width: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .glossary-post-banner .post-tag {
+    font-size: 130px;
+    line-height: 294px;
+  }
+}
+
+
+@media (max-width: 479px){
+  .glossary-post-banner .title {
+    font-size: 28px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

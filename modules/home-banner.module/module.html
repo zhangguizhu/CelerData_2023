@@ -1,0 +1,34 @@
+{% if module.title or module.content or item.type or item.style %}
+<div class="home-banner banner_sec col-flex">
+  <div class="lottie-container home-banner-bg" id="banner-lottie-container"></div>
+  <script defer src="https://celerdata.com/hubfs/js/lottie.min.js"></script>
+
+  <div class="content-wrapper hs-row-flex hs-align-center hs-jus-between">
+    <div class="banner-content col-flex">
+      <h1 class="title">{{ module.title }} </h1>
+      <p class="desc">{{ module.content }}</p>
+      <div class="banner-buttons row-flex full-width">
+        {% for item in module.buttons %}
+        <div class="banner-btn button button-{{ item.style }}">
+          {% if item.type == "std" %}
+          {% set href = item.link.url.href %}
+          {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          <a href="{{ href }}"
+             {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+             {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+             >
+             <span> {{ item.text }}</span>
+          </a>
+          {% endif %}
+          {% if item.type == "cta" %}
+          {% cta guid="{{ item.cta }}" %}
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}

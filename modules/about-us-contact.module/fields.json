@@ -1,0 +1,26 @@
+[ {
+  "id" : "5eb0f40c-63f7-99ec-d7a1-1de763a9307c",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Contact Us"
+}, {
+  "id" : "4686db77-6915-3d33-4624-80624562d14b",
+  "name" : "form",
+  "label" : "Form",
+  "required" : false,
+  "locked" : false,
+  "type" : "form",
+  "display_width" : null,
+  "default" : {
+    "form_id" : "b207e27a-4c2d-43ce-a9a0-aef6c904e003",
+    "response_type" : "inline",
+    "message" : "<p>Thanks for reaching out to us. We'll make sure your message reaches the right person and they will follow up with you shortly.</p>",
+    "gotowebinar_webinar_key" : null,
+    "form_type" : "HUBSPOT"
+  }
+} ]

@@ -1,0 +1,52 @@
+{% if module.item_groups or module.section_title %}
+  <div class="services-wrapper" style="background-color:{{ module.background_color.color }}; opacity:{{ module.background_color.opacity * 0.01 }};">
+    <div class="content-wrapper hs-col-flex">
+      <div class="hs-col-flex hs-align-center">
+        <h3 class="sec-title">{{ module.section_title }}</h3>
+        <div class="sec-content">{{ module.section_content }}</div>
+      </div>
+      <div class="services-row hs-row-flex hs-jus-evenly">
+        {% for item in module.item_groups %}
+          <div class="services-item hs-col-flex hs-align-center hs-jus-center {{ item.item_theme }}" >
+            {% if item.item_label %}
+              <div class="item_label hs-col-flex hs-align-center hs-jus-center" style="background-image: url({{ get_asset_url('../../images/home/product-label.png') }});"><span>{{ item.item_label}}</span></div>
+            {% endif %}
+            <div class="services-item-content hs-col-flex hs-align-center">
+              {% if item.icon_img.src %}
+                <img src="{{ item.icon_img.src }}" alt="{{ item.icon_img.alt }}">
+              {% endif %}
+              <p class="title">{{ item.title }}</p>
+              {% if item.content %}
+                <p class="content">{{ item.content }}</p>
+              {% endif %}
+            </div>
+            <div class="button-wrap hs-col-flex">
+              {% for buttonItem in item.buttons %}
+                <div class="button button-{{ buttonItem.style }}">
+                  {% if buttonItem.type == "std" %}
+                  {% set href = buttonItem.link.url.href %}
+                  {% if buttonItem.link.url.type is equalto "EMAIL_ADDRESS" %}
+                  {% set href = "mailto:" + href %}
+                  {% endif %}
+                  <a href="{{ href }}"
+                    {% if buttonItem.link.open_in_new_tab %}target="_blank"{% endif %}
+                    {% if buttonItem.link.rel %}rel="{{ buttonItem.link.rel }}"{% endif %}
+                    >
+                    <span> {{ buttonItem.text }} </span>
+                    <svg height="18" version="1.1" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M826.24 535.893333l-212.48 213.333334a33.706667 33.706667 0 0 1-23.893333 10.24c-8.533333 0-17.066667-3.413333-23.893334-10.24a34.005333 34.005333 0 0 1 0-48.64l154.453334-155.306667H222.08c-18.773333 0-34.133333-15.36-34.133333-34.133333 0-18.773333 15.36-34.133333 34.133333-34.133334h498.346667l-154.453334-155.306666a34.005333 34.005333 0 0 1 0-48.64c13.653333-13.653333 34.986667-13.653333 48.64 0l212.48 213.333333c12.8 14.506667 12.8 36.693333-0.853333 49.493333z" p-id="4717"></path>
+                    </svg>
+                  </a>
+                  {% endif %}
+                  {% if buttonItem.type == "cta" %}
+                  {% cta guid="{{ buttonItem.cta }}" %}
+                  {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endif %}

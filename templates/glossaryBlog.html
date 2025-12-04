@@ -1,0 +1,103 @@
+<!--
+  templateType: blog_post
+  isAvailableForNewContent: True
+  screenshotPath: ../images/template-previews/glossary-blog.png
+  label: Celerdata glossary Blog Detail
+-->
+{% extends "./layouts/base.html" %}
+
+{% block template_stylesheets %}
+  <link type="text/css" rel="stylesheet" href="{{ get_asset_url('../css/templates/blog.css') }}">
+  {% endblock template_stylesheets %}
+  
+{% block body %}
+ <main id="glossary-blog-main" class="body-container-wrapper glossary-detail-page glossary">
+  <div class="banner-area-section">
+    {% module "post_banner" path="../modules/glossary-blog-banner", label="Blog Post Banner" %}
+  </div>
+  <div style="display: none;">
+      {% module "glossary_reference" path="@hubspot/text", label="Glossary Reference" %}
+    </div>
+  <div class="post-container-wrapper hs-row-flex">
+    <div class="left-panel" style="width: 40px;margin-right: 10px;">&nbsp;</div>
+    <div class="placeholder">&nbsp;</div>
+    <div class="right-panel">
+      {% module "Glossary Panel Banner" path="../modules/glossary-blog-right-banner", label="Glossary Panel Banner" %}
+      <div class="toc-module">
+        {% module "Blog TOC" path="../modules/blog-toc", label="Blog TOC" %}
+      </div>
+      {% module "Glossary Panel" path="../modules/glossary-list-panel", label="Glossary List Panel" %}
+    </div>
+    <div class="post-container">
+      <div class="blog-post__timestamp">
+        Publish date: {{ content.publish_date_localized }}
+      </div> 
+      <div class="blog-post__body" id="blog-content">
+        {{ content.post_body }}
+      </div>
+      {% if group.allow_comments %}
+      <div class="blog-comments">
+        {% module 'blog_comments'
+            path='@hubspot/blog_comments',
+            label="Blog comments"
+          %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <div>
+    {% module "Story" path='../modules/success-story' label="Success Story" %}
+  </div>
+</main>
+{% require_js %}
+  <script>
+    function throttleFN(fn){
+      let pre = new Date().getTime();
+      return function (){
+        let now =  new Date().getTime();
+        if(now - pre > 800) {
+          fn && fn();
+          pre = now
+        }
+      }
+    }
+    var headerHeight = $(".banner-area-section").outerHeight();
+    var windowHeight = $(window).height();
+    var windowWidth = $(window).width();
+    var pcDevice = true;
+    var fixedLeft = $('.right-panel').offset().left;
+    $(window).on("load resize change ready", function() {
+      headerHeight = $(".banner-area-section").outerHeight();
+      windowHeight = $(window).height();
+      windowWidth = $(window).width();
+      if(windowWidth < 1280) {
+        pcDevice = false;
+        $('.right-panel').removeClass('fixed')
+      } else {
+        pcDevice = true;
+      }
+      fixedLeft = $('.right-panel').offset().left
+      console.log('init', fixedLeft)
+    });
+    $(window).scroll(function() {
+      {# if($(document).scrollTop() > (headerHeight + 8)) { 
+          $('.right-panel').css('transform', `translateY(${$(document).scrollTop() - headerHeight}px)`);
+        } else {
+          $('.right-panel').css('transform', 'translateY(0px)');
+        } #}
+      if($(document).scrollTop() >= (headerHeight + 8) && pcDevice) { 
+        $('.left-panel').addClass('fixed')
+        $('.right-panel').addClass('fixed')
+        $('.placeholder').css('display', 'block')
+        console.log('use', fixedLeft)
+        $('.right-panel').css('left', fixedLeft + 'px')
+      } else {
+        $('.left-panel').removeClass('fixed')
+        $('.right-panel').removeClass('fixed')
+        $('.placeholder').css('display', 'none')
+        $('.right-panel').css('left', '')
+      }
+    });
+  </script>
+{% end_require_js %}
+{% endblock body %}

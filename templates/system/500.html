@@ -1,0 +1,28 @@
+<!--
+templateType: error_page
+isAvailableForNewContent: true
+label: Boilerplate - 500 error
+screenshotPath: ../../images/template-previews/500.png
+-->
+
+{% block template_stylesheets %}
+<link type="text/css" rel="stylesheet" href="{{ get_asset_url('../../css/templates/system.css') }}">
+{% endblock template_stylesheets %}
+{% extends "../layouts/base.html" %}
+{# pageTitle is used on system templates for setting a value for the title tag #}
+{% set pageTitle = "Error 500 | Server error" %}
+
+{% block body %}
+<section class="content-wrapper error-page">
+  <img class=""
+    src={% image_src "505_img" 'src'="{{get_asset_url('../../images/system/system_505.png')}}", label="Image", no_wrapper=True %}
+    alt="error 505" width="751" height="290">
+  <div class="error-page-content hs-col-flex hs-align-center" data-error="500">
+    {% module "content"
+      path="@hubspot/rich_text",
+      html="<h1>SOMETHING ISN\'T QUITE RIGHT</h1><p>Sorry, an internal server error occurred. But have no fear, we\'re on the case!</p>"
+    %}
+    <a href="/" class="button button-primary">Back To home</a>
+  </div>
+</section>
+{% endblock body %}

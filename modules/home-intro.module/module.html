@@ -1,0 +1,49 @@
+{% if module.banner_image.src or module.title or module.content %}
+<div class="home-intro banner_sec col-flex">
+  <div class="content-wrapper row-flex">
+  {% if module.banner_image.src %}
+    <div class="img-wrap animation-bg-box">
+      <img src="{{ module.banner_image.src }}" alt="{{ module.banner_image.alt }}" width="100%" height="100%">
+      <div class="lottie-container" id="frame-lottie-container"></div>
+      <script defer src="https://celerdata.com/hubfs/js/lottie.min.js"></script>
+    </div>
+  {% endif %}
+    <div class="intro-content col-flex">
+      <H1 class="sec-title">{{ module.title }} </H1>
+      <div class="sec-content">{{ module.content }}</div>
+      <div class="banner-buttons row-flex full-width">
+        {% for item in module.buttons %}
+        <div class="banner-btn button button-{{ item.style }}">
+          {% if item.type == "std" %}
+          {% set href = item.link.url.href %}
+          {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          <a href="{{ href }}"
+             {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+             {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+             >
+             <span> {{ item.text }}</span>
+          </a>
+          {% endif %}
+          {% if item.type == "cta" %}
+          {% cta guid="{{ item.cta }}" %}
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="hs-row-flex footer-narrow">
+      <svg width="44" height="166" viewBox="0 285 44 166" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M42.85 285.350403V340.126C42.8463 347.065 40.6698 353.857 36.5804 359.69L7.36182 401.295C3.26304 407.124 1.08149 413.917 1.0791 420.859V450.819" stroke="#D8D8EB" stroke-miterlimit="10"></path>
+      </svg>
+      <svg width="96" height="166" viewBox="0 276 96 166" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left:-44px;">
+        <path d="M95.4248 276V331.401C95.4196 337.263 93.8609 343.036 90.8837 348.22C87.9065 353.403 83.6004 357.842 78.3379 361.152L18.0869 399.132C12.822 402.439 8.51407 406.878 5.53657 412.062C2.55908 417.246 1.00189 423.02 1 428.882V458.48" stroke="#D8D8EB" stroke-miterlimit="10"/>
+      </svg>
+      <svg width="149" height="166" viewBox="0 275 149 166" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left:-96px;">
+        <path d="M148 275V326.87C148.007 333.874 145.795 340.729 141.636 346.598C137.477 352.466 131.55 357.095 124.578 359.919L24.5013 400.389C17.5355 403.21 11.6125 407.834 7.45389 413.695C3.29524 419.557 1.08039 426.404 1.0791 433.402V463" stroke="#D8D8EB" stroke-miterlimit="10"/>
+      </svg>
+    </div>
+</div>
+{% endif %}

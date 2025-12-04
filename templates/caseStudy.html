@@ -1,0 +1,45 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: True
+  screenshotPath: ../images/template-previews/caseStudy.png
+  label: Celerdata CaseStudy page
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+ <main id="case-study-main" class="body-container-wrapper case-study-page">
+  <div class="banner-section">
+    {% dnd_area 'Banner' class="banner-area" label='Header Section' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/resource-banner' %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}
+    {% end_dnd_area %}
+  </div>
+  <div class="text-section">
+    {% dnd_area 'text-1' class="text-area" label='Text Section' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/text-temp' %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}
+    {% end_dnd_area %}
+  </div>
+  {% dnd_area "one" label='Text1 Area' %}
+  {% end_dnd_area %}
+  {% dnd_area "two" label='Text2 Area' %}
+  {% end_dnd_area %}
+  {% dnd_area "three" label='Text3 Area' %}
+  {% end_dnd_area %}
+  <div class="text-section">
+    {% dnd_area 'Footer Form' class="form-area" label='Form Section' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/footer-form' %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}
+    {% end_dnd_area %}
+  </div>
+</main>
+{% require_js %}
+<script>
+</script>
+{% end_require_js %}
+{% endblock body %}

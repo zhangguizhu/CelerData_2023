@@ -1,0 +1,54 @@
+.blog-right-panel-wrap {
+  width: 377px;
+  position: relative;
+  min-height: 360px;
+  border: 1px solid #D4D4EA;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.blog-right-panel-wrap .init-right-panel {
+  text-align: center;
+  padding: 30px;
+}
+.blog-right-panel-wrap .init-right-panel img {
+  margin-bottom: 20px;
+}
+.blog-right-panel-wrap .init-right-panel .title {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+  text-align: left;
+}
+.blog-right-panel-wrap .init-right-panel .button-secondary {
+  border: 2px solid #0061ff;
+  margin-top: 52px;
+  max-width: 460px;
+  padding: 0 36px 0 30px;
+  width: 100%;
+}
+.blog-right-panel-wrap .init-right-panel .button-secondary svg path{
+  fill: #0061FF;
+}
+
+@media (max-width: 767px){
+  .blog-right-panel-wrap {
+    width: 100%;
+    min-height: auto;
+    padding: 20px 26px;
+  }
+  .blog-right-panel-wrap .init-right-panel img {
+    max-width: 70%;
+    max-height: 109px;
+    width: auto;
+  }
+  .blog-right-panel-wrap .init-right-panel .title  {
+    font-size: 22px;
+    line-height: 32px;
+  }
+  .blog-right-panel-wrap .init-right-panel .button-secondary {
+    padding: 0 25px 0 20px;
+    font-size: 13px;
+  }
+}
+

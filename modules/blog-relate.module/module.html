@@ -1,0 +1,114 @@
+{% macro post_formatter_standard(blog_post, index, count) %}
+  {% set show_featured_image = false %}
+    {% if blog_post.featured_image %}
+      {% if blog.listing_page_id %}
+        {% if module.featured_image %}
+           {% set show_featured_image = true %}
+        {% endif %}
+      {% else %}
+        {% if group.use_featured_image_in_summary %}
+           {% set show_featured_image = true %}
+        {% endif %}
+      {% endif %}
+    {% endif %}
+
+  <div class="post-item hs-col-flex {% if module.author %} has-author {% endif%}">
+    <a class="post-item-outter hs-col-flex hs-row-flex" href="{{ blog_post.absolute_url }}">
+      {% if show_featured_image == true %}
+      <div class="feature-thumbnail" style="background-image: url('{{ blog_post.featured_image }}');">
+      </div>
+      {% endif %}
+      <div class="post-intro hs-col-flex">
+        {# Title #}
+        {% if module.title %}
+          <p class="title">{{ blog_post.name }}</p>
+        {% endif %}
+        {% if module.content %}
+          <p class="content">{{ blog_post.post_body|striptags|truncate(135, True, "...") }}</p>
+        {% endif %}
+        {# End title #}
+      </div>
+    </a>
+    {% if module.author %}
+      <div class="item__author">
+        {% if blog_post.blog_post_author  %}
+          <a href="{{ blog_author_url(group.id, blog_post.blog_post_author.slug) }}" target="_blank" class="hs-row-flex hs-align-center">
+            <span class="blog-author-avatar" style="background-image: url('{{ blog_post.blog_author.avatar }}');"></span>
+            <span> {{ blog_post.blog_post_author.display_name }}</span>
+          </a>
+        {% endif %}
+    </div>
+    {% endif %}
+  </div>
+  {% endmacro %}
+{% if module.show_relation_blogs %}
+<div class="relation-blog-wrap" style="background-color:{{ module.background_color.color }}; opacity:{{ module.background_color.opacity * 0.01 }};">
+  <div class="relation-blog-container hs-col-flex" >
+    <h2 class="sec-title">{{ module.intro_to_title }}</h2>
+    <div id="post-listing" class="post-listing hs-row-flex hs-jus-start hs-align-stretch">
+      {%- if group.id %}
+        {% set blog_id = group.id %}
+      {% else %}
+        {% set blog_id = module.filter.blog_id|default('default')  %}
+      {% endif -%}
+      {%- set limit = 3 -%}
+
+      {%- if module.filter.type_of_filter == 'related' %}
+        {%- set filter_tags = [] -%}
+        {%- for tag in module.filter.tags -%}
+          {% if tag %}{%- do filter_tags.append(tag) -%}{% endif %}
+        {%- endfor -%}
+        {% set tags_total_list = '' %}
+        {% if content.topic_list && (content.topic_list + filter_tags)|length > 0 %}
+          {% set tags_total_list = (content.topic_list + filter_tags)|join(', ')|default('') %}
+        {% elif filter_tags|length > 0 %}
+          {% set tags_total_list = filter_tags|join(', ')|default('') %}
+        {% endif %}
+        {% if content.blog_post_author.display_name && module.filter.author_s %}
+          {% set authors_total = content.blog_post_author.display_name + ', ' + module.filter.author_s %}
+        {% else %}
+          {% set authors_total = module.filter.author_s|default('')  %}
+        {% endif %}
+        {% set post_override = module.filter.force_post_s|default('') %}
+        {% related_blog_posts blog_ids="{{ blog_id }}", tags="{{ tags_total_list }}", blog_authors="{{ authors_total }}", blog_post_ids="", blog_post_override="{{ post_override }}", post_formatter="post_formatter_standard", limit="{{limit}}" %} 
+      {% else %}
+        {%- set posts = [] -%}
+        {%- if module.filter.type_of_filter == 'popular' %}
+          {% set posts = blog_popular_posts(blog_id, limit, module.filter.popular_tag, module.filter.popular_time_frame) %}
+        {% elif module.filter.type_of_filter == 'recent' %}
+          {% set posts = blog_recent_posts(blog_id, limit) %}
+        {% elif module.filter.type_of_filter == 'recent_by_tags' %}
+          {%- set recent_filter_tags = [] -%}
+          {%- for tag in module.filter.recent_tags -%}
+            {% if tag %}{%- do recent_filter_tags.append(tag) -%}{% endif %}
+          {%- endfor -%}
+          {% set tags_total_array = '' %}
+          {% if content.topic_list && (content.topic_list + recent_filter_tags)|length > 0 %}
+            {% set tags_total_array = (content.topic_list + recent_filter_tags) %}
+          {% elif recent_filter_tags|length > 0 %}
+            {% set tags_total_array = recent_filter_tags %}
+          {% endif %}
+          {% set posts = blog_recent_tag_posts(blog_id, tags_total_array, limit) %}
+        {% elif module.filter.type_of_filter == 'recent_by_author' %}
+          {% set author_slug = module.filter.recent_author %}
+          {% if author_slug|trim|length == 0 && content.blog_post_author.slug %}
+            {% set author_slug = content.blog_post_author.slug %}
+          {% endif %}
+          {% set posts = blog_recent_author_posts(blog_id, author_slug, limit) %}
+        {% endif -%}
+        {% set is_skipped_post = false %}
+          {%- for post in posts %}
+            {% if content.absolute_url != post.absolute_url %}
+              {% if (!is_skipped_post && loop.index < limit) || is_skipped_post  %}
+                {% set tmp = post_formatter_standard(post, loop.index, loop.length) %}
+                {{ tmp }}
+              {% endif %}
+            {% else %}
+              {% set is_skipped_post = true %}
+            {% endif %}
+          {% endfor -%}
+      {% endif -%}
+    </div>
+  </div>
+</div>
+{% endif %}

@@ -1,0 +1,55 @@
+{% if module.section_title or module.feature_items %}
+<div id="{{ name }}" name="{{ name }}" class="feature-temp-wrap hs-col-flex hs-jus-center hs-align-center">
+  <div class="content-wrapper hs-col-flex">
+    <div class="hs-col-flex feature-top-wrap">
+      {% if module.section_title %}
+          <div class="hs-row-flex sec-title-wrap">
+            <span class="title-decorate row-flex">
+              <img class="title-decorate-img" src="{{ get_asset_url('../../images/title-decorate.png') }}" alt="title" />
+            </span>
+            <p class="sec-title">{{ module.section_title }}</p>
+          </div>
+        {% endif %}
+      <div class="sec-content">{{ module.section_content }}</div>
+    </div>
+    <div class="feature-temp-buttons row-flex full-width">
+      {% for item in module.buttons %}
+        <div class="feature-btn button button-{{ item.style }}">
+          {% if item.type == "std" %}
+          {% set href = item.link.url.href %}
+          {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          <a href="{{ href }}"
+             {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+             {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+             >
+             <span> {{ item.text }}</span>
+          </a>
+          {% endif %}
+          {% if item.type == "cta" %}
+          {% cta guid="{{ item.cta }}" %}
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="feature-lists hs-row-flex hs-jus-center">
+      {% for item in module.feature_items %}
+        <div class="feature-item hs-row-flex" style="background-color:{{ item.background_color.color }};">
+          <div class="item-icon-box hs-row-flex">
+            <div class="item-icon-inner-box hs-row-flex  hs-jus-center hs-align-center">
+              {% if item.icon.src %}
+                <img class="item-icon" src="{{ item.icon.src }}" alt="{{ item.icon.alt }}">
+              {% endif %}
+            </div>
+          </div>
+          <div class="card hs-col-flex">
+              <p class="sub-title">{{ item.title }}</p>
+              <p class="desc">{{ item.content }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}

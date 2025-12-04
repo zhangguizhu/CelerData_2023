@@ -1,0 +1,65 @@
+{% if module.title or module.content %}
+<div class="banner-news-wrap">
+  {% if module.show_summit %}
+  <div class="summit-countdown-wrapper" id="summitCountdownWrapper">
+    <div class="summit-countdown" id="summitCountdown">
+      <div class="countdown-time">
+        <div class="time-area">
+          <span class="colon" style="left: 71px;">:</span>
+          <span class="colon" style="left: 168px;">:</span>
+          <span class="time time1">00</span>
+          <span class="time time2">00</span>
+          <span class="time time3">00</span>
+        </div>
+        <div class="time-unit-area">
+          <span class="unit unit1">-</span>
+          <span class="unit unit2">-</span>
+          <span class="unit unit3">-</span>
+        </div>
+      </div>
+      <div class="countdown-content">
+        <div class="countdown-title">
+          StarRocks Global Summit is September 10th
+        </div>
+        <div class="countdown-desc">
+          Join 1,000s of other community members for this one day virtual celebration.
+        </div>
+        <div style="margin-top: 10px;">
+          <a href="https://summit.starrocks.io/2025">
+            Save Your Spot &nbsp;
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M16.7031 10.0037L11.4004 15.3064L10.6924 14.5994L14.832 10.4607H3.2002V9.46069H14.748L10.6924 5.40698L11.4004 4.69995L16.7031 10.0037Z" fill="#65daff"/>
+              <path d="M16.7031 10.0037L16.9153 10.2158L17.1274 10.0037L16.9153 9.79155L16.7031 10.0037ZM11.4004 15.3064L11.1884 15.5187L11.4005 15.7305L11.6125 15.5185L11.4004 15.3064ZM10.6924 14.5994L10.4803 14.3872L10.2679 14.5995L10.4804 14.8116L10.6924 14.5994ZM14.832 10.4607L15.0441 10.6729L15.5564 10.1607H14.832V10.4607ZM3.2002 10.4607H2.9002V10.7607H3.2002V10.4607ZM3.2002 9.46069V9.16069H2.9002V9.46069H3.2002ZM14.748 9.46069V9.76069H15.4726L14.9601 9.24851L14.748 9.46069ZM10.6924 5.40698L10.4804 5.1947L10.2679 5.40689L10.4803 5.61917L10.6924 5.40698ZM11.4004 4.69995L11.6125 4.48784L11.4006 4.27581L11.1884 4.48767L11.4004 4.69995ZM16.7031 10.0037L16.491 9.79153L11.1883 15.0943L11.4004 15.3064L11.6125 15.5185L16.9153 10.2158L16.7031 10.0037ZM11.4004 15.3064L11.6124 15.0941L10.9044 14.3871L10.6924 14.5994L10.4804 14.8116L11.1884 15.5187L11.4004 15.3064ZM10.6924 14.5994L10.9045 14.8115L15.0441 10.6729L14.832 10.4607L14.6199 10.2485L10.4803 14.3872L10.6924 14.5994ZM14.832 10.4607V10.1607H3.2002V10.4607V10.7607H14.832V10.4607ZM3.2002 10.4607H3.5002V9.46069H3.2002H2.9002V10.4607H3.2002ZM3.2002 9.46069V9.76069H14.748V9.46069V9.16069H3.2002V9.46069ZM14.748 9.46069L14.9601 9.24851L10.9045 5.1948L10.6924 5.40698L10.4803 5.61917L14.536 9.67288L14.748 9.46069ZM10.6924 5.40698L10.9044 5.61926L11.6124 4.91223L11.4004 4.69995L11.1884 4.48767L10.4804 5.1947L10.6924 5.40698ZM11.4004 4.69995L11.1882 4.91206L16.491 10.2158L16.7031 10.0037L16.9153 9.79155L11.6125 4.48784L11.4004 4.69995Z" fill="#65daff"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="banner-news row-flex">
+    <div class="news-detail">
+      <p class="title">{{ module.title }} </p>
+      <p class="desc">{{ module.content }}</p>
+    </div>
+    <div class="news-buttons row-flex">
+      {% for item in module.buttons %}
+      <div>
+        {% set href = item.link.url.href %}
+        {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+        {% endif %}
+        <a class="news-btn button button-{{ item.style }}"
+            href="{{ href }}"
+            {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+            {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+            >
+            <span> {{ item.text }}</span>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</div>
+{% endif %}

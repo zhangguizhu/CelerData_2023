@@ -1,0 +1,24 @@
+{% if module.title %}
+<div class="about-us-contact">
+  <div class="contact-container">
+    <div class="contact-left">
+      <div class="title">
+        {{ module.title }}
+      </div>
+      <div class="contact-form hs-width-fill">
+        {% form
+          form_key="{{ module.form.form_key }}"
+          form_to_use="{{ module.form.form_id }}"
+          response_response_type="{{ module.form.response_type }}"
+          response_message="{{ module.form.message }}"
+          response_redirect_id="{{ module.form.redirect_id }}"
+          response_redirect_url="{{module.form.redirect_url}}"
+        %}
+      </div>
+    </div>
+    <div class="contact-right">
+      <img src="{{ get_asset_url('../images/contact_us_astronaut.png') }}">
+    </div>
+  </div>
+</div>
+{% endif %}

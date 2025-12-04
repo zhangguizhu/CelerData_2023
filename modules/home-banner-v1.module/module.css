@@ -1,0 +1,206 @@
+.home-banner-v1 {
+  width: 100%;
+  position: relative;
+  height: 830px;
+  background: #65DAFF;
+  overflow: hidden;
+}
+.home-banner-v1 .home-banner-bg {
+  top: 0;
+  left: 50%;
+  height: 740px;
+  width: 50%;
+  transform: translateX(0);
+  max-width: 740px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 740px auto;
+  position: absolute;
+  z-index: 0;
+}
+
+/* .home-banner-v1 .home-banner-bg:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100px;
+  z-index: 2;
+  background: linear-gradient(to right, #65DAFF 0%, rgba(101, 218, 255, 0) 100%);
+}
+.home-banner-v1 .home-banner-bg:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100px;
+  z-index: 2;
+  background: linear-gradient(to right, rgba(101, 218, 255, 0) 0%, #65DAFF 100%);
+} */
+.home-banner-v1 .content-wrapper {
+  position: relative;
+  max-width: 1596px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 1;
+  transform:translateY(-46px);
+}
+.home-banner-v1 .banner-content {
+  flex-basis: 47%;
+}
+.home-banner-v1 .title {
+  color: #000;
+  font-size: 72px;
+  line-height: 87px;
+  font-weight: 700;
+  max-width: 790px;
+}
+.home-banner-v1 .title.smaller-title{
+  font-size: 58px;
+  line-height: 80px;
+}
+.home-banner-v1 .desc {
+  color: #000;
+  font-size: 20px;
+  line-height: 32px;
+  margin-top: 14px;
+  font-weight: 400;
+}
+.home-banner-v1 .banner-btn {
+  padding: 0;
+  display: flex;
+}
+.home-banner-v1 .button-secondary {
+  border: 2px solid #0061FF;
+}
+.home-banner-v1 .banner-btn a {
+  font-size: 20px;
+  text-align: center;
+  min-width: 200px;
+}
+.home-banner-v1 p.desc:empty {
+  display: none;
+}
+.home-banner-v1 .animation-wrap {
+  flex-basis: 50%;
+  text-align: center
+}
+.home-banner-v1 .animation-wrap img{
+  width: 346px;
+}
+
+.home-banner-v1 .banner-buttons {
+  margin-top: 40px;
+  justify-content: flex-start;
+}
+.home-banner-v1 .banner-btn:not(:last-child) {
+  margin-right: 2rem;
+}
+
+@media (max-width: 1560px){ 
+  .home-banner-v1 .title {
+    font-size: 56px;
+    line-height: 78px;
+  }
+  .home-banner-v1 .title.smaller-title {
+    font-size: 52px;
+    line-height: 70px;
+  }
+}
+@media (max-width: 1410px){ 
+  .home-banner-v1 .title.smaller-title {
+    font-size: 40px;
+    line-height: 60px;
+  }
+}
+
+@media (max-width: 1106px){ 
+  .home-banner-v1 .title.smaller-title {
+    font-size: 34px;
+    line-height: 46px;
+  }
+}
+@media (max-width: 1200px){ 
+  .home-banner-v1 .title {
+    font-size: 45px;
+    line-height: 66px;
+  }
+}
+
+@media (max-width: 767px){
+  .home-banner-v1 {
+    height: auto;
+    padding-bottom: 80px;
+    padding-top: 240px;
+  }
+  .home-banner-v1 .content-wrapper {
+    width: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    transform:translateY(0px);
+  }
+  .home-banner-v1 .home-banner-bg  {
+    height: 260px;
+    top: 0;
+    transform: translateX(-50%);
+    width: 66%
+  }
+  .home-banner-v1 .banner-content, .home-banner-v1 .animation-wrap {
+    flex-basis: 100%;
+    z-index: 2;
+    padding: 0;
+  }
+  .home-banner-v1 .animation-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.2;
+  }
+  .home-banner-v1 .animation-wrap img {
+    width: 200px;
+  }
+  .home-banner-v1 .title {
+    font-size: 36px;
+    line-height: 46px;
+  }
+  .home-banner-v1 .title.smaller-title {
+    font-size: 28px;
+    line-height: 42px;
+  }
+  .home-banner-v1 .desc {
+    width: 100%;
+    font-size: 15px;
+    line-height: 24px;
+  }
+  .home-banner-v1 .banner-buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .home-banner-v1 .banner-btn:not(:first-child) {
+    margin-top: 20px;
+  }
+  .home-banner-v1 .banner-btn:not(:last-child) {
+    margin-right: 1rem;
+  }
+ 
+  .home-banner-v1 .banner-buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .home-banner-v1 .banner-btn a {
+    width: 12rem;
+    font-size: 16px;
+  }
+}
+

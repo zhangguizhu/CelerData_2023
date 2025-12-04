@@ -1,0 +1,13 @@
+{% if module.section_title or module.section_content %}
+<div id="{{ name }}" name="{{ name }}" class="animation-bg-box home-iso-wrap hs-row-flex hs-jus-center hs-align-center" style="background-color:{{ module.background_color.color }};">
+  <div class="content-wrapper hs-row-flex hs-align-center">
+    <div class="img-box">
+      <img class="right-top-img" src="{{ module.left_image.src }}" alt="{{ module.left_image.alt }}" width="{{ module.left_image.width|divide(2) }}">
+    </div>
+    <div class="home-iso-right hs-col-flex hs-jus-center">
+      <p class="sec-title">{{ module.section_title }}</p>
+      <div class="sec-content">{{ module.section_content }}</div>
+    </div>
+  </div>
+</div>
+{% endif %}

@@ -1,0 +1,89 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: True
+  screenshotPath: ../images/template-previews/home.png
+  label: Celerdata Home page
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+ <main id="home-main" class="body-container-wrapper home-page">
+  <div class="lighting-effect hide"></div>
+  <div class="banner-section">
+    {% dnd_area "Banner" class='banner-area', label='Banner Area' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/home-banner', width=12, offset=0, label="Banner" %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}   
+    {% end_dnd_area %}
+  </div>
+
+  <div>
+    {% dnd_area "News" class='banner-news-area', label='News Area' %}
+    {% dnd_section %}
+    {% dnd_module path='../modules/banner-news', width=12, offset=0, label="News" %}
+    {% end_dnd_module full_width=true %}
+    {% end_dnd_section %}  
+    {% end_dnd_area %}
+  </div>
+
+  <div>
+    {% dnd_area "Logos" class='slide-logos-wrap', label='Logos Area' %}
+    {% dnd_section %}
+    {% dnd_module path='../modules/slide-logo', width=12, offset=0, label="Logos" %}
+    {% end_dnd_module full_width=true %}
+    {% end_dnd_section %}  
+    {% end_dnd_area %}
+  </div>
+
+  <div>
+    {% dnd_area "Intro" class='intro-area', label='Intro Area' %}
+    {% dnd_section %}
+    {% dnd_module path='../modules/home-intro', width=12, offset=0, label="Intro" %}
+    {% end_dnd_module full_width=true %}
+    {% end_dnd_section %}  
+    {% end_dnd_area %}
+  </div>
+
+  {% dnd_area 'Feature' class='home-feature-area', label='Feature Area' %}
+
+  {% end_dnd_area %}
+  {% dnd_area 'Video' class='home-video-are', label='Video Area' %}
+
+  {% end_dnd_area %}
+  {% dnd_area 'Performence' class='home-performence-sec', label='Performence Area' %}
+
+  {% end_dnd_area %}
+  {% dnd_area 'ISO' class='home-iso-area', label='Home ISO' %}
+
+  {% end_dnd_area %}
+  {% dnd_area 'Customer' class='home-customer', label='Customer Area' %}
+
+  {% end_dnd_area %}
+  {% dnd_area 'services' class='home-services', label='Services Area' %}
+
+  {% end_dnd_area %}
+</main>
+{% require_js %}
+<script>
+  $(window).load( function() {
+   var preScrolTop = 0
+    $(window).scroll(function() {
+      window.requestAnimationFrame(function(){
+        var newScrolTop = $(window).scrollTop()
+          if(newScrolTop > preScrolTop && $('.home-feature-area').offset().top - newScrolTop < 220 &&  $('.home-customer').offset().top - newScrolTop > 115) {
+            $('.lighting-effect').removeClass('hide');
+          } else {
+            $('.lighting-effect').addClass('hide');
+          }
+        $('.title-decorate').each((index, item)=>{
+          if($(item).offset().top - newScrolTop < 180) {
+            $(item).addClass('animate')
+          }
+        })
+        preScrolTop = newScrolTop;
+      })
+    })
+  })
+</script>
+{% end_require_js %}
+{% endblock body %}

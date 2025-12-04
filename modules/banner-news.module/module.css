@@ -1,0 +1,217 @@
+.banner-news-wrap {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 5;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100%;
+  max-width: 1596px;
+  padding: 0 30px;
+}
+.banner-news {
+  width: 100%;
+  padding: 26px 53px 26px 36px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #D8D8EB;
+  justify-content: space-between;
+  border-radius: 16px;
+  flex-wrap: wrap;
+  backdrop-filter: blur(12px);
+}
+.banner-news .news-detail {
+  flex: 1;
+  padding-right: 120px;
+}
+.banner-news .news-detail .title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 32px;
+  color: #000000;
+}
+.banner-news .news-detail .desc {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #000000;
+}
+.banner-news .news-buttons {
+  justify-content: flex-start;
+}
+.banner-news .news-buttons .news-btn {
+  font-size: 16px;
+  text-align: center;
+  min-width: 200px;
+  padding: 0 18px;
+  line-height: 40px;
+}
+.banner-news-wrap .summit-countdown-wrapper {
+  width: 100%;
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.banner-news-wrap .summit-countdown {
+  width: 100%;
+  max-width: 1200px;
+  height: 180px;
+  border-radius: 8px;
+  backdrop-filter: blur(12px);
+  background: hsla(0, 0%, 100%, .8);
+  border: 1px solid #d8d8eb;
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+}
+
+.banner-news-wrap .summit-countdown .countdown-time .time-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 54px;
+  color: #fff;
+  font-weight: 700;
+  width: 270px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+.banner-news-wrap .summit-countdown .countdown-time .time-area span.colon {
+  margin: 0 10px;
+  font-size: 32px;
+  color: #666;
+  position: absolute;
+  left: 71px;
+}
+.banner-news-wrap .summit-countdown .countdown-time .time-area span.time {
+  position: absolute;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 71px;
+  height: 100px;
+  padding-top: 10px;
+  background: #65daff;
+  top: 0;
+  font-family: DIN Condensed;
+}
+
+.banner-news-wrap .summit-countdown .countdown-time .time-area span.time1 {
+  left: 0;
+}
+
+.banner-news-wrap .summit-countdown .countdown-time .time-area span.time2 {
+  left: 98px;
+}
+
+.banner-news-wrap .summit-countdown .countdown-time .time-area span.time3 {
+  left: 196px;
+}
+
+.banner-news-wrap .summit-countdown .countdown-time .time-unit-area {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Open Sans";
+  font-size: 12px;
+  width: 270px;
+}
+
+.banner-news-wrap .summit-countdown .countdown-time .time-unit-area span.unit {
+  display: inline-block;
+  width: 71px;
+  text-align: center;
+}
+.banner-news-wrap .summit-countdown .countdown-content {
+  margin-left: 67px;
+  color: #000;
+  font-family: "Open Sans";
+}
+.banner-news-wrap .summit-countdown .countdown-content .countdown-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+.banner-news-wrap .summit-countdown .countdown-content .countdown-desc {
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.banner-news-wrap .summit-countdown .countdown-content a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 32px;
+  background-color: #fff;
+  border: 1px solid #65daff;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+}
+@media (max-width: 767px){
+  .banner-news-wrap {
+    position: relative;
+    transform: none;
+    top: 0;
+    left: 0;
+    margin: -50px 16px -50px;
+    width: auto;
+    padding: 0;
+  }
+  .banner-news {
+    border: 1px solid #f0f0f0;
+    padding: 20px;
+  }
+  .banner-news .news-detail .title {
+    font-size: 18px;
+  }
+  .banner-news .news-detail .desc {
+    font-size: 13px;
+    line-height: 22px
+  }
+  .banner-news .news-detail  {
+    width: 100%;
+    padding: 0;
+  }
+  .banner-news .news-buttons {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .banner-news .news-buttons .news-btn {
+    font-size: 14px;
+  }
+  .banner-news-wrap .summit-countdown-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .banner-news-wrap .summit-countdown {
+    flex-direction: column;
+    max-width: auto;
+    height: auto;
+  }
+  
+  .banner-news-wrap .summit-countdown .countdown-time {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .banner-news-wrap .summit-countdown .countdown-content {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+  
+  .banner-news-wrap .summit-countdown .countdown-content div{
+    text-align: center;
+  }
+  
+  .banner-news-wrap .content-wrapper {
+    padding: 3.4rem 15px 6rem;
+  }
+}
+
+
+
+
+

@@ -1,0 +1,11 @@
+{% if module.content %}
+<div class="about-us-banner">
+  <div class="banner-content">
+    <div class="hs-col-flex left">
+      <span class="title">{{ module.title }}</span>
+      <span class="content">{{ module.content }}</span>
+    </div>
+    <img src="{{ module.banner_image.src }}" alt="{{ module.banner_image.alt }}">
+  </div>
+</div>
+{% endif %}

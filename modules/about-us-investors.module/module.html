@@ -1,0 +1,12 @@
+{% if module.title %}
+<div class="about-us-investors">
+  <span class="title">{{ module.title }}</span>
+  <div class="investors-container">
+    {% for investor in module.investor_image %}
+    <div>
+      <img src="{{ investor.src }}" alt="investor.alt">
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

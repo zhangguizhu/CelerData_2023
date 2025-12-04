@@ -1,0 +1,81 @@
+.about-us-team {
+  width: 100%;
+  padding: 90px 0 110px;
+  background-color: #f5f5fb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-us-team .title {
+  width: 100%;
+  color: #000;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.about-us-team .content {
+  display: inline-block;
+  margin-top: 18px;
+  width: 100%;
+  color: #000;
+  text-align: center;
+  font-size: 16px;
+}
+
+.about-us-team .teammates-container-1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.about-us-team .teammates-container-2 {
+  max-width: 1420px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.about-us-team .teammate-card {
+  color: #000;
+  display: flex;
+  width: 212px;
+  margin: 16px 12px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-us-team .teammate-card img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+}
+
+.about-us-team .teammate-card .teammate-name {
+  margin-top: 16px;
+  font-size； 20px;
+  font-weight: 500;
+}
+
+.about-us-team .teammate-card .teammate-position {
+  margin-top: 8px;
+  font-size； 16px;
+}
+@media(max-width: 1197px){
+  .about-us-team .teammate-card {
+    width: 160px;
+    margin: 12px 9px;
+  }
+  
+  .about-us-team .teammates-container-1 {
+    flex-wrap: wrap;
+  }
+  
+  .about-us-team .teammates-container-2 {
+    justify-content: center;
+  }
+}
+@media(max-width: 767px){
+  
+}

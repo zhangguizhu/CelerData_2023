@@ -1,0 +1,44 @@
+[ {
+  "id" : "88658c44-d2a1-4313-5263-f841d6f819bc",
+  "name" : "image_type",
+  "label" : "Image Type",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "custom_img", "Custom Image" ], [ "featured_img", "Featured Image" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "custom_img"
+}, {
+  "id" : "ecff6a8a-5db1-4590-4b19-3186cca3e85e",
+  "name" : "background_image",
+  "label" : "Background Image",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "88658c44-d2a1-4313-5263-f841d6f819bc",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "custom_img",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : "Banner",
+    "loading" : "lazy",
+    "width" : 1920,
+    "height" : 500,
+    "max_width" : 1920,
+    "max_height" : 500
+  }
+} ]

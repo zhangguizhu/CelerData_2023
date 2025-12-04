@@ -1,0 +1,31 @@
+[ {
+  "id" : "1f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa361",
+  "name" : "section_title",
+  "label" : "Section Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Let's build something together"
+}, {
+  "id" : "1f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa362",
+  "name" : "section_desc",
+  "label" : "Section Description",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "CelerData is actively hiring and we'd love for you to join us."
+}, {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa363",
+  "name" : "view_roles_btn",
+  "label" : "View Open Roles Button",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "View Open Roles"
+} ]

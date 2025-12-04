@@ -1,0 +1,87 @@
+<div class="resource-list-container hs-col-flex">
+  <div class="content-wrapper hs-col-flex">
+    {% if module.section_title or module.section_content %}
+      <div class="hs-col-flex feature-top-wrap">
+        <div class="hs-row-flex sec-title-wrap">
+          <p class="sec-title">{{ module.section_title }}</p>
+        </div>
+        <div class="sec-content">{{ module.section_content }}</div>
+      </div>
+    {% endif %}
+    {%- set final_cats = [] -%}
+      {%- for box in module.item_groups -%}
+        {% if box.filtering.cats %}
+          {% set cats = box.filtering.cats|split(',') %}
+          {% for cat in cats %}
+          {%- do final_cats.append(cat|trim) -%}
+          {% endfor %}
+        {% endif %}
+      {%- endfor -%}
+      {% set final_cats = final_cats|unique %}
+        
+      {% if final_cats|length > 0 %}
+        <div id="filterTag" class="category-wrap tags">
+          {% set my_tags = blog_tags(module.select_blog, 250) %}
+            <a href="#all"  class="all filter-tag {% if module.filter_active_category|lower == "all" || module.filter_active_category|trim == "" || !module.filter_active_category %}active{% endif %}">All</a>
+          {% for cat in final_cats %}
+            <a href="#{{ cat|replace(' ','_')|lower }}" class="{{ cat|replace(' ','_')|lower }} filter-tag {% if module.filter_active_category|lower == cat|lower %}active{% endif %}">{{ cat }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    <div id="resourceListing" class="resource-listing hs-row-flex hs-jus-start hs-align-stretch">
+      {% for item in module.item_groups %}
+        {% set itemCats = item.filtering.cats|split(',') %}
+        <div class="resource-item hs-col-flex {% for cat in itemCats %} {{cat|trim|replace(' ','_')|lower}} {% endfor %}">
+          {% set href = item.link.url.href %}
+          {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+          {% endif %}
+          {% if item.show_way == 'video-way' %}
+            {% set href = "javascript:;" %}
+          {% endif %}
+          <a class="resource-item-outter hs-col-flex hs-row-flex" href="{{ href }}"
+            {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+            {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+          >
+            {% if item.show_way == 'video-way' %}
+              {% if item.embed_field %}
+                {{ item.embed_field.media_bridge_object.oembed_response.html }}
+              {% endif %}
+            {% endif %}
+            {% if item.show_way == 'img-way' %}
+              {% if item.intro_img %}
+                <div class="resource-img-box">
+                  <img class="blog-post-banner-img" src="{{ item.intro_img.src }}" alt="{{ item.intro_img.alt }}"/>
+                </div>
+              {% endif %}
+            {% endif %}
+            <div class="resource-intro hs-col-flex {% if item.link_botton %} hs-jus-between {% endif %}">
+              {% if item.title %}
+                <p class="title">{{ item.title }}</p>
+              {% endif %}
+              <div class="hs-row-flex hs-jus-between hs-align-center">
+                {% if item.content %}
+                  <div class="content">{{ item.content }}</div>
+                {% endif %}
+                {% if item.link_botton %}
+                  <div class="button button-secondary">
+                    <span> {{ item.button_text }}</span>
+                    <svg height="18" version="1.1" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M826.24 535.893333l-212.48 213.333334a33.706667 33.706667 0 0 1-23.893333 10.24c-8.533333 0-17.066667-3.413333-23.893334-10.24a34.005333 34.005333 0 0 1 0-48.64l154.453334-155.306667H222.08c-18.773333 0-34.133333-15.36-34.133333-34.133333 0-18.773333 15.36-34.133333 34.133333-34.133334h498.346667l-154.453334-155.306666a34.005333 34.005333 0 0 1 0-48.64c13.653333-13.653333 34.986667-13.653333 48.64 0l212.48 213.333333c12.8 14.506667 12.8 36.693333-0.853333 49.493333z" p-id="4717"></path>
+                    </svg>
+                  </div>
+                {% endif %}
+              </div>
+              {% if item.intro_to_title %}
+                <div class="item-tag hs-row-flex">
+                  <span> {{item.intro_to_title}}</span>
+                </div>
+              {% endif %}
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+</div>

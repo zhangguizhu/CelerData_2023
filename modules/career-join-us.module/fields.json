@@ -1,0 +1,82 @@
+[ {
+  "id" : "1f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa361",
+  "name" : "section_title",
+  "label" : "Section Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Why you should join CelerData"
+}, {
+  "id" : "1f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa362",
+  "name" : "reasons",
+  "label" : "Reasons",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "39a02d67-41d7-077f-646f-d945839eacdf",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "1f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa365",
+    "name" : "reason_title",
+    "label" : "Reason Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "1f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa363",
+    "name" : "reason_desc",
+    "label" : "Reason Desc",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "1f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa364",
+    "name" : "reason_bg",
+    "label" : "Reason Background Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "alt" : "",
+      "width" : 1694,
+      "height" : 1090,
+      "max_width" : 1694,
+      "max_height" : 1090
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "type" : "std",
+    "style" : "primary",
+    "text" : "Button",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }
+} ]

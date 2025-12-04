@@ -1,0 +1,30 @@
+.about-us-solutions {
+  width: 100%;
+  padding: 35px 30px;
+  background-color: #edfbff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-us-solutions .title {
+  display: inline-block;
+  width: 100%;
+  max-width: 684px;
+  color: #000;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.about-us-solutions .content {
+  display: inline-block;
+  margin-top: 15px;
+  margin-bottom: 26px;
+  width: 100%;
+  max-width: 1500px;
+  color: #000;
+  text-align: center;
+  font-size: 16px;
+}

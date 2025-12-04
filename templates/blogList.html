@@ -1,0 +1,91 @@
+<!--
+  templateType: blog_listing
+  isAvailableForNewContent: true
+  label: Celerdata blogs
+  screenshotPath: ../images/template-previews/blog-list.png
+-->
+
+{% extends './layouts/base.html' %}
+
+{% block template_stylesheets %}
+<link type="text/css" rel="stylesheet" href="{{ get_asset_url('../css/templates/blog.css') }}">
+{% endblock template_stylesheets %}
+
+{% block body %}
+<main class="body-container-wrapper blog blog_listing">
+  <div class="body-container body-container--blog-index">
+
+    {# Blog Header #}
+    {% dnd_area 'Banner' class="blog-banner-area" label='Header Section' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/resource-banner' %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}
+    {% end_dnd_area %}
+    {# End Blog Header #}
+    {% if !blog_author %}
+      {% dnd_area 'Blog Tag Area' class="blog-tag-area" label='Tags Section' %}
+      {% dnd_section full_width=true %}
+      {% dnd_module path='../modules/blog-tags' %}
+      {% end_dnd_module %}
+      {% end_dnd_section %}
+      {% end_dnd_area %}
+    {% else %}
+      {% dnd_area 'Author Area' class="blog-author-area" label='Author Section' %}
+      {% dnd_section full_width=true %}
+      {% dnd_module path='../modules/blog-author' %}
+      {% end_dnd_module %}
+      {% end_dnd_section %}
+      {% end_dnd_area %}
+    {% endif %}
+
+     {# Blog listing section #}
+    <div class="blog-list-box">
+      {% dnd_area 'dnd_area_blog' label='Main Content' %}
+      {% dnd_section full_width=true %}
+      {% dnd_module path='../modules/blog-listings' %}
+      {% end_dnd_module %}
+      {% end_dnd_section %}
+      {% end_dnd_area %}
+      {# End blog listing section #}
+
+      {% if next_page_num %}
+        <div class="blog-pagination-area hs-row-flex hs-jus-center">
+          <a id="blog-btn-load-more" class="button button-secondary" href="{{ blog_page_link(next_page_num) }}">{% module "txt_load_more" path="@hubspot/text", label="Listing - Standard Text - Load More", value="Load More Posts", no_wrapper=True %}</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  {% require_js %}
+    <script>
+
+    var $postsContainer = $("#post-listing");
+    var isFetching = false;
+    $("#blog-btn-load-more").on("click", function(e) {
+      e.preventDefault();
+      if(isFetching) {
+        return;
+      }
+      var $btnLoadMore = $(this);
+      isFetching = true;
+
+      $.get($btnLoadMore.attr("href").split("?")[0] + `?t=${new Date().getTime()}`, function(data) {
+          var $page = $(data),
+          $posts = $page.find(".post-item");
+          if($posts.length && $postsContainer.length) {
+            $posts.each(function() {
+              var $this = $(this);
+              $postsContainer.append($this);
+            });
+          }
+          var $btnLoadMoreNew = $page.find("#blog-btn-load-more");
+          $btnLoadMoreNew.length > 0 ? $btnLoadMore.attr("href", $btnLoadMoreNew.attr("href").split("?")[0]) : $btnLoadMore.remove();
+          setTimeout((function() {
+            isFetching = false
+          }), 100);
+      });
+    })
+    </script>
+  {% end_require_js %}
+</main>
+{% endblock body %}

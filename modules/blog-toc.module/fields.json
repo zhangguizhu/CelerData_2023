@@ -1,0 +1,88 @@
+[ {
+  "id" : "76bb64a6-43ea-1291-496c-5dacd822f53",
+  "name" : "background_color",
+  "label" : "Background Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#65DAFF",
+    "opacity" : 100
+  }
+}, {
+  "id" : "87e17a91-46ff-75b8-1b94-3fdd9053f925",
+  "name" : "top_image",
+  "label" : "Top Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "src" : "https://starrocks.com/hubfs/celerdata_2023/slack.png",
+    "alt" : "starrocks_slack",
+    "width" : 232,
+    "height" : 232,
+    "max_width" : 232,
+    "max_height" : 232
+  }
+}, {
+  "id" : "title",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Join StarRocks Community on Slack"
+}, {
+  "id" : "5eb0f40c-63f7-99ec-d7a1-1de763a9307c",
+  "name" : "content",
+  "label" : "Rich Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "button_text",
+  "name" : "button_text",
+  "label" : "Button Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Connect on Slack"
+}, {
+  "id" : "53569399-8407-5134-a17c-f4ce278bfe79",
+  "name" : "link",
+  "label" : "Link",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "button_text",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "",
+    "property" : null,
+    "operator" : "NOT_EMPTY",
+    "access" : null
+  },
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : "https://try.celerdata.com/join-starrocks-on-slack?utm_campaign=slack&utm_source=blog"
+    },
+    "open_in_new_tab" : true,
+    "no_follow" : false
+  }
+} ]

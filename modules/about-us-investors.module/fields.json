@@ -1,0 +1,34 @@
+[ {
+  "id" : "5eb0f40c-63f7-99ec-d7a1-1de763a9307c",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Our Investors"
+}, {
+  "id" : "686a7e56-4d95-439b-a592-4ea44686c0e4",
+  "name" : "investor_image",
+  "label" : "Investor Image",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+} ]

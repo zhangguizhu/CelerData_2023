@@ -1,0 +1,70 @@
+[ {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa361",
+  "name" : "section_title",
+  "label" : "Section Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Accelerate Your Career"
+}, {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa362",
+  "name" : "section_content",
+  "label" : "Section Content",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Have a say in the future of analytics. CelerData is growing quickly and we're looking for experts across every field to grow with us."
+}, {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa363",
+  "name" : "view_roles_btn",
+  "label" : "View Open Roles Button",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "View Open Roles"
+}, {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa364",
+  "name" : "question_title",
+  "label" : "Question Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Are you passionate about building the world's best data processing product?"
+}, {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa365",
+  "name" : "question_content",
+  "label" : "Question Content",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Do you dream of elegant code? Does the idea of tackling the most challenging technical problems get you excited?Can you tell a good story? Are you obsessed with customer success? Do you have what it takes to help customers make sense of their data instantaneously, as things happen?If the answer is yes, we'd like to speak to you.At CelerData, we strive to build the world's best data platform. We've come a long way and we have many ambitious goals in front of us. We are looking for the best and brightest engineers, architects, sales, marketing, and customer success professionals to join our mission.Get to know us. We want you to be a part of our team and can't wait to hear from you."
+}, {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa366",
+  "name" : "fast_image",
+  "label" : "Fast Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "src" : "https://21782839.fs1.hubspotusercontent-na1.net/hubfs/21782839/fast-1.png",
+    "alt" : "",
+    "width" : 1694,
+    "height" : 1090,
+    "max_width" : 1694,
+    "max_height" : 1090
+  }
+} ]

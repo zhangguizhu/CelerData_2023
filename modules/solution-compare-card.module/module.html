@@ -1,0 +1,36 @@
+{% if module.section_content or module.section_title or module.compare_content %}
+  <div class="vs-compare-wrap" style="background-color:{{ module.background_color.color }}; opacity:{{ module.background_color.opacity * 0.01 }};">
+    <div class="content-wrapper hs-col-flex">
+      {% if module.section_title or module.section_content %}
+        <div class="hs-col-flex hs-align-center">
+          <h3 class="sec-title">{{ module.section_title }}</h3>
+          <div class="sec-content">{{ module.section_content }}</div>
+        </div>
+      {% endif%}
+      <div class="compare-box-wrap hs-col-flex hs-jus-between">
+        {{ module.content }}
+        <div class="compare-buttons row-flex full-width">
+          {% for item in module.buttons %}
+            <div class="compare-btn button button-{{ item.style }}">
+              {% if item.type == "std" %}
+              {% set href = item.link.url.href %}
+              {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+              {% endif %}
+              <a href="{{ href }}"
+                {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+                {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+                >
+                <span> {{ item.text }}</span>
+              </a>
+              {% endif %}
+              {% if item.type == "cta" %}
+              {% cta guid="{{ item.cta }}" %}
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

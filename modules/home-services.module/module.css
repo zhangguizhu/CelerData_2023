@@ -1,0 +1,163 @@
+.services-wrapper {
+  width: 100%;
+  position: relative;
+  background: #F5F5FB;
+  overflow: hidden;
+}
+.services-wrapper .content-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  margin: 18px auto 0;
+  padding: 80px 30px;
+}
+.services-wrapper .services-row {
+  width: 100%;
+  padding: 62px 0 0;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.services-wrapper .sec-title {
+  text-align: center;
+  max-width: 760px;
+  margin: 12px auto;
+}
+.services-wrapper .sec-content{
+  text-align: center;
+  max-width: 760px;
+  margin: 12px auto;
+}
+.services-wrapper .services-item {
+  position: relative;
+  flex-basis: 32%;
+  max-width: 450px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  background: #fff;
+  -webkit-transition: all .5s cubic-bezier(.25,.8,.5,1);
+  -o-transition: all .5s cubic-bezier(.25,.8,.5,1);
+  transition: all .5s cubic-bezier(.25,.8,.5,1);
+  padding: 52px 45px 49px;
+  color: #000;
+  margin-bottom: 20px;
+}
+.services-wrapper .services-item .item_label {
+  position: absolute;
+  right: -34px;
+  top: -33px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top right;
+  width: 173px;
+  height: 190px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #1539BA;
+}
+.services-wrapper .services-item .item_label span{
+  transform: rotate(48.88deg);
+}
+.services-wrapper .services-item.dark_theme{
+  background: #0061FF;
+  color: #fff;
+}
+.services-wrapper .services-item .services-item-content {
+  flex: 1;
+  min-height: 280px;
+}
+.services-wrapper .services-item .button-wrap {
+
+}
+.services-wrapper .services-item .button-wrap a {
+  min-width: 200px;
+  display: inline-block;
+}
+.services-wrapper .services-item .button-wrap a svg {
+  -webkit-transform: translateY(3px) ;
+  -ms-transform: translateY(3px);
+  transform: translateY(3px);
+  -webkit-transition: all .3s cubic-bezier(.25,.8,.5,1);
+  -o-transition: all .3s cubic-bezier(.25,.8,.5,1);
+  transition: all .3s cubic-bezier(.25,.8,.5,1);
+}
+.services-wrapper .services-item.dark_theme .button-secondary {
+  background: #0061FF;
+}
+.services-wrapper .services-item.dark_theme .button-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.services-wrapper .services-item.dark_theme .button-secondary a {
+  color: #fff;
+}
+.services-wrapper .services-item.dark_theme .button-secondary a svg{
+  fill: #fff;
+}
+.services-wrapper .services-item .button-wrap a:hover svg {
+  -webkit-transform: translateX(3px) translateY(3px);;
+  -ms-transform: translateX(3px) translateY(3px);;
+  transform: translateX(3px) translateY(3px);;
+  -webkit-transition: all .3s cubic-bezier(.25,.8,.5,1);
+  -o-transition: all .3s cubic-bezier(.25,.8,.5,1);
+  transition: all .3s cubic-bezier(.25,.8,.5,1);
+}
+.services-wrapper .services-item:hover {
+  box-shadow: 0px 0px 36px rgba(90, 100, 126, 0.2);
+  -webkit-transition: all .5s cubic-bezier(.25,.8,.5,1);
+  -o-transition: all .5s cubic-bezier(.25,.8,.5,1);
+  transition: all .5s cubic-bezier(.25,.8,.5,1);
+}
+.services-wrapper .services-item img{
+  width: 72px;
+  margin-bottom: 30px;
+}
+.services-wrapper .services-item p.title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  margin: 0;
+  max-width: 148px;
+  text-align: center;
+}
+.services-wrapper .services-item p.content {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  margin: 14px 0 0;
+  text-align: center;
+}
+
+@media(max-width: 768px){
+  .services-wrapper {
+    height: auto;
+    padding: 2rem 0;
+  }
+  .services-wrapper .content-wrapper {
+    width: 90%;
+    padding: 1rem 0;
+  }
+  .services-wrapper .services-row  {
+    padding: 20px 0;
+  }
+  .services-wrapper .services-item {
+    -ms-flex-preferred-size: 100% !important;
+    flex-basis: 100% !important;
+    max-width: 100%;
+  }
+  .services-wrapper .services-item .services-item-content {
+    padding: 18px 24px 30px;
+  }
+  .services-wrapper .services-item p.title{
+    height: auto;
+    font-size: 16px;
+  }
+  .services-wrapper .services-item p.content{
+    height: auto;
+    font-size: 14px;
+    margin-top: 10px;
+    line-height: 26px;
+  }
+}
+

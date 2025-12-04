@@ -1,0 +1,79 @@
+[ {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa36",
+  "name" : "section_title",
+  "label" : "Section Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Powered by open source tech StarRocks"
+}, {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa361",
+  "name" : "section_content",
+  "label" : "Section Content",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Built at StarRocks to billions of users, Vitess is the world’s most scalable open source database."
+}, {
+  "id" : "76bb64a6-43ea-1291-496c-5dacd822f533",
+  "name" : "background_color",
+  "label" : "Background Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "",
+    "opacity" : 100
+  }
+}, {
+  "id" : "87e17a91-46ff-75b8-1b94-3fdd9053f925",
+  "name" : "right_image",
+  "label" : "Right Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "src" : "",
+    "alt" : "Rocket",
+    "width" : 1694,
+    "height" : 1090,
+    "max_width" : 1694,
+    "max_height" : 1090
+  }
+}, {
+  "picker" : "video",
+  "id" : "a916898a-9d0b-da1e-d0c9-28737680faa2",
+  "name" : "file_video",
+  "label" : "File",
+  "required" : true,
+  "locked" : false,
+  "type" : "file",
+  "display_width" : null,
+  "default" : "https://21782839.fs1.hubspotusercontent-na1.net/hubfs/21782839/Criteria%20for%20Choosing%20an%20Analytics%20Platform%20(1).mp4"
+}, {
+  "id" : "72c4eabb-8d62-03f9-74fb-f26f789986bd",
+  "name" : "poster_img",
+  "label" : "Poster Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://celerdata.com/hubfs/celerdata_2023/poster.png",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+} ]

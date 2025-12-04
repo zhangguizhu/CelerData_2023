@@ -1,0 +1,56 @@
+.glossary-blog-right-panel-wrap {
+  width: 377px;
+  position: relative;
+  border: 1px solid #D4D4EA;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.glossary-blog-right-panel-wrap .init-right-panel {
+  text-align: center;
+  padding: 30px;
+}
+.glossary-blog-right-panel-wrap .init-right-panel img {
+  margin-bottom: 20px;
+}
+.glossary-blog-right-panel-wrap .init-right-panel .title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  text-align: left;
+  color: #FFFFFF;
+}
+.glossary-blog-right-panel-wrap .init-right-panel .button-secondary {
+  margin-top: 20px;
+  border: 2px solid #0061ff;
+  padding: 0 36px 0 30px;
+  width: 100%;
+  max-width: 460px;
+}
+.glossary-blog-right-panel-wrap .init-right-panel .button-secondary svg path{
+  fill: #0061FF;
+}
+
+@media (max-width: 767px){
+  .glossary-blog-right-panel-wrap {
+    width: 100%;
+    min-height: auto;
+    padding: 20px 26px;
+  }
+  .glossary-blog-right-panel-wrap .init-right-panel {
+    padding: 30px 0;
+  }
+  .glossary-blog-right-panel-wrap .init-right-panel img {
+    width: 68px;
+  }
+  .glossary-blog-right-panel-wrap .init-right-panel .title  {
+    font-size: 22px;
+    line-height: 32px;
+    text-align: center;
+  }
+  .glossary-blog-right-panel-wrap .init-right-panel .button-secondary {
+    padding: 0 25px 0 20px;
+  }
+}
+

@@ -1,0 +1,23 @@
+<div class="request-reference">
+  <div class="content-wrapper hs-col-flex">
+    <div class="hs-col-flex hs-align-center">
+      <h3 class="sec-title">{{ module.section_title }}</h3>
+      <div class="ref-cards hs-width-fill hs-row-flex hs-jus-evenly hs-align-evenly  {{ module.number_of_columns }}">
+        {% for item in module.ref_cards %}
+        <div class="ref-card hs-col-flex hs-jus-evenly hs-align-center">
+          {% if item.item_label %}
+            <div class="item_label hs-col-flex hs-align-center hs-jus-center" style="background-image: url({{ get_asset_url('../../images/home/product-label.png') }});"><span>{{ item.item_label}}</span></div>
+          {% endif %}
+          <img src="{{ get_asset_url('../../images/dots-large.png') }}" class="backgroundimg" alt="Background Image">
+          <div class="title sec-title">{{ item.ref_title }}</div>
+          <div class="desc sec-content">{{ item.ref_desc }}</div>
+          <div style="flex: 1"></div>
+          {%if item.ref_btn_text  %}
+            <a class="button button-secondary" href="{{ item.ref_btn_link }}">{{ item.ref_btn_text }}</a>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

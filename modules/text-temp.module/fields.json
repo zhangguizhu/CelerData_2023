@@ -1,0 +1,63 @@
+[ {
+  "id" : "76bb64a6-43ea-1291-496c-5dacd822f53",
+  "name" : "background_color",
+  "label" : "Background Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#fff",
+    "opacity" : 100
+  }
+}, {
+  "id" : "layout_theme",
+  "name" : "layout_theme",
+  "label" : "Layout Theme",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "one_column", "Text 1 Column" ], [ "one_column_left", "Text 1 Column, Align Left" ], [ "two_column", "Text 2 Columns" ], [ "two_column_card", "Text 2 Columns, Card Style" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "one_column"
+}, {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa36",
+  "name" : "section_title",
+  "label" : "Section Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Introduction"
+}, {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa361",
+  "name" : "left_content",
+  "label" : "Left Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa362",
+  "name" : "right_content",
+  "label" : "Right Content",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "layout_theme",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "^(?=two_column|two_column_card)",
+    "property" : null,
+    "operator" : "MATCHES_REGEX",
+    "access" : null
+  },
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : ""
+} ]

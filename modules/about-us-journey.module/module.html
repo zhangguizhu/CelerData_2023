@@ -1,0 +1,43 @@
+<div id="journeyContainer" class="about-us-journey">
+  <span class="title">{{ module.title }}</span>
+  <div id="journeyChart" class="journey-chart">
+    <img src="{{ get_asset_url('../images/celerdata_journey_bg.png') }}">
+    {% if module.datas %}
+    {% for data in module.datas %}
+    {% set topPointX = data.top_point.split(',')[0] %}
+    {% set topPointY = data.top_point.split(',')[1] %}
+    <div class="chart-item" style="top:{{topPointY}}px; left:{{topPointX}}px; height: {{data.height}}px">
+      <span class="point top-point"></span>
+      <span class="point bottom-point"></span>
+      {% if data.text_on_the_right %}
+      <span class="yaxis-value">{{ data.yaxis_value }}</span>
+      {% else %}
+      <span class="yaxis-value left-value">{{ data.yaxis_value }}</span>
+      {% endif %}
+      {% if data.label_position %}
+      {% set labelX = data.label_position.split(',')[0] %}
+      {% set labelY = data.label_position.split(',')[1] %}
+      <span class="xaxis-label custom-position" style="bottom:{{labelY}}px; left:{{labelX}}px;">{{ data.xaxis_label }}</span>
+      {% else %}
+      <span class="xaxis-label">{{ data.xaxis_label }}</span>
+      {% endif %}
+    </div>
+    {% endfor %}
+    <!--
+      <script>
+        window.journeyData = [];
+        {% for data in module.datas %}
+          window.journeyData.push({
+            bottomPoint: "{{ data.bottom_point }}",
+            label: "{{ data.xaxis_label }}",
+            labelPosition: "{{ data.label_position }}",
+            height: "{{ data.height }}",
+            value: `{{ data.yaxis_value }}`,
+            textOnTheRight: "{{ data.text_on_the_right }}"
+          });
+        {% endfor %}
+      </script>
+    -->
+    {% endif %}
+  </div>
+</div>

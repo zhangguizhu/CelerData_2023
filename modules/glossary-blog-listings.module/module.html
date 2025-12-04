@@ -1,0 +1,16 @@
+<div class="glossary-listings-container hs-col-flex">
+  {% set my_tags = blog_tags(module.select_blog, 30) %}
+  {% for item in my_tags  %}
+    <div class="glossary-line-item hs-row-flex {{item}}" >
+      <span class="classify"> {{ item }}</span>
+      {% set blogList =  blog_recent_tag_posts("default", item )%} 
+      <div class="glossary-item hs-row-flex hs-align-center">
+        {% for content in blogList %}
+          <a class="glossary-blog-item" target="_blank"  href="{{ content.absolute_url }}">
+            {{ content.widgets.glossary_reference.body.value }}
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>

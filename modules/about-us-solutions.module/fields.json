@@ -1,0 +1,29 @@
+[ {
+  "id" : "5eb0f40c-63f7-99ec-d7a1-1de763a9307c",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "How can we make enterprise analytics simpler and more efficient?"
+}, {
+  "id" : "4bc88696-a2b7-3acf-2ef2-82d4a8b1358b",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<div style=\"text-align: center;\">That was the question the team behind the StarRocks project was asking themselves as they set off to build what would become the industry's fastest open analytics database.Today, StarRocks has become a worldwide phenomenon, helping organizations of all sizes accelerate their analytics and simplify their data pipeline management. Yet, as StarRocks adoption has grown, so too have the analytics needs of enterprises. The challenges enterprises face in the analytics space are vast, complex, and require a level of dedicated support that an open project couldn't support on its own.</div>\n<div style=\"text-align: center;\">&nbsp;</div>\n<div style=\"text-align: center;\">That's why we started CelerData, to bring more resources to the StarRocks project while helping businesses everywhere accelerate their analytics performance with the support and flexibility they need to stay focused on serving their customers and not managing their analytics solutions.</div>"
+}, {
+  "id" : "1929452e-6222-dacd-3aa9-b22d8f063476",
+  "name" : "cta",
+  "label" : "CTA",
+  "required" : false,
+  "locked" : false,
+  "type" : "cta",
+  "display_width" : null,
+  "default" : "1e3c9df1-defd-4dee-afe7-621662c70b07"
+} ]

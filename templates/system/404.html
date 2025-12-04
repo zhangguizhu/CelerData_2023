@@ -1,0 +1,29 @@
+<!--
+templateType: error_page
+isAvailableForNewContent: true
+label: Boilerplate - 404 error
+screenshotPath: ../../images/template-previews/404.png
+-->
+{% block template_stylesheets %}
+<link type="text/css" rel="stylesheet" href="{{ get_asset_url('../../css/templates/system.css') }}">
+{% endblock template_stylesheets %}
+
+{% extends "../layouts/base.html" %}
+{# pageTitle is used on system templates for setting a value for the title tag #}
+{% set pageTitle = "Error 404 | Page not found" %}
+
+{% block body %}
+<section class="content-wrapper error-page">
+  <img class=""
+    src={% image_src "404_img" 'src'="{{get_asset_url('../../images/system/system_404.png')}}", label="Image", no_wrapper=True %}
+    alt="error 404" width="751" height="290">
+  <div class="error-page-content hs-col-flex hs-align-center" data-error="404">
+    {% module "content"
+      path="@hubspot/rich_text",
+      html="<h1>PAGE NOT FOUND.</h1>
+      <p>The page you were looking for at this URL could not be found.</p>"
+    %}
+    <a href="/" class="button button-primary">Back To home</a>
+  </div>
+</section>
+{% endblock body %}

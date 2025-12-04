@@ -1,0 +1,48 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: True
+  screenshotPath: ../images/template-previews/product.png
+  label: Celerdata Product page
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+ <main id="product-main" class="body-container-wrapper product-page">
+  <div class="banner-section">
+    {% dnd_area "Banner" class='banner-area', label='Banner Area' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/banner', width=12, offset=0, label="Banner" %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}   
+    {% end_dnd_area %}
+  </div>
+  <div>
+    {% dnd_area "Performence" class='performence-area', label='Performence Area' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/product-performance', width=12, offset=0, label="Banner" %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}   
+    {% end_dnd_area %}
+  </div>
+
+  {% dnd_area 'overview' class='overview-area', label='Cloud Overview Area' %}
+
+  {% end_dnd_area %}
+  {% dnd_area 'feature' class='feature-are', label='Feature Area' %}
+
+  {% end_dnd_area %}
+  {% dnd_area 'example' class='example-area', label='Example Area' %}
+
+  {% end_dnd_area %}
+  {% dnd_area 'Enterprise overview' class='example-area', label='Enterprise Overview Area' %}
+
+  {% end_dnd_area %}
+  {% dnd_area 'video' class='video-area', label='Video Area' %}
+
+  {% end_dnd_area %}
+  
+</main>
+{% require_js %}
+<script>
+</script>
+{% end_require_js %}
+{% endblock body %}

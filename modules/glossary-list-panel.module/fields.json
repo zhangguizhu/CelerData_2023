@@ -1,0 +1,316 @@
+[ {
+  "id" : "5eb0f40c-63f7-99ec-d7a1-1de763a9307c",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "See all glossary items"
+}, {
+  "id" : "custom_list",
+  "name" : "custom_list",
+  "label" : "Use Custom List",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "88d2ac55-4bde-2745-37a5-b1946fea6b72",
+  "name" : "items",
+  "label" : "Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "39a02d67-41d7-077f-646f-d945839eacdf",
+    "default" : null
+  },
+  "visibility" : {
+    "controlling_field" : "custom_list",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "39a02d67-41d7-077f-646f-d945839eacdf",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "What is a data lakehouse？"
+  }, {
+    "id" : "53569399-8407-5134-a17c-f4ce278bfe79",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "df8390b7-2c92-268d-e48a-15f4822a4bc0",
+  "name" : "filter",
+  "label" : "Post Filter",
+  "help_text" : "Specify which posts to show...",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "custom_list",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "false",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "4cbe3dfd-86e2-bb35-14f0-3aaf9000a30d",
+    "name" : "type_of_filter",
+    "label" : "Type of filter",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "related", "Related Articles" ], [ "popular", "Popular Articles" ], [ "recent", "Recent Articles" ], [ "recent_by_tags", "Recent Articles By Tags" ], [ "recent_by_author", "Recent Articles By Author" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "related"
+  }, {
+    "id" : "0911ace3-8081-60a5-f5ce-43f54c46fff7",
+    "name" : "blog_id",
+    "label" : "Blog",
+    "required" : false,
+    "locked" : false,
+    "type" : "blog",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "9c088e21-250f-f41c-40dc-0a1eb8423c21",
+    "name" : "tags",
+    "label" : "Tags / Categories",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "4cbe3dfd-86e2-bb35-14f0-3aaf9000a30d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "related",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "4e1816c5-9316-3246-5b77-84d3dcf7e1b5",
+      "name" : "tag_1",
+      "label" : "Tag 1",
+      "required" : false,
+      "locked" : false,
+      "tag_value" : "SLUG",
+      "type" : "tag",
+      "display_width" : null
+    }, {
+      "id" : "852a9636-8817-92df-6a7b-914f43a4a084",
+      "name" : "tag_2",
+      "label" : "Tag  2",
+      "required" : false,
+      "locked" : false,
+      "tag_value" : "SLUG",
+      "type" : "tag",
+      "display_width" : null
+    }, {
+      "id" : "f1f0e9c7-1444-b19e-37d7-121e1d1df76a",
+      "name" : "tag_3",
+      "label" : "Tag 3",
+      "required" : false,
+      "locked" : false,
+      "tag_value" : "SLUG",
+      "type" : "tag",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "eef4d900-df1a-2f44-c794-cef15aa1c0be",
+    "name" : "author_s",
+    "label" : "Author(s)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "4cbe3dfd-86e2-bb35-14f0-3aaf9000a30d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "related",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "f9509de3-1162-2291-83ab-bd7845daac76",
+    "name" : "force_post_s",
+    "label" : "Always show this Article",
+    "help_text" : "Articles which should always show up in the returned listing, despite all other filters.\nEnter the IDs of the articles. You'll find the ID in the URL while editing the specific post: https://app.hubspot.com/blog/HUBSPOT-ID/edit/THIS_IS_THE_POST_ID/...\nYou can configure several ones by separating them  by comma without whitespace.",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "4cbe3dfd-86e2-bb35-14f0-3aaf9000a30d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "related",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "e3481cd0-6a07-16be-827d-7ae00a37d61c",
+    "name" : "popular_time_frame",
+    "label" : "Time Frame",
+    "required" : true,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "4cbe3dfd-86e2-bb35-14f0-3aaf9000a30d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "popular",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "popular_all_time", "Popular All Time" ], [ "popular_past_year", "Popular Past Year" ], [ "popular_past_six_months", "Popular Past Six Months" ], [ "popular_past_month", "Popular Last Month" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "popular_past_year"
+  }, {
+    "id" : "74373836-6486-f8f8-5de5-09d733334a74",
+    "name" : "popular_tag",
+    "label" : "Tag / Category",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "4cbe3dfd-86e2-bb35-14f0-3aaf9000a30d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "popular",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "tag_value" : "SLUG",
+    "type" : "tag",
+    "display_width" : null
+  }, {
+    "id" : "20d03d1a-bdc5-f254-5583-6fba2a7bd9e3",
+    "name" : "recent_tags",
+    "label" : "Tags / Categories",
+    "help_text" : "Articles that have one of these tags will be shown",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "4cbe3dfd-86e2-bb35-14f0-3aaf9000a30d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "recent_by_tags",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "3da77ce3-7f0e-4033-1c40-79c94293e81e",
+      "name" : "tag_1",
+      "label" : "Tag 1",
+      "required" : false,
+      "locked" : false,
+      "tag_value" : "SLUG",
+      "type" : "tag",
+      "display_width" : null
+    }, {
+      "id" : "9ee0df44-ade6-857d-46fa-5d825aadc39b",
+      "name" : "tag_2",
+      "label" : "Tag  2",
+      "required" : false,
+      "locked" : false,
+      "tag_value" : "SLUG",
+      "type" : "tag",
+      "display_width" : null
+    }, {
+      "id" : "2af45683-a035-ef00-2afd-ce72b2e303d6",
+      "name" : "tag_3",
+      "label" : "Tag 3",
+      "required" : false,
+      "locked" : false,
+      "tag_value" : "SLUG",
+      "type" : "tag",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "f01f7e05-0582-fa94-2524-fe8c317f38a2",
+    "name" : "recent_author",
+    "label" : "Author",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "4cbe3dfd-86e2-bb35-14f0-3aaf9000a30d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "recent_by_author",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "type_of_filter" : "related",
+    "blog_id" : "",
+    "tags" : { },
+    "popular_time_frame" : "popular_past_year",
+    "recent_tags" : { }
+  }
+} ]

@@ -1,0 +1,14 @@
+{% if content.name %}
+<div class="glossary-post-banner hs-row-flex hs-jus-center hs-align-start">
+  <div class="glossary-post-banner-bg" style="{% if module.image_type == "custom_img" %}background-image: url({{ module.background_image.src }});{% endif %}{% if module.image_type == "featured_img" %}background-image: url({{ content.post_list_summary_featured_image }});{% endif %}"></div>
+  <div class="content-wrapper hs-col-flex hs-jus-end hs-align-start">
+    <div class="intro">
+      {% if !(module.background_image.src or content.post_list_summary_featured_image)%}
+        <img class="glossary-post-banner-img" src="{{ get_asset_url('../../images/letter.png') }}" alt="letter"/>
+      {% endif %}
+      <h1><div class="title">{{ content.name }}</div></h1>
+    </div>
+    <span class="post-tag"> {{content.tag_list[0] }}</span>
+  </div>
+</div>
+{% endif %}

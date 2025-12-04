@@ -1,0 +1,118 @@
+.home-intro {
+  width: 100%;
+  position: relative;
+  padding: 20px 0 0;
+  overflow: hidden;
+}
+.home-intro .content-wrapper {
+  position: relative;
+  max-width: 1596px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  z-index: 1;
+  flex-wrap: wrap;
+}
+.home-intro .footer-narrow {
+  width: 100%;
+  max-width: 1596px;
+  padding: 0 30px;
+  transform: translateX(-1.5px);
+  margin-top: -60px;
+}
+.home-intro .intro-content {
+  flex-basis: 36%;
+  padding: 0 28px;
+}
+.home-intro .img-wrap {
+  flex-basis: 64%;
+  border-radius: 24px;
+  overflow: hidden;
+}
+.home-intro .img-wrap img {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  display: block;
+}
+.home-intro .img-wrap .lottie-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 2;
+}
+.home-intro .sec-content {
+  margin-top: 30px;
+}
+.home-intro .banner-buttons {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.home-intro .banner-btn {
+  padding: 0;
+  display: flex;
+}
+.home-intro .banner-btn a {
+  font-size: 20px;
+  text-align: center;
+  min-width: 200px;
+  padding: 0 20px;
+}
+.home-intro .banner-btn:not(:last-child) {
+  margin-right: 32px;
+}
+.home-intro .banner-btn{
+  margin-top: 30px;
+}
+@media (max-width: 1200px){
+  .home-intro .img-wrap {
+    flex-basis: 50%;
+  }
+  .home-intro .intro-content {
+    flex-basis: 50%
+  }
+}
+
+@media (max-width: 900px){
+  .home-intro .footer-narrow {
+    display: none;
+  }
+}
+@media (max-width: 767px){
+  .home-intro {
+    padding: 20px 0 50px;
+  }
+  .home-intro .content-wrapper {
+    width: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .home-intro .intro-content {
+    flex-basis: 100%;
+    z-index: 2;
+    padding: 30px 0  0;
+  }
+  .home-intro .img-wrap {
+    flex-basis: 100%;
+  }
+  .home-intro .banner-buttons {
+    justify-content: center;
+  }
+  .home-intro .banner-btn {
+    margin: 20px 10px 0!important;
+  }
+  .home-intro .banner-btn a {
+    width: 12rem;
+    font-size: 16px;
+    min-width: auto;
+  }
+}
+
+
+
+

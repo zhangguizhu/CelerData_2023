@@ -1,0 +1,40 @@
+[ {
+  "id" : "87e17a91-46ff-75b8-1b94-3fdd9053f925",
+  "name" : "banner_image",
+  "label" : "Banner Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "src" : "https://celerdata.com/hubfs/celerdata_2023/product-banner.png",
+    "alt" : "Banner Image",
+    "width" : 1694,
+    "height" : 1090,
+    "max_width" : 1694,
+    "max_height" : 1090
+  }
+}, {
+  "id" : "5eb0f40c-63f7-99ec-d7a1-1de763a9307c",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Our mission"
+}, {
+  "id" : "f514a5d4-3ec8-47c2-0f9d-983eabdd5b2f",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Shorten the gap between raw data and business value for enterprises"
+} ]

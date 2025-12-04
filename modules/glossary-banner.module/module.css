@@ -1,0 +1,96 @@
+.glossary-banner {
+  height: 580px;
+  position: relative;
+  width: 100%;
+  background: #65DAFF;
+}
+.glossary-banner .glossary-banner-img {
+  width: 218px;
+  margin-left: 6px;
+}
+.glossary-banner .content-wrapper {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 1596px;
+  height: 100%;
+  margin: 0 auto;
+  top: 0;
+  position: absolute;
+  padding: 10px;
+  width: 100%;
+}
+.glossary-banner .intro {
+  box-sizing: content-box;
+  text-align: center;
+  max-width: 1280px;
+}
+.glossary-banner .title {
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 77px;
+  margin-bottom: 20px;
+}
+.glossary-banner .character-list {
+  margin-top: 27px;
+  background: #FFFFFF;
+  padding: 40px 60px;
+}
+.glossary-banner .character-list span {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  color: #999;
+  padding: 0 6px;
+}
+.glossary-banner .character-list span.active{
+  color: #0061FF;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px){
+  .glossary-banner .intro {
+    padding: 0;
+    width: 90%;
+  }
+  .glossary-banner .title {
+    font-size: 46px;
+    line-height: 65px;
+  }
+}
+
+
+@media (max-width: 767px){
+  .glossary-banner {
+    height: 360px;
+  }
+  .glossary-banner .glossary-banner-img {
+    max-width: 40%;
+    margin-bottom: 10px;
+  }
+  .glossary-banner .title {
+    font-size: 30px;
+    line-height: 48px;
+  }
+  .glossary-banner .character-list span {
+    font-size: 16px;
+    padding: 0 6px;
+  }
+  .glossary-banner .character-list {
+    padding: 20px;
+    margin-top: 10px;
+  }
+  .glossary-banner .content-wrapper {
+    padding: 0;
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+

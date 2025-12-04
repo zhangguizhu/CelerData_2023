@@ -1,0 +1,348 @@
+[ {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5",
+  "name" : "section_id",
+  "label" : "ID",
+  "help_text" : "Customize the current module id, which can be used to some text CTA links, and click the links scroll the page to this module.",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "76bb64a6-43ea-1291-496c-5dacd822f53",
+  "name" : "background_color",
+  "label" : "Background Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#fff",
+    "opacity" : 100
+  }
+}, {
+  "id" : "8f56a11d-2fb1-d81a-c6c7-fabace032e53",
+  "name" : "horizontal_layout",
+  "label" : "Horizontal layout",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "8f56a11d-2fb1-d81a-c6c7-fabace032e5113",
+  "name" : "reverse_boolean",
+  "label" : "Image or video left",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "8f56a11d-2fb1-d81a-c6c7-fabace032e53",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "8f56a11d-2fb1-d81a-c6c7-fabace032e533434",
+  "name" : "show_way_card",
+  "label" : "Image or video show as a card",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "0a4ed21d-b545-573a-c672-ba41f6ceb36d",
+  "name" : "show_way",
+  "label" : "Introduction Way",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "img-way", "Show Images" ], [ "video-way", "Original Video" ], [ "embed-wistia", "Embed Wistia" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "embed-wistia"
+}, {
+  "picker" : "video",
+  "id" : "a916898a-9d0b-da1e-d0c9-28737680faa2",
+  "name" : "file_video",
+  "label" : "File",
+  "required" : true,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_way",
+    "controlling_value_regex" : "video-way",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "file",
+  "display_width" : null,
+  "default" : "https://21782839.fs1.hubspotusercontent-na1.net/hubfs/21782839/StarRocks%20Introduction_subtitle.mp4"
+}, {
+  "id" : "72c4eabb-8d62-03f9-74fb-f26f789986bd",
+  "name" : "poster_img",
+  "label" : "Poster Image",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "0a4ed21d-b545-573a-c672-ba41f6ceb36d",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "video-way",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://celerdata.com/hubfs/celerdata_2023/poster.png",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+}, {
+  "id" : "72c4eabb-8d62-03f9-74fb-f26f789986bd2",
+  "name" : "intro_img",
+  "label" : "Introduction Image",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "0a4ed21d-b545-573a-c672-ba41f6ceb36d",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "img-way",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://celerdata.com/hubfs/celerdata_2023/poster.png",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+}, {
+  "id" : "8f56a11d-2fb1-d81a-c6c7-fabace032e530",
+  "name" : "image_link_flag",
+  "label" : "Image can click",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "0a4ed21d-b545-573a-c672-ba41f6ceb36d",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "img-way",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "53569399-8407-5134-a17c-f4ce278bfe70",
+  "name" : "intro_img_link",
+  "label" : "Image link to",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "8f56a11d-2fb1-d81a-c6c7-fabace032e530",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : ""
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "730221e4-097b-2a9d-7aa8-7c193115a4ab",
+  "name" : "embed_field",
+  "label" : "Embed",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_way",
+    "controlling_value_regex" : "embed-wistia",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "supported_source_types" : [ "media_bridge" ],
+  "supported_oembed_types" : [ "photo", "video", "link", "rich" ],
+  "resizable" : true,
+  "show_preview" : true,
+  "supported_media_bridge_providers" : [ 33338 ],
+  "type" : "embed",
+  "display_width" : null,
+  "default" : { }
+}, {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa36",
+  "name" : "section_title",
+  "label" : "Section Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Powered by StarRocks"
+}, {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa361",
+  "name" : "section_content",
+  "label" : "Section Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "All CelerData products are built on top of the world’s fastest open SQL engine and MPP database: StarRocks. Supported by a large and ever-growing community of contributors, our foundation in open source means a wider support community and more transparency in CelerData’s products for you and your business. Click the learn more link below to get more information about this popular project or view the source code for yourself."
+}, {
+  "id" : "88d2ac55-4bde-2745-37a5-b1946fea6b7233",
+  "name" : "buttons",
+  "label" : "Buttons",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "39a02d67-41d7-077f-646f-d945839eacdf",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "10fe49c7-e85e-4dec-e0e8-ec82f901e9a0",
+    "name" : "type",
+    "label" : "Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "std", "Standard" ], [ "cta", "Call To Action" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "std"
+  }, {
+    "id" : "ee1c4a9a-f4bd-b0af-1b2a-88aadad24db9",
+    "name" : "style",
+    "label" : "Style",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "primary", "Primary" ], [ "secondary", "Secondary" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "primary"
+  }, {
+    "id" : "39a02d67-41d7-077f-646f-d945839eacdf",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "10fe49c7-e85e-4dec-e0e8-ec82f901e9a0",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "std",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Button"
+  }, {
+    "id" : "8f56a11d-2fb1-d81a-c6c7-fabace032e53999",
+    "name" : "show_narrow",
+    "label" : "Show Button Narrow",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "53569399-8407-5134-a17c-f4ce278bfe79",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "10fe49c7-e85e-4dec-e0e8-ec82f901e9a0",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "std",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "dd72aeda-c6df-c717-93bc-d0e6ce1bd24e",
+    "name" : "cta",
+    "label" : "CTA",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "10fe49c7-e85e-4dec-e0e8-ec82f901e9a0",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "cta",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "cta",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+} ]

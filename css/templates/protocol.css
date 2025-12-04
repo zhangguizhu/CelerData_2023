@@ -1,0 +1,73 @@
+.protocol-page .mian-content p, .protocol-page .mian-content div {
+  margin: 16px 0;
+  line-height: 26px;
+}
+
+.protocol-page .mian-content h1, .protocol-page .mian-content h2, .protocol-page .mian-content h3{
+  font-weight: 700;
+  font-size: 48px !important;
+  line-height: 58px;
+  margin-bottom: 20px;
+}
+.protocol-page .mian-content h1 {
+  font-size: 52px !important;
+}
+.protocol-page .mian-content h3{
+  font-size: 46px !important;
+}
+.protocol-page .mian-content h4, .protocol-page .mian-content h5, .protocol-page .mian-content h6 {
+  font-weight: 700;
+  font-size: 36px !important;
+  line-height: 50px;
+  margin-bottom: 16px;
+}
+.protocol-page .mian-content h5 {
+  font-size: 32px !important;
+}
+.protocol-page .mian-content h6 {
+  font-size: 28px !important;
+}
+@media (max-width: 1200px){
+  .protocol-page .mian-content h1, .protocol-page .mian-content h2, .protocol-page .mian-content h3{
+    font-size: 30px !important;
+    line-height: 42px;
+  }
+  .protocol-page .mian-content h1 {
+    font-size: 36px !important;
+  }
+  .protocol-page .mian-content h3{
+    font-size: 28px !important;
+  }
+  .protocol-page .mian-content h4, .protocol-page .mian-content h5, .protocol-page .mian-content h6 {
+    font-size: 24px !important;
+    line-height: 32px;
+  }
+  .protocol-page .mian-content h5 {
+    font-size: 20px !important;
+  }
+  .protocol-page .mian-content h6 {
+    font-size: 16px !important;
+  }
+}
+@media (max-width: 767px){
+  .protocol-page .mian-content h1, .protocol-page .mian-content h2, .protocol-page .mian-content h3{
+    font-size: 24px !important;
+    line-height: 36px;
+  }
+  .protocol-page .mian-content h1 {
+    font-size: 28px !important;
+  }
+  .protocol-page .mian-content h3{
+    font-size: 22px !important;
+  }
+  .protocol-page .mian-content h4, .protocol-page .mian-content h5, .protocol-page .mian-content h6 {
+    font-size: 20px !important;
+    line-height: 32px;
+  }
+  .protocol-page .mian-content h5 {
+    font-size: 18px !important;
+  }
+  .protocol-page .mian-content h6 {
+    font-size: 15px !important;
+  }
+}

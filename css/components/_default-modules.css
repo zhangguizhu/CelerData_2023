@@ -1,0 +1,7 @@
+/* Menu and simple menu */
+
+.hs-menu-wrapper ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}

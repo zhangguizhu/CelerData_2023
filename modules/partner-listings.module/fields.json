@@ -1,0 +1,108 @@
+[ {
+  "id" : "6751548b-7505-0403-e4a8-bc344ddbd69d",
+  "name" : "show_filter",
+  "label" : "Show Filter",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "db9c7c56-ca47-b78c-0454-f0d802a2cc09",
+  "name" : "partner_items",
+  "label" : "Partner Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "40495973-1310-300a-dce6-809d545af518",
+    "name" : "logo",
+    "label" : "Logo",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "39f26f8f-9a9d-11ee-d953-654d22f88349",
+    "name" : "partner_name",
+    "label" : "Partner Name",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "e99e5c35-1ba5-ff51-35fc-c9a775e521e6",
+    "name" : "partner_website",
+    "label" : "Partner Website",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "3962644f-3462-2e76-1f30-f7a9e7ba010f",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null
+  }, {
+    "id" : "07d440a2-788a-8062-c590-fedf1dbb6dca",
+    "name" : "filter_tags",
+    "label" : "Filter Tags",
+    "required" : false,
+    "locked" : false,
+    "placeholder" : "Split with ','",
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "0a044871-928a-de72-d143-c5a5dac09b83",
+  "name" : "filter_tags",
+  "label" : "Filter Tags",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null
+} ]

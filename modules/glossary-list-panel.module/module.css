@@ -1,0 +1,84 @@
+.glossary-list-panel-wrap {
+  width: 377px;
+  position: relative;
+  min-height: 360px;
+  background: #FAFAFC;
+  border: 1px solid #D4D4EA;
+  border-radius: 8px;
+  padding: 27px 32px;
+}
+.glossary-list-panel-wrap .glossary-panel-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid #D4D4EA;
+}
+.glossary-list-panel-wrap .glossary-panel-title a{
+  color: #000000;
+}
+.glossary-list-panel-wrap .glossary-panel-title svg {
+  -webkit-transition: all .3s cubic-bezier(.25,.8,.5,1);
+  -o-transition: all .3s cubic-bezier(.25,.8,.5,1);
+  transition: all .3s cubic-bezier(.25,.8,.5,1);
+}
+.glossary-list-panel-wrap .glossary-panel-title:hover svg {
+  -webkit-transform: translateX(3px);
+  -ms-transform: translateX(3px);
+  transform: translateX(3px);
+  -webkit-transition: all .3s cubic-bezier(.25,.8,.5,1);
+  -o-transition: all .3s cubic-bezier(.25,.8,.5,1);
+  transition: all .3s cubic-bezier(.25,.8,.5,1);
+}
+.glossary-list-panel-wrap .glossary-link-list {
+
+}
+.glossary-list-panel-wrap .glossary-link-list .glossary-link {
+  margin-top: 22px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  
+}
+.glossary-list-panel-wrap .glossary-link-list .glossary-link a {
+  color: #333333;
+}
+.glossary-list-panel-wrap  .glossary-link-list .glossary-link svg {
+  flex-shrink: 0;
+}
+.glossary-list-panel-wrap  .glossary-link-list .glossary-link .link-text{
+  padding-left: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@media (max-width: 767px){
+  .glossary-list-panel-wrap {
+    width: 100%;
+    min-height: auto;
+    padding: 20px 26px;
+  }
+  .glossary-list-panel-wrap .glossary-panel-title {
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+  .glossary-list-panel-wrap .glossary-panel-title svg{
+    -webkit-transform: translateY(3px);
+    -ms-transform: translateY(3px);
+    transform: translateY(3px);
+  }
+  .glossary-list-panel-wrap .glossary-panel-title:hover svg {
+    -webkit-transform: translateX(3px) translateY(3px);
+    -ms-transform: translateX(3px) translateY(3px);
+    transform: translateX(3px) translateY(3px);
+  }
+  .glossary-list-panel-wrap .glossary-link-list .glossary-link {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  
+  .glossary-list-panel-wrap .glossary-link-list .glossary-link svg {
+    width: 20px;
+  }
+}
+

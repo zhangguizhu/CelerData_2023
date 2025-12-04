@@ -1,0 +1,56 @@
+[ {
+  "id" : "3ae23931-0870-1b5b-6247-155c9a41a9d7",
+  "name" : "background_color",
+  "label" : "Background Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#f0f2f6",
+    "opacity" : 100
+  }
+}, {
+  "id" : "365daa71-7c4c-a468-274e-19ef21bd9a70",
+  "name" : "logos",
+  "label" : "Logos",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "3975476d-dfd1-89c7-7797-55ab4fe8062e",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "3975476d-dfd1-89c7-7797-55ab4fe8062e",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : "logo",
+      "loading" : "lazy"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : "logo",
+      "loading" : "lazy"
+    }
+  }
+} ]

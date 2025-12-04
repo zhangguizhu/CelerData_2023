@@ -1,0 +1,32 @@
+{% if module.title or module.content or module.form.form_id %}
+<div id="form" class="footer-from-wrap hs-col-flex hs-jus-center hs-align-center" style="background-color:{{ module.background_color.color }}; opacity:{{ module.background_color.opacity * 0.01 }};">
+  <div class="content-wrapper hs-row-flex">
+    <div class="left-panel hs-col-flex hs-jus-center hs-align-strech">
+      {%if module.image.src %}
+        <div class="{%if! module.title and !module.content%} align-center {% endif %}">
+          <img class="form-img" src="{{module.image.src }}" width="{{ module.image.width|divide(2) }}" alt="{{module.image.alt }}"/>
+        </div>
+      {% endif %}
+      {%if module.title or module.content%}
+        <p class="sec-title">{{ module.title }}</p>
+        <div class="sec-content">{{ module.content }}</div>
+      {% endif %}
+    </div>
+    <div class="right-panel hs-col-flex hs-jus-center hs-align-start">
+      <p class="sec-title">{{ module.form_title }}</p>
+      {% if module.form.form_id %}
+      <div class="form__area">
+        {% form
+        form_to_use="{{ module.form.form_id }}"
+        response_response_type="{{ module.form.response_type }}"
+        response_message="{{ module.form.message }}"
+        response_redirect_id="{{ module.form.redirect_id }}"
+        response_redirect_url="{{module.form.redirect_url}}"
+        gotowebinar_webinar_key="{{ module.form.gotowebinar_webinar_key }}"
+        %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endif %}

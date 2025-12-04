@@ -1,0 +1,86 @@
+button,
+.button {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.15s linear;
+  white-space: normal;
+  line-height: 40px;
+}
+button svg,
+.button svg {
+  -webkit-transform: translateX(3px) translateY(3px);
+  -ms-transform: translateX(3px) translateY(3px);
+  transform: translateX(3px) translateY(3px);
+  -webkit-transition: all .3s cubic-bezier(.25,.8,.5,1);
+  -o-transition: all .3s cubic-bezier(.25,.8,.5,1);
+  transition: all .3s cubic-bezier(.25,.8,.5,1);
+}
+
+button:hover svg,
+.button:hover svg  {
+  -webkit-transform: translateX(10px) translateY(3px);
+  -ms-transform: translateX(10px) translateY(3px);
+  transform: translateX(10px) translateY(3px);
+  -webkit-transition: all .3s cubic-bezier(.25,.8,.5,1);
+  -o-transition: all .3s cubic-bezier(.25,.8,.5,1);
+  transition: all .3s cubic-bezier(.25,.8,.5,1);
+}
+button.button-text,
+.button.button-text {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  color: #000;
+}
+button.button-text a,
+.button.button-text a{
+  color: #000;
+}
+button.button-text:hover,
+button.button-text:focus,
+.button.button-text:hover,
+.button.button-text:focus {
+  background-color: transparent;
+  border-color: transparent;
+  color: #000;
+}
+
+
+button.button-secondary, .button.button-secondary {
+  background-color: #fff;
+  color: #000;
+}
+button.button-secondary a, .button.button-secondary a {
+  color: #000;
+}
+
+button:disabled,
+.button:disabled {
+  background-color: #D0D0D0;
+  border-color: #D0D0D0;
+  color: #E6E6E6;
+}
+
+/* No button */
+
+.no-button,
+.no-button:hover,
+.no-button:focus,
+.no-button:active {
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: initial;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  margin-bottom: 0;
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
+  transition: none;
+}

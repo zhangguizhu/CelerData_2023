@@ -1,0 +1,120 @@
+.request-reference {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #EDFBFF;
+}
+
+.request-reference .content-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 70px 30px;
+}
+
+.request-reference .content-wrapper .ref-cards {
+  padding: 0px;
+  flex-wrap: wrap;
+}
+
+.request-reference .content-wrapper .ref-card {
+  position: relative;
+  width: 42%;
+  height: 30rem;
+  color: white;
+  background-color: #1539BA;
+  border-radius: 1rem;
+  padding: 3rem 20px;
+  margin: 10px 0;
+}
+.request-reference .content-wrapper .ref-cards.three_column, .request-reference .content-wrapper .ref-cards.four_column{
+  justify-content: space-between;
+}
+.request-reference .content-wrapper .ref-cards.three_column .ref-card {
+  flex-basis: 32.5%;
+}
+.request-reference .content-wrapper .ref-cards.four_column .ref-card {
+  flex-basis: 24%;
+}
+
+.request-reference .content-wrapper .ref-cards .title {
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+}
+
+.request-reference .content-wrapper .ref-cards .desc {
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+}
+
+.request-reference .content-wrapper .ref-cards .button {
+  background-color: #1539BA;
+  border: 1px solid #65DAFF;
+  color: white;
+  width: 14rem;
+  z-index: 2;
+}
+.request-reference .content-wrapper .ref-cards .button:hover {
+  background: hsla(0, 0%, 100%, .2);
+}
+.request-reference .content-wrapper .ref-cards .backgroundimg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  mix-blend-mode: color-dodge;
+  border-radius: 1.75rem;
+  max-height: 100%;
+}
+.request-reference .content-wrapper .ref-card .item_label {
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #1539ba;
+    font-size: 12px;
+    font-weight: 700;
+    height: 140px;
+    line-height: 15px;
+    position: absolute;
+    right: -23px;
+    top: -22px;
+    z-index: 10;
+    width: 125px;
+}
+.request-reference .content-wrapper .ref-card .item_label span {
+    transform: rotate(48.88deg);
+}
+
+@media(max-width: 1200px){
+  .request-reference .content-wrapper .ref-cards .button{
+    width: auto;
+  }
+}
+@media(max-width: 768px){
+  .request-reference {
+    height: auto;
+  }
+  .request-reference .content-wrapper {
+    padding: 30px 20px;
+  }
+  .request-reference .content-wrapper .ref-cards {
+    padding: 0px;
+  }
+  .request-reference .content-wrapper .ref-card {
+    flex-basis: 100% !important;
+    width: 100%;
+    height: 20rem;
+    margin: 1rem 0;
+  }
+  .request-reference .content-wrapper .ref-cards .button {
+    border-radius: 1.5rem;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    width: 13rem;
+    margin-top: 3rem;
+  }
+}

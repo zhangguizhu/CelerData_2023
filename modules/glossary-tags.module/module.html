@@ -1,0 +1,11 @@
+<div class="tag-container">
+  <div class="content-wrapper">
+    <div class="tags">
+      {% set my_tags = blog_tags(module.select_blog, 250) %}
+      {% for item in my_tags|sort(True, True, "name")  %}
+      <a href="{{ blog_tag_url(group.id, item.slug) }}">{{ item }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="blog-divider"></div>

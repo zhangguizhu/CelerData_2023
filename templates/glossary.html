@@ -1,0 +1,60 @@
+<!--
+  templateType: blog_listing
+  isAvailableForNewContent: true
+  label: Celerdata glossary
+  screenshotPath: ../images/template-previews/glossary.png
+-->
+{% extends './layouts/base.html' %}
+
+{% block template_stylesheets %}
+<link type="text/css" rel="stylesheet" href="{{ get_asset_url('../css/templates/blog.css') }}">
+{% endblock template_stylesheets %}
+
+{% block body %}
+<main class="body-container-wrapper blog blog_listing">
+  <div class="body-container body-container--blog-index">
+
+    {# Blog Header #}
+    {% dnd_area 'Banner' class="glossary-banner-area" label='Header Section' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/glossary-banner' %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}
+    {% end_dnd_area %}
+    {# End Blog Header #}
+
+    {% dnd_area 'Article' class='glossary-article', label='Glossary Article' %}
+      {% dnd_section %}
+      {% dnd_module path='../modules/glossary-blog-listings', width=12, offset=0, label="Article" %}
+      {% end_dnd_module full_width=true %}
+      {% end_dnd_section %}  
+    {% end_dnd_area %}
+    <div>
+      {% dnd_area "Story" class='success-story-area', label='News Area' %}
+      {% dnd_section %}
+      {% dnd_module path='../modules/success-story', width=12, offset=0, label="Story" %}
+      {% end_dnd_module full_width=true %}
+      {% end_dnd_section %}  
+      {% end_dnd_area %}
+    </div>
+  </div>
+  {% require_js %}
+    <script>
+    var headerHeight = 0;
+      $(window).on("load resize change ready", function() {
+          headerHeight = $(".glossary-banner-area").outerHeight();
+      });
+      $('.glossary-blog-item.active').click(function(){
+          var classify = $(this).text().trim('');
+          var classifyItem = $(`.glossary-line-item.${classify}`)[0]
+          if(classifyItem){
+              window.scrollTo({
+                  top: classifyItem.offsetTop + headerHeight - 30,
+                  behavior: 'smooth'
+              })
+          }
+      });
+    </script>
+  {% end_require_js %}
+</main>
+{% endblock body %}

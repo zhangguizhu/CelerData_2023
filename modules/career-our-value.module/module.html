@@ -1,0 +1,17 @@
+<div class="career-values">
+  <div class="content-wrapper hs-col-flex">
+    <div class="hs-col-flex hs-align-center">
+      <h3 class="sec-title">{{ module.section_title }}</h3>
+      <div class="value-cards hs-width-fill hs-row-flex hs-jus-evenly hs-align-evenly">
+        {% for item in module.value_cards %}
+        <div class="value-card hs-col-flex hs-jus-center hs-align-center">
+          <img src="{{ item.value_icon.src }}" class="icon">
+          <img src="{{ get_asset_url('../../images/dots.png') }}" class="backgroundimg">
+          <div class="desc">{{ item.value_desc }}</div>
+          <div class="hover-desc hs-row-flex hs-jus-center hs-align-center">{{ item.value_hover_desc }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

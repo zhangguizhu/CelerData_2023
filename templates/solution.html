@@ -1,0 +1,72 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: True
+  screenshotPath: ../images/template-previews/solution.png
+  label: Celerdata Solution page
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+ <main id="product-main" class="body-container-wrapper solution-page">
+  <div class="banner-section">
+    {% dnd_area "Banner" class='banner-area', label='Banner Area' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/banner', width=12, offset=0, label="Banner" %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}   
+    {% end_dnd_area %}
+  </div>
+  <div>
+    {% dnd_area "Reason" class='reason-area', label='Reason Area' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/product-performance', width=12, offset=0, label="Reason" %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}   
+    {% end_dnd_area %}
+  </div>
+  <div>
+    {% dnd_area "vs" class='vs-card-area', label='VS Area' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/solution-vs-card', width=12, offset=0, label="vs" %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}   
+    {% end_dnd_area %}
+  </div>
+  <div>
+    {% dnd_area "video" class='video-area', label='Video Area' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/introduction-temp', width=12, offset=0, label="video" %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}   
+    {% end_dnd_area %}
+  </div>
+
+  <div>
+    {% dnd_area "Performence" class='performence-area', label='Performence Area' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/product-performance', width=12, offset=0, label="Banner" %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}   
+    {% end_dnd_area %}
+  </div>
+  <div>
+    {% dnd_area "compare" class='vs-compare-area', label='Compare Area' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/solution-compare-card', width=12, offset=0, label="Banner" %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}   
+    {% end_dnd_area %}
+  </div>
+  <div>
+    {% dnd_area "Story" class='success-story-area', label='News Area' %}
+    {% dnd_section %}
+    {% dnd_module path='../modules/success-story', width=12, offset=0, label="Story" %}
+    {% end_dnd_module full_width=true %}
+    {% end_dnd_section %}  
+    {% end_dnd_area %}
+  </div>
+</main>
+{% require_js %}
+<script>
+</script>
+{% end_require_js %}
+{% endblock body %}

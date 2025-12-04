@@ -1,0 +1,31 @@
+{% if module.banner_image.src or module.title or module.content%}
+  <div class="glossary-blog-right-panel-wrap"  style="background-color:{{ module.background_color.color }}; opacity:{{ module.background_color.opacity * 0.01 }};">
+    <div class="init-right-panel">
+      {% if module.banner_image.src %}
+        <img class="banner_img" src="{{ module.banner_image.src }}" width="{{ module.banner_image.width|divide(2) }}" alt="{{ module.banner_image.alt }}"> 
+      {% endif %}
+      <div class="right-panel-box">
+        {% if module.title%}
+          <p class="title">{{module.title}}</p>
+        {% endif %}
+        {% if module.content%}
+          <div class="content-box">
+            {{module.content}}
+          </div>
+        {% endif %}
+          {% set href = module.link.url.href %}
+          {% if module.link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+          {% endif %}
+          <a  href="{{ href }}"
+            {% if module.link.open_in_new_tab %}target="_blank"{% endif %}
+            {% if module.link.rel %}rel="{{ module.link.rel }}"{% endif %}
+            class="button button-secondary">
+              <span>{{module.button_text}} <svg height="18" version="1.1" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg">
+              <path d="M826.24 535.893333l-212.48 213.333334a33.706667 33.706667 0 0 1-23.893333 10.24c-8.533333 0-17.066667-3.413333-23.893334-10.24a34.005333 34.005333 0 0 1 0-48.64l154.453334-155.306667H222.08c-18.773333 0-34.133333-15.36-34.133333-34.133333 0-18.773333 15.36-34.133333 34.133333-34.133334h498.346667l-154.453334-155.306666a34.005333 34.005333 0 0 1 0-48.64c13.653333-13.653333 34.986667-13.653333 48.64 0l212.48 213.333333c12.8 14.506667 12.8 36.693333-0.853333 49.493333z" p-id="4717"></path>
+            </svg></span>
+          </a>
+      </div>
+    </div>
+  </div>
+{% endif %}

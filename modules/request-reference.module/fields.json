@@ -1,0 +1,82 @@
+[ {
+  "id" : "0a4ed21d-b545-573a-c672-ba41f6ceb36d2",
+  "name" : "number_of_columns",
+  "label" : "Number Of Columns",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "two_column", "Two Column" ], [ "three_column", "Three Column" ], [ "four_column", "Four Column" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "two_column"
+}, {
+  "id" : "1f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa362",
+  "name" : "ref_cards",
+  "label" : "Reference Links",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "39a02d67-41d7-077f-646f-d945839eacdf",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "1f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa364",
+    "name" : "ref_title",
+    "label" : "Link Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "1f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa363",
+    "name" : "ref_desc",
+    "label" : "Link Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "1f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa365",
+    "name" : "ref_btn_text",
+    "label" : "Link Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "1f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa366",
+    "name" : "ref_btn_link",
+    "label" : "Link URL",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "93662724-7bd7-8f90-ec60-788a6398892b",
+    "name" : "item_label",
+    "label" : "Item Label",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+} ]

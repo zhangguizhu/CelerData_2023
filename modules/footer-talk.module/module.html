@@ -1,0 +1,33 @@
+{% if module.image.src or module.title or module.content %}
+<div class="footer-talk-wrap banner_sec row-flex" style="background-color:{{ module.background_color.color }}; opacity:{{ module.background_color.opacity * 0.01 }};">
+  <div class="content-wrapper row-flex">
+    <div class="talk-to-content col-flex">
+      <h2 class="title">{{ module.title }} </h2>
+      <p class="desc">{{ module.content }}</p>
+      <div class="footer-buttons row-flex full-width">
+        {% for item in module.buttons %}
+        <div class="footer-btn button button-{{ item.style }}">
+          {% if item.type == "std" %}
+          {% set href = item.link.url.href %}
+          {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          <a href="{{ href }}"
+             {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+             {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+             >
+             <span> {{ item.text }}</span>
+          </a>
+          {% endif %}
+          {% if item.type == "cta" %}
+          {% cta guid="{{ item.cta }}" %}
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="lottie-container" id="satellite-lottie-container"></div>
+  <script defer src="https://celerdata.com/hubfs/js/lottie.min.js"></script>
+</div>
+{% endif %}

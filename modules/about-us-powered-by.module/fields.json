@@ -1,0 +1,41 @@
+[ {
+  "id" : "5eb0f40c-63f7-99ec-d7a1-1de763a9307c",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Powered by StarRocks"
+}, {
+  "id" : "4bc88696-a2b7-3acf-2ef2-82d4a8b1358b",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<div style=\"text-align: center;\">We're proud to be powered by the open source Linux Foundation project StarRocks. Together, with an amazing global community of contributors, CelerData is helping lead the way in open lakehouse technology.</div>"
+}, {
+  "id" : "bea32d8b-b10e-f7e1-e653-cf233353d91c",
+  "name" : "image_left",
+  "label" : "Image Left",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://21782839.fs1.hubspotusercontent-na1.net/hubfs/21782839/about-us-powered-by.png",
+    "alt" : "about-us-powered-by",
+    "loading" : "lazy",
+    "width" : 760,
+    "height" : 691,
+    "max_width" : 760,
+    "max_height" : 691
+  }
+} ]

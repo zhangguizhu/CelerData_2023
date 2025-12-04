@@ -1,0 +1,151 @@
+.introduction-card-wrap-outer {
+  overflow: hidden;
+}
+.introduction-video-wrap {
+}
+.introduction-video-wrap .content-wrapper {
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 70px 30px;
+}
+.introduction-video-wrap .content-wrapper .sec-content {
+  max-width: 1268px;
+  text-align: center;
+}
+.introduction-video-wrap .content-wrapper .introduction-buttons {
+  margin-top: 33px;
+  flex-wrap: wrap;
+}
+.introduction-video-wrap .content-wrapper.row-layout {
+  flex-direction: row;
+  padding: 70px 10px 70px 30px;
+}
+.introduction-video-wrap .content-wrapper.row-layout .title-box {
+  flex-basis: 45%;
+}
+.introduction-video-wrap .content-wrapper.row-layout .video-box  {
+  flex-basis: 55%;
+  border-radius: 24px;
+  padding: 20px 50px;
+}
+.introduction-video-wrap .content-wrapper.row-layout .video-box  a:not([href="javascript:;"]) img:hover {
+  box-shadow: 0 0 20px rgba(90,100,126,.3);
+}
+.introduction-video-wrap .content-wrapper.row-layout .video-box.card  {
+  padding: 46px 36px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid #D8D8EB;
+  backdrop-filter: blur(18px);
+}
+.introduction-video-wrap .content-wrapper.row-layout .title-box {
+  text-align: left;
+  align-items: flex-start;
+  padding: 20px 50px 20px 0;
+}
+.introduction-video-wrap .content-wrapper.row-layout .button:first-child {
+  margin-left: 0;
+}
+.introduction-video-wrap .content-wrapper.row-layout .sec-content {
+  text-align: left;
+}
+.introduction-video-wrap .content-wrapper.row-layout .sec-content a {
+  color: #000;
+  text-decoration: underline;
+}
+.introduction-video-wrap .content-wrapper.row-layout.flex-reverse {
+  flex-direction: row-reverse;
+  padding: 70px 10px;
+}
+.introduction-video-wrap .content-wrapper.row-layout.flex-reverse .title-box {
+  padding: 20px 50px;
+}
+.introduction-video-wrap .content-wrapper.row-layout.flex-reverse .sec-content {
+  text-align: left;
+}
+.introduction-video-wrap .button a{
+  min-width: 140px;
+}
+.introduction-video-wrap .button {
+  margin: 20px 10px 0
+}
+.introduction-video-wrap .content-wrapper  .video-box {
+  margin: 60px auto 0;
+  overflow: hidden;
+  max-width: 980px;
+  width: 100%;
+}
+.introduction-video-wrap .content-wrapper.row-layout .video-box{
+  margin: 0px auto;
+}
+.introduction-video-wrap .content-wrapper  .video-box video {
+  max-width: 100%;
+  cursor: pointer;
+  border-radius: 20px;
+  width: 100%;
+}
+.introduction-video-wrap .content-wrapper  .video-box img {
+  max-width: 100%;
+  border-radius: 20px;
+}
+.introduction-video-wrap .content-wrapper .introduction-content-box .content-img{
+  width: 120px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 767px){
+  .introduction-video-wrap {
+    height: auto;
+    padding: 20px 16px;
+  }
+  .introduction-video-wrap .content-wrapper {
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  .introduction-video-wrap .content-wrapper.row-layout {
+    padding: 0 10px;
+  }
+  .introduction-video-wrap .content-wrapper.row-layout .title-box,.introduction-video-wrap .content-wrapper.row-layout .video-box  {
+    flex-basis: 100%;
+  }
+  .introduction-video-wrap .content-wrapper.row-layout .video-box {
+    padding: 20px;
+    margin: 0 0 20px;
+  }
+  .introduction-video-wrap .content-wrapper.row-layout .video-box.card  {
+    padding: 20px;
+  }
+  .introduction-video-wrap .content-wrapper.row-layout.flex-reverse {
+    flex-direction: column-reverse;
+    padding: 20px 10px;
+  }
+  .introduction-video-wrap .content-wrapper.row-layout.flex-reverse .title-box {
+    padding: 0;
+  }
+  .introduction-video-wrap .content-wrapper.row-layout .sec-content, .introduction-video-wrap .content-wrapper.row-layout.flex-reverse .sec-content {
+    text-align: center;
+  }
+  .introduction-video-wrap .content-wrapper .introduction-buttons {
+    margin-top: 0;
+    width: 100%;
+  }
+  .introduction-video-wrap .button {
+    margin: 20px 6px 0;
+  }
+  .introduction-video-wrap .button a{
+    min-width: auto;
+  }
+  .introduction-video-wrap .content-wrapper .video-box {
+    margin: 36px auto 0;
+  }
+}
+
+
+
+
+
+
+
+
+

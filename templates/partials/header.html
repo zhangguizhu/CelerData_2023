@@ -1,0 +1,24 @@
+<!--
+templateType: global_partial
+label: Website header
+-->
+<div class="custom-header">
+  <header class="header">
+    <div class="header__container content-wrapper">
+      <div class="mobil-trigger"><div class="top-line"></div><div class="bottom-line"></div></div>
+      <div class="logo-wrapper">
+        <div class="normal-logo">
+          {% set logo_file =  get_asset_url('../../images/logo.png') %}
+          {% module "header_logo" path="@hubspot/logo", label="Header Logo", link="/index",img={src="{{logo_file}}", width= 146, alt=Celerdata, override_inherited_src= true} %}
+        </div>
+      </div>
+      <div class="header-navigation">
+        {% menu "header_menu" id=114967157266, flyouts='false', max_levels='8', label='Header Menu' %}
+      </div>
+      <div class="gap"></div>
+      <div class="header-right">
+      {% module "header_right_content" path="../../modules/header-right-content", label="Header Right Content" %}
+      </div>
+    </div>
+  </header>
+</div>

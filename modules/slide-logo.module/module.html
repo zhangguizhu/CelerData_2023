@@ -1,0 +1,15 @@
+{% if module.logos %}
+  <link type="text/css" rel="stylesheet" href="https://celerdata.com/hubfs/css/swiper.min.css">
+  <div class="slide-logos-box swiper-container row-flex">
+    <div class="swiper-wrapper align-center">
+      {% for item in module.logos %}
+      <div class="logo-item swiper-slide col-flex">
+        {% if item.image.src %}
+        <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" width="190" height="85">
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <script defer src="https://celerdata.com/hubfs/js/swiper.min.js"></script>
+{% endif %}

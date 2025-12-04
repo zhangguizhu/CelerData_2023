@@ -1,0 +1,10 @@
+.social-wrapper a {
+    margin-left: 8px;
+}
+.social-wrapper a svg{
+    width: 20px;
+    height: 20px;
+}
+.social-wrapper a:hover svg path{
+    fill: #ddd;
+}

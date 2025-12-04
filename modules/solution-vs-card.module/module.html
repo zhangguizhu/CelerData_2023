@@ -1,0 +1,41 @@
+{% if module.item_groups or module.section_title %}
+  <div class="vs-card-wrap" style="background-color:{{ module.background_color.color }}; opacity:{{ module.background_color.opacity * 0.01 }};">
+    <div class="content-wrapper hs-col-flex">
+      {% if module.section_title or module.section_content %}
+        <div class="hs-col-flex hs-align-center">
+          <h3 class="sec-title">{{ module.section_title }}</h3>
+          <div class="sec-content">{{ module.section_content }}</div>
+        </div>
+      {% endif%}
+        {% set lenthArr = [] %}
+        {% for item in module.item_groups %}
+           {% set length = 0 %}
+            {% if item.increasing_filed %}
+              {% set length = item.title_number|length %}
+            {% else %}
+              {% set length = item.title|length %}
+            {% endif %}
+          {% do lenthArr.append(length) %}
+        {% endfor %}
+      <div class="performance-row hs-row-flex hs-jus-between {{ module.number_of_columns }} {% if lenthArr|sort()|last > 4 %} small-text {%endif%}">
+        {% for item in module.item_groups %}
+          <div class="performance-item hs-col-flex hs-jus-start {% if item.increasing_filed %} increse-effect{% endif %}" style="background-color:{{ item.background_color.color }}; opacity:{{ item.background_color.opacity * 0.01 }}; background-image: url({{ item.background_image.src }});">
+            <div class="performance-item-content hs-col-flex hs-jus-center">
+              {% if item.increasing_filed %}
+                <p class="title">
+                  <span class="pre-unit {% if item.title_pre|length > 2 %} small-unit {% endif %}">{{ item.title_pre }}</span><span class="increse-number">{{ item.title_number }}</span><span class="unit {% if item.title_following|length > 2 %} small-unit {% endif %}">{{ item.title_following }}</span>
+                </p>
+              {% else %}
+                <p class="title">{{ item.title }}</p>
+              {% endif %}
+              {% if item.content %}
+                <p class="content">{{ item.content }}</p>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="sec-content bottom-content">{{ module.bottom_content }}</div>
+    </div>
+  </div>
+{% endif %}

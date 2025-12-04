@@ -1,0 +1,55 @@
+<div class="blog-container hs-col-flex">
+  {% if blog_author %}
+    <div class="blog-list-title sec-title">Blog Post by {{blog_author.display_name}}</div>
+  {% endif %}
+  <div id="post-listing" class="post-listing hs-row-flex hs-jus-start hs-align-stretch">
+    {# Blog listing #}
+    {% for content in contents %}
+
+    {# Set featured image #}
+    {# This checks to see if a user is opted into the blog listing editing experience. If they are it uses the conditional from the module. If they are not it uses the conditional from blog settings #}
+    {% set show_featured_image = false %}
+    {% if content.featured_image %}
+    {% if blog.listing_page_id %}
+    {% if module.featured_image %}
+    {% set show_featured_image = true %}
+    {% endif %}
+    {% else %}
+    {% if group.use_featured_image_in_summary %}
+    {% set show_featured_image = true %}
+    {% endif %}
+    {% endif %}
+    {% endif %}
+    {# End set featured image #}
+    <div class="post-item hs-col-flex {% if module.author %} has-author {% endif%}">
+      <a class="post-item-outter hs-col-flex hs-row-flex" href="{{ content.absolute_url }}">
+        {% if show_featured_image == true %}
+        <div class="feature-thumbnail" style="background-image: url('{{ content.featured_image }}');">
+        </div>
+        {% endif %}
+        <div class="post-intro hs-col-flex">
+          {# Title #}
+          {% if module.title %}
+            <p class="title">{{ content.name }}</p>
+          {% endif %}
+          {% if module.content %}
+            <p class="content">{{ content.post_body|striptags|truncate(135, True, "...") }}</p>
+          {% endif %}
+          {# End title #}
+        </div>
+      </a>
+      {% if module.author %}
+        <div class="item__author">
+          {% if content.blog_post_author  %}
+            <a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}" target="_blank" class="hs-row-flex hs-align-center">
+              <span class="blog-author-avatar" style="background-image: url('{{ content.blog_author.avatar }}');"></span>
+              <span> {{ content.blog_post_author.display_name }}</span>
+            </a>
+          {% endif %}
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+    {# End blog listing #}
+  </div>
+</div>

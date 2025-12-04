@@ -1,0 +1,51 @@
+<!--
+templateType: global_partial
+label: Footer
+-->
+<footer class="footer">
+  <div class="footer__container content-wrapper col-flex">
+    <div class="footer-logo full-width">
+      {% module "footer_logo" path="@hubspot/image", label="Footer Logo", link="/index", img={src="{{get_asset_url('../../images/white-logo.png')}}", alt="Star Rocks", width= 180, override_inherited_src= true} %}
+
+      {% dnd_area "Text" class='common-text-area', label='Footer Logo Text' %}
+        {% dnd_section full_width=true %}
+          {% dnd_module path='../../modules/common-text' %}
+          {% end_dnd_module %}
+        {% end_dnd_section %}   
+      {% end_dnd_area %}
+    </div>
+    <div class="main-footer row-flex full-width">
+      <div class="footer-left">
+        <div class="inner-wrap">
+          <p style="word-break: auto-phrase">101 Jefferson Drive, Suite 230 Menlo Park, CA 94025, United States</p>
+          <div class="full-width row-flex">
+            <img src="{{ get_asset_url('../../images/footer-soc.png') }}" style="margin-right: 1rem;" alt="soc" class="soc" height="100%"/>
+            <div id="gdprVerifier">
+              <script>
+                  (function (w, d, s, o, f, js, fjs) {
+                      w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };
+                      js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+                      js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
+                  }(window, document, 'script', 'gdprBadge', 'https://cdn.gdprlocal.com/static/widget.js'));
+                  gdprBadge('init',{element: document.getElementById('gdprVerifier'), verificationId: 'U72SNQA'});
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-right">
+        <div class="footer-links">
+          {% menu "footer_menu" id=119798921020, flyouts='false', max_levels='2', label='Footer Menu' %}
+        </div>
+      </div>
+    </div>
+    <div class="footer-desc-section full-width row-flex">
+      <div class="footer-copyright">
+        <span class="rights-reserved">@2024 CelerData, Inc.  All rights reserved</span> {% menu "footer_policy" id=119799614610, flyouts='false', max_levels='2', label='Footer Policy' %}
+      </div>
+      <div class="follow-us">
+        {% module "footer_social" path="../../modules/footer-follow-us", label="Footer Follow Us" %}
+      </div>
+    </div>
+  </div>
+</footer>

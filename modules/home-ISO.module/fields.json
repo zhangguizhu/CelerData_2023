@@ -1,0 +1,51 @@
+[ {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa36",
+  "name" : "section_title",
+  "label" : "Section Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "The enterprise-grade security and privacy practices your data deserves."
+}, {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa361",
+  "name" : "section_content",
+  "label" : "Section Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "StarRocks' native support for distributed JOIN algorithms and its cost-based optimizer best-in-class query performance against both single and multi-table joined queries. With StarRocks, users get to keep their normalized tables and do JOIN operations on the fly, simplifying their data ingestion pipeline, improving data freshness, and cutting down on ETL costs."
+}, {
+  "id" : "76bb64a6-43ea-1291-496c-5dacd822f533",
+  "name" : "background_color",
+  "label" : "Background Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "",
+    "opacity" : 100
+  }
+}, {
+  "id" : "87e17a91-46ff-75b8-1b94-3fdd9053f925",
+  "name" : "left_image",
+  "label" : "Left Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "src" : "https://celerdata.com/hubfs/celerdata_2023/iso.png",
+    "alt" : "ISO",
+    "width" : 1694,
+    "height" : 1090,
+    "max_width" : 1694,
+    "max_height" : 1090
+  }
+} ]

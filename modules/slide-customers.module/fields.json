@@ -1,0 +1,98 @@
+[ {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa36",
+  "name" : "section_title",
+  "label" : "Section Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa361",
+  "name" : "section_content",
+  "label" : "Section Content",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "a38ce86c-0093-ba22-601d-c9b91ad7cf52822",
+  "name" : "item_groups",
+  "label" : "Customer Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "c95b4e9b-fa12-d9bc-61af-0c5a0f2d12c5",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "72c4eabb-8d62-03f9-74fb-f26f789986b2",
+    "name" : "background_img",
+    "label" : "background Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://celerdata.com/hubfs/celerdata_2023/customer-bg.png",
+      "alt" : "Customer Background Image",
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "72c4eabb-8d62-03f9-74fb-f26f789986bd",
+    "name" : "icon_img",
+    "label" : "Icon Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://celerdata.com/hubfs/celerdata_2023/trip.png",
+      "alt" : "Customer Image",
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "c95b4e9b-fa12-d9bc-61af-0c5a0f2d12c5",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "-SOFTWARE ENGINEER AIRBNB，CELERDATA CUSTOMER"
+  }, {
+    "id" : "c30bc71d-5e3f-d89e-eddb-65ea4f42e80a",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "“We provide booking services for over 1.5 million hotels worldwide. By using CelerData we realized high-speed real-time data analysis with an average query response speed of 200ms. Thanks to the unified data analytical architecture, manpower and hardware costs are greatly reduced.”"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "content" : "",
+    "title" : "",
+    "icon_img" : ""
+  }
+} ]

@@ -1,0 +1,145 @@
+.partners-page {
+  width: 100%;
+  max-width: 1596px;
+  padding: 20px 0 100px;
+  margin: 50px auto 0;
+  display: flex;
+}
+
+.partner-list {
+  flex: 1;
+}
+
+.partner-filter {
+  width: 23rem;
+  padding: 2rem;
+  margin-left: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid #D4D4EA;
+  background: #FAFAFC;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-title {
+  font-size: 24px;
+  font-weight: 700;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #D4D4EA;
+}
+
+.filter-tags {
+  padding: 2rem 0;
+}
+
+.filter-tags .tag-item {
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.filter-tags .tag-item input {
+  width: 1rem;
+  height: 1rem;
+}
+
+.filter-tags .tag-item label {
+  color: #333;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.partner-description {
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.75rem;
+}
+
+.partner-description a {
+  color: #65DAFF;
+}
+
+.partner-item {
+  padding: 3rem 2rem;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid #D8D8EB;
+  margin-bottom: 2.25rem;
+}
+
+.partner-item:last-of-type {
+  margin-bottom: 0;
+}
+
+.partner-left {
+  width: 180px;
+  text-align: center;
+}
+
+.partner-left img {
+  height: auto;
+  width: auto;
+  max-height: 80px;
+  max-width: 180px;
+}
+
+.partner-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2.5rem;
+}
+
+.partner-name {
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.partner-right .partner-name a {
+  color: #000;
+}
+
+.partner-right .partner-name a:hover {
+  text-decoration: underline;
+}
+
+@media(max-width: 991px) and (min-width: 768px){
+  .partners-page {
+    flex-direction: column-reverse;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .partner-filter {
+    margin-left: 0;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+
+@media(max-width: 767px){
+  .partners-page {
+    flex-direction: column-reverse;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .partner-filter {
+    margin-left: 0;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .partner-item {
+    flex-direction: column;
+  }
+  
+  .partner-name {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .partner-right {
+    margin-left: 0;
+  }
+}

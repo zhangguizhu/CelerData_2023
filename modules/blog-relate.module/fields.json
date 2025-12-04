@@ -1,0 +1,309 @@
+[ {
+  "id" : "76bb64a6-43ea-1291-496c-5dacd822f53",
+  "name" : "background_color",
+  "label" : "Background Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#F5F5FB",
+    "opacity" : 100
+  }
+}, {
+  "id" : "show_relation_blogs",
+  "name" : "show_relation_blogs",
+  "label" : "Show Relation Blogs",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "478556d4-1125-82b8-7821-d642bd9abf60",
+  "name" : "intro_to_title",
+  "label" : "Intro to title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "show_emoji_picker" : true,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Related Articles"
+}, {
+  "id" : "featured_image",
+  "name" : "featured_image",
+  "label" : "Featured image",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "title",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "content",
+  "name" : "content",
+  "label" : "Post Body",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "author",
+  "name" : "author",
+  "label" : "Author",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "df8390b7-2c92-268d-e48a-15f4822a4bc0",
+  "name" : "filter",
+  "label" : "Post Filter",
+  "help_text" : "Specify which posts to show...",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "4cbe3dfd-86e2-bb35-14f0-3aaf9000a30d",
+    "name" : "type_of_filter",
+    "label" : "Type of filter",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "related", "Related Posts" ], [ "popular", "Popular Posts" ], [ "recent", "Recent Posts" ], [ "recent_by_tags", "Recent Posts By Tags" ], [ "recent_by_author", "Recent Posts By Author" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "related"
+  }, {
+    "id" : "0911ace3-8081-60a5-f5ce-43f54c46fff7",
+    "name" : "blog_id",
+    "label" : "Blog",
+    "help_text" : "The blog to include posts from. If nothing is selected, the module considers posts from the default blog.",
+    "required" : false,
+    "locked" : false,
+    "type" : "blog",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "9c088e21-250f-f41c-40dc-0a1eb8423c21",
+    "name" : "tags",
+    "label" : "Tags / Categories",
+    "help_text" : "If a blog post has one of these tags or a similar tag, the post’s relevancy is increased, improving its ranking in the listing.",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "4cbe3dfd-86e2-bb35-14f0-3aaf9000a30d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "related",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "4e1816c5-9316-3246-5b77-84d3dcf7e1b5",
+      "name" : "tag_1",
+      "label" : "Tag 1",
+      "required" : false,
+      "locked" : false,
+      "tag_value" : "SLUG",
+      "type" : "tag",
+      "display_width" : null
+    }, {
+      "id" : "852a9636-8817-92df-6a7b-914f43a4a084",
+      "name" : "tag_2",
+      "label" : "Tag  2",
+      "required" : false,
+      "locked" : false,
+      "tag_value" : "SLUG",
+      "type" : "tag",
+      "display_width" : null
+    }, {
+      "id" : "f1f0e9c7-1444-b19e-37d7-121e1d1df76a",
+      "name" : "tag_3",
+      "label" : "Tag 3",
+      "required" : false,
+      "locked" : false,
+      "tag_value" : "SLUG",
+      "type" : "tag",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "eef4d900-df1a-2f44-c794-cef15aa1c0be",
+    "name" : "author_s",
+    "label" : "Author(s)",
+    "help_text" : "Posts from specific authors.\nPlease enter the exact name as configured in HubSpot.\nYou can configure several ones by separating them by comma without whitespace.",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "4cbe3dfd-86e2-bb35-14f0-3aaf9000a30d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "related",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "f9509de3-1162-2291-83ab-bd7845daac76",
+    "name" : "force_post_s",
+    "label" : "Always show this Posts",
+    "help_text" : "Blog posts which should always show up in the returned listing, despite all other filters.\nEnter the IDs of the blog posts. You'll find the ID in the URL while editing the specific post: https://app.hubspot.com/blog/HUBSPOT-ID/edit/THIS_IS_THE_POST_ID/...\nYou can configure several ones by separating them  by comma without whitespace.",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "4cbe3dfd-86e2-bb35-14f0-3aaf9000a30d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "related",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "e3481cd0-6a07-16be-827d-7ae00a37d61c",
+    "name" : "popular_time_frame",
+    "label" : "Time Frame",
+    "required" : true,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "4cbe3dfd-86e2-bb35-14f0-3aaf9000a30d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "popular",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "popular_all_time", "Popular All Time" ], [ "popular_past_year", "Popular Past Year" ], [ "popular_past_six_months", "Popular Past Six Months" ], [ "popular_past_month", "Popular Last Month" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "popular_past_year"
+  }, {
+    "id" : "74373836-6486-f8f8-5de5-09d733334a74",
+    "name" : "popular_tag",
+    "label" : "Tag / Category",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "4cbe3dfd-86e2-bb35-14f0-3aaf9000a30d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "popular",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "tag_value" : "SLUG",
+    "type" : "tag",
+    "display_width" : null
+  }, {
+    "id" : "20d03d1a-bdc5-f254-5583-6fba2a7bd9e3",
+    "name" : "recent_tags",
+    "label" : "Tags / Categories",
+    "help_text" : "Blog posts that have one of these tags will be shown",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "4cbe3dfd-86e2-bb35-14f0-3aaf9000a30d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "recent_by_tags",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "3da77ce3-7f0e-4033-1c40-79c94293e81e",
+      "name" : "tag_1",
+      "label" : "Tag 1",
+      "required" : false,
+      "locked" : false,
+      "tag_value" : "SLUG",
+      "type" : "tag",
+      "display_width" : null
+    }, {
+      "id" : "9ee0df44-ade6-857d-46fa-5d825aadc39b",
+      "name" : "tag_2",
+      "label" : "Tag  2",
+      "required" : false,
+      "locked" : false,
+      "tag_value" : "SLUG",
+      "type" : "tag",
+      "display_width" : null
+    }, {
+      "id" : "2af45683-a035-ef00-2afd-ce72b2e303d6",
+      "name" : "tag_3",
+      "label" : "Tag 3",
+      "required" : false,
+      "locked" : false,
+      "tag_value" : "SLUG",
+      "type" : "tag",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "f01f7e05-0582-fa94-2524-fe8c317f38a2",
+    "name" : "recent_author",
+    "label" : "Author",
+    "help_text" : "This field accepts a lowercase hyphenated name such as 'brian-halligan'.\nIf used in a blog post the author of the current post will be used if not overwritten by this field.",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "4cbe3dfd-86e2-bb35-14f0-3aaf9000a30d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "recent_by_author",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "type_of_filter" : "related",
+    "blog_id" : "",
+    "tags" : { },
+    "popular_time_frame" : "popular_past_year",
+    "recent_tags" : { }
+  }
+} ]

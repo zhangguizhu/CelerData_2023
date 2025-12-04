@@ -1,0 +1,31 @@
+{% if module.item_groups or module.section_title or module.section_content%}
+  <link type="text/css" rel="stylesheet" href="https://celerdata.com/hubfs/css/swiper.min.css">
+  <div class="slide-customer-wrap">
+    <div class="content-wrapper hs-col-flex">
+      <div class="hs-col-flex hs-align-center">
+        <h3 class="sec-title">{{ module.section_title }}</h3>
+        <div class="sec-content">{{ module.section_content }}</div>
+      </div>
+      <div class="swiper-container hs-row-flex hs-jus-between">
+        <div class="swiper-wrapper">
+          {% for item in module.item_groups %}
+            <div class="swiper-slide slide-item hs-col-flex hs-jus-center hs-align-center" style="background-image: url({{ item.background_img.src }});">
+              <div class="slide-item-content hs-col-flex hs-jus-center hs-align-center">
+                {% if item.icon_img.src %}
+                  <img src="{{ item.icon_img.src }}" alt="{{ item.icon_img.alt }}">
+                {% endif %}
+                {% if item.content %}
+                  <p class="content">{{ item.content }}</p>
+                {% endif %}
+                <p class="title">{{ item.title }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+  </div>
+  <script defer src="https://celerdata.com/hubfs/js/swiper.min.js"></script>
+{% endif %}

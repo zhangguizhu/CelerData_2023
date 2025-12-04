@@ -1,0 +1,51 @@
+{% if module.partner_items %}
+<div class="partners-page">
+  <!-- Partners -->
+  <div class="partner-list">
+    {% for partner in module.partner_items %}
+    <div class="partner-item">
+      <span style="display: none" class="tags">{{ partner.filter_tags }}</span>
+      <!-- Partner Logo -->
+      <div class="partner-left">
+        <img src="{{ partner.logo.src }}" alt="{{ partner.logo.alt }}">
+      </div>
+      <!-- Partner Info -->
+      <div class="partner-right">
+        {% if partner.partner_website.url.href %}
+        <span class="partner-name">
+          <a
+             href="{{ partner.partner_website.url.href }}"
+             {% if partner.partner_website.open_in_new_tab %}
+             target="_blank"
+             {% endif %}
+             >
+            {{ partner.partner_name }}
+          </a>
+        </span>
+        {% else %}
+        <span class="partner-name">{{ partner.partner_name }}</span>
+        {% endif %}
+        <span class="partner-description">{{ partner.description }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <!-- Filter -->
+  {% if module.show_filter %}
+  <section>
+    <div class="partner-filter">
+      <span class="filter-title">Partners Filter</span>
+      <div class="filter-tags" id="partner-filter">
+        {% for tag in module.filter_tags %}
+        <div class="tag-item">
+          <input type="checkbox" id="FILTER_TAG-{{ tag }}" />
+          <label for="FILTER_TAG-{{ tag }}">{{ tag }}</label>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  
+  {% endif %}
+</div>
+{% endif %}

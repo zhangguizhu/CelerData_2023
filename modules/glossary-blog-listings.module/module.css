@@ -1,0 +1,104 @@
+.glossary-listings-container {
+  max-width: 1596px;
+  padding: 20px 10px;
+  width: 100%;
+  margin: 0 auto;
+}
+.glossary-listings-container .glossary-line-item {
+  margin-bottom: 60px;
+}
+.glossary-listings-container .glossary-line-item .classify {
+  position: relative;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 77px;
+  color: #000000;
+  width: 100px;
+  flex-shrink: 0;
+}
+.glossary-listings-container .glossary-line-item .classify:after {
+  position: absolute;
+  content: '';
+  width: 1px;
+  height: 100%;
+  background: #999;
+  top: 0;
+  right: 0;
+}
+.glossary-listings-container .glossary-line-item .glossary-item {
+  padding-left: 65px;
+  flex-wrap: wrap;
+}
+.glossary-listings-container .glossary-line-item .glossary-item a {
+  padding: 13px 30px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+  background: #FFFFFF;
+  border: 1px solid #D4D4EA;
+  border-radius: 27px;
+  margin: 10px 5px;
+}
+.glossary-listings-container .glossary-line-item .glossary-item a:hover {
+  background: #F0FBFF;
+  border: 1px solid #65DAFF;
+}
+
+@media(max-width: 1200px){
+  .glossary-listings-container {
+    padding: 20px;
+  }
+  .glossary-listings-container .glossary-line-item  {
+    margin-bottom: 30px;
+  }
+  .glossary-listings-container .glossary-line-item .classify {
+    font-size: 40px;
+    line-height: 56px;
+    width: 66px;
+  }
+  .glossary-listings-container .glossary-line-item .glossary-item a {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 8px 20px;
+  }
+  .glossary-listings-container .glossary-line-item .glossary-item {
+    padding-left: 20px;
+  }
+}
+
+
+@media(max-width: 767px){
+  .glossary-listings-container .glossary-line-item  {
+    margin-bottom: 20px;
+    flex-direction: column;
+  }
+  .glossary-listings-container .glossary-line-item .classify:after {
+    display: none;
+  }
+  .glossary-listings-container .glossary-line-item .classify {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .glossary-listings-container .glossary-line-item .glossary-item a {
+    font-size: 12px;
+    line-height: 24px;
+    padding: 4px 16px;
+  }
+  .glossary-listings-container .glossary-line-item .glossary-item {
+    padding-left: 0;
+    padding-top: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

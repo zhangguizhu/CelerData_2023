@@ -1,0 +1,58 @@
+{% if module.item_groups or module.section_title %}
+  <div id="{{module.section_id ||  name }}"  class="success-story-wrapper" style="background-color:{{ module.background_color.color }}; opacity:{{ module.background_color.opacity * 0.01 }};">
+    <div class="content-wrapper hs-col-flex">
+      <div class="hs-col-flex success-story-top hs-align-center">
+        <h3 class="sec-title">{{ module.section_title }}</h3>
+        <div class="sec-content">{{ module.section_content }}</div>
+      </div>
+      <div class="success-story-row hs-row-flex hs-jus-evenly">
+        {% for item in module.item_groups %}
+          {% set href = item.link.url.href %}
+          {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          {% if item.show_way == 'video-way'  || item.show_way == 'embed-wistia' %}
+            {% set href = "javascript:;" %}
+          {% endif %}
+          <div class="story-item">
+          <a href="{{ href }}"
+            {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+            {% if item.link.rel %}rel="{{ itemButton.link.rel }}"{% endif %}
+            class="hs-col-flex"
+          >
+            {% if item.show_way == 'img-way' %}
+              {% if item.story_img.src %}
+                <img src="{{ item.story_img.src }}" alt="{{ item.story_img.alt }}">
+              {% endif %}
+            {% endif %}
+
+            {% if item.show_way == 'video-way' %}
+              {% if item.file_video %}
+                <div class="video-box">
+                  <video controls x-webkit-airplay="true" webkit-playsinline="true" preload="none" src="{{ item.file_video }}" poster="{{ item.video_poster.src}}"></video>
+                </div>
+              {% endif %}
+            {% endif %}
+            {% if item.show_way == 'embed-wistia' %}
+              <div class="video-box">
+                {% if item.embed_field %}
+                  {{ item.embed_field.media_bridge_object.oembed_response.html }}
+                {% endif %}
+              </div>
+            {% endif %}
+
+
+
+              <div class="story-item-content hs-col-flex hs-align-start">
+                <p class="title">{{ item.title }}</p>
+                {% if item.content %}
+                  <div class="content">{{ item.content }}</div>
+                {% endif %}
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,113 @@
+.vs-compare-wrap {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.vs-compare-wrap .content-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 70px 30px;
+}
+.vs-compare-wrap .compare-box-wrap {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid #D8D8EB;
+  backdrop-filter: blur(18px);
+  border-radius: 24px;
+  margin: 50px 0 42px;
+  padding: 20px 20px 42px;
+}
+.vs-compare-wrap table {
+  width: 100%;
+  border: none !important;
+  background-color: transparent;
+  margin: 0;
+}
+.vs-compare-wrap table, .vs-compare-wrap td, .vs-compare-wrap th{
+  border-color: #fff !important;
+}
+.vs-compare-wrap table tr {
+  border: 20px solid #fff;
+  color: #000;
+}
+.vs-compare-wrap table tr td {
+  position: relative;
+  border: 15px solid #fff;
+  padding: 4px 20px !important;
+  background: #F5F5FB;
+  line-height: 24px;
+}
+.vs-compare-wrap table tr td ul {
+  padding: 0 0 0 52px;
+  margin: 0;
+}
+.vs-compare-wrap table tr td ul li {
+  line-height: 24px;
+}
+.vs-compare-wrap table tr td:first-child  {
+  background: #FAFAFC;
+}
+.vs-compare-wrap table tr:first-child td:nth-child(2):after  {
+  position: absolute;
+  content: '';
+  width: 64px;
+  height: 55px;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url("https://celerdata.com/hubfs/%5BCelerData%5D%20Icons/vs.png") no-repeat center center / contain;
+}
+.vs-compare-wrap table tr:first-child td {
+  background: transparent;
+}
+.vs-compare-wrap table tr:first-child td img {
+  vertical-align: middle;
+  transform: translateY(-2px);
+}
+.vs-compare-wrap .compare-buttons .compare-btn {
+  margin: 0 8px;
+}
+.vs-compare-wrap .compare-buttons .compare-btn a {
+  padding: 0 10px;
+}
+@media(max-width: 768px){
+  .vs-compare-wrap {
+    height: auto;
+  }
+  .vs-compare-wrap .content-wrapper {
+    width: 90%;
+    padding: 1rem 0;
+  }
+  .vs-compare-wrap .compare-box-wrap {
+    margin: 20px 0;
+    padding: 0px 0 30px;
+  }
+  .vs-compare-wrap table tr td {
+    font-size: 12px;
+  }
+  .vs-compare-wrap table tr td h1, .vs-compare-wrap table tr td h2, .vs-compare-wrap table tr td h3, .vs-compare-wrap table tr td h4, .vs-compare-wrap table tr td h5, .vs-compare-wrap table tr td h6 {
+    font-size: 13px;
+  }
+  .vs-compare-wrap table tr {
+    border: none;
+  }
+  .vs-compare-wrap table tr td{
+    border: 2px solid #fff;
+    padding: 2px 8px!important;
+  }
+  .vs-compare-wrap table tr:first-child td img {
+    margin: 0 4px 0 0 !important;
+    width: 24px !important;
+  }
+  .vs-compare-wrap table tr:first-child td {
+    width: 18% !important;
+    border: 2px solid transparent;
+  }
+  .vs-compare-wrap table tr:first-child td:nth-child(2):after {
+    right: -23px;
+    width: 34px;
+  }
+}
+

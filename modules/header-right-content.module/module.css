@@ -1,0 +1,27 @@
+.header-right-content .button {
+    line-height: 38px;
+}
+.header-right-content .button a {
+    padding: 0 14px;
+}
+.header-right-content .button.button-text a {
+  color: #0061ff;
+}
+.header-right-content .button.button-text a:hover,
+.header-right-content .button.button-text a:focus{
+  opacity: 0.8;
+}
+ 
+@media (max-width: 1110px) and (min-width: 768px){
+ .header-right-content .button{
+    font-size: 14px;
+    padding: 0px 6px;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 1250px) {
+ .header-right-content .button-secondary, .header-right-content .button-text {
+    display: none;
+  }
+}

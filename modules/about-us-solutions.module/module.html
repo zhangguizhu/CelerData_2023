@@ -1,0 +1,7 @@
+{% if module.title %}
+<div class="about-us-solutions">
+  <span class="title">{{ module.title }}</span>
+  <span class="content">{{ module.content }}</span>
+  {% cta guid="{{ module.cta }}" %}
+</div>
+{% endif %}

@@ -1,0 +1,49 @@
+.toc-container {
+  display: flex;
+  padding: 24px 24px 36px 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #FFF;
+}
+.toc-title {
+  color: #828692;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 180%;
+  letter-spacing: 0.28px;
+  margin-bottom: 12px;
+}
+
+#toc {
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+#toc li {
+  margin: 16px 0;
+}
+
+#toc li a {
+  margin: 16px 0;
+  line-height: 180%;
+  color: #363a47;
+  font-size: 16px;
+  scroll-margin-top: 80px;
+}
+#toc li.h3 {
+  padding-left: 12px;
+}
+#toc li.h3 a {
+  font-size: 14px;
+}
+
+#toc a {
+  text-decoration: none;
+}
+
+#toc a.active {
+  font-weight: bold;
+  color: #0061ff;
+}
+

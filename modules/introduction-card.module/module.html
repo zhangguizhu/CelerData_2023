@@ -1,0 +1,50 @@
+{% if module.section_title or module.section_content %}
+<div class="introduction-card-wrap-outer">
+  <div id="{{ name }}" name="{{ name }}" class="animation-bg-box introduction-card-wrap hs-row-flex hs-jus-center hs-align-center">
+    <div class="content-wrapper hs-row-flex hs-align-center  {% if module.boolean_filed %} flex-reverse {% endif %}">
+      <div class="hs-row-flex introduction-image-box hs-jus-center">
+        <div class="hs-col-flex image-container {% if module.img_animation_filed %} image-container-animation {% endif %}">
+          <div class="hs-col-flex intro-img-box {% if module.img_animation_filed %} animation-bg-box {% endif %}">
+            <img class="intro-img" src="{{ module.intro_img.src }}" alt="{{ module.intro_img.alt }}">
+          </div>
+        </div>
+      </div>
+      <div class="introduction-content-box hs-col-flex hs-jus-center">
+        {% if module.intro_icon.src  %}
+          <img class="content-img" src="{{ module.intro_icon.src }}" alt="{{ module.intro_icon.alt }}">
+        {% endif %}
+        <p class="sec-title">
+          {{ module.section_title }}
+          {% if module.section_label %}
+          <span class="sec-label">{{ module.section_label }}</span>
+          {% endif %}
+        </p>
+        <div class="sec-content">{{ module.section_content }}</div>
+        {% if module.buttons %}
+          <div class="introduction-buttons hs-row-flex">
+            {% for item in module.buttons %}
+            <div class="button button-{{ item.style }}">
+              {% set href = item.link.url.href %}
+              {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+              {% endif %}
+              <a 
+                  href="{{ href }}"
+                  {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+                  {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+                  >
+                  <span> {{ item.text }} 
+                  <svg height="18" version="1.1" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M826.24 535.893333l-212.48 213.333334a33.706667 33.706667 0 0 1-23.893333 10.24c-8.533333 0-17.066667-3.413333-23.893334-10.24a34.005333 34.005333 0 0 1 0-48.64l154.453334-155.306667H222.08c-18.773333 0-34.133333-15.36-34.133333-34.133333 0-18.773333 15.36-34.133333 34.133333-34.133334h498.346667l-154.453334-155.306666a34.005333 34.005333 0 0 1 0-48.64c13.653333-13.653333 34.986667-13.653333 48.64 0l212.48 213.333333c12.8 14.506667 12.8 36.693333-0.853333 49.493333z" p-id="4717"></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}

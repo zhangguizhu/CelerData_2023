@@ -1,0 +1,11 @@
+[ {
+  "id" : "419ae21f-a07d-0f43-bf0e-5ed8c0716c09",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "A Common Text"
+} ]

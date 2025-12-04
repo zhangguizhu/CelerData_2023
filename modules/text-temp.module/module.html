@@ -1,0 +1,15 @@
+{% if module.section_title or module.left_content or module.right_content %}
+  <div class="text-temp-wrap {{ module.layout_theme }}" style="background-color:{{ module.background_color.color }}; opacity:{{ module.background_color.opacity * 0.01 }};">
+    <div class="content-wrapper hs-col-flex">
+      <div class="text-temp-box">
+        <h3 class="sec-title">{{ module.section_title }}</h3>
+        <div class="text-temp-contanier hs-row-flex hs-jus-between">
+          <div class="sec-content">{{ module.left_content }}</div>
+          {% if module.right_content %}
+            <div class="sec-content">{{ module.right_content }}</div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

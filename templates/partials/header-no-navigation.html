@@ -1,0 +1,20 @@
+<!--
+templateType: global_partial
+label: Header no navigation
+-->
+<div class="custom-header">
+  <header class="header no-navigation">
+    <div class="hs-row-flex hs-jus-between hs-align-center content-wrapper">
+      <div class="logo-wrapper">
+        <div class="normal-logo">
+          {% set logo_file =  get_asset_url('../../images/logo.png') %}
+          {% module "header_logo" path="@hubspot/logo", label="Header Logo", link="/index",img={src="{{logo_file}}", width= 146, alt=Celerdata, override_inherited_src= true} %}
+        </div>
+      </div>
+      <div class="gap"></div>
+      <div class="header-right">
+      {% module "header_right_content" path="../../modules/header-right-content", label="Header Right Content" %}
+      </div>
+    </div>
+  </header>
+</div>

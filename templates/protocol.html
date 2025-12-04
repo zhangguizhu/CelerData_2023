@@ -1,0 +1,29 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: True
+  screenshotPath: ../images/template-previews/protocol.png
+  label: Celerdata Protocol page
+-->
+{% extends "./layouts/base.html" %}
+
+{% block template_stylesheets %}
+   <link type="text/css" rel="stylesheet" href="{{ get_asset_url('../css/templates/protocol.css') }}">
+{% endblock template_stylesheets %}
+
+{% block body %}
+
+ <main id="protocol-main" class="body-container-wrapper protocol-page">
+  <div class="mian-content">
+    {% module "content"
+      path="@hubspot/rich_text",
+      html="<h1>CelerData Inc. Terms of Service</h1>",
+      label="Main Content Area"
+    %}
+  </div>
+</main>
+{% require_js %}
+<script>
+ 
+</script>
+{% end_require_js %}
+{% endblock body %}

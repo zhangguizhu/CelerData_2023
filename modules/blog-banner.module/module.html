@@ -1,0 +1,26 @@
+{% if content.name %}
+<div class="blog-post-banner hs-row-flex hs-jus-center hs-align-start">
+  <div class="blog-post-banner-bg" style="{% if module.image_type == "custom_img" %}background-image: url({{ module.background_image.src }});{% endif %}{% if module.image_type == "featured_img" %}background-image: url({{ content.post_list_summary_featured_image }});{% endif %}"></div>
+  {% if !(module.image_type == "custom_img" && module.background_image.src) and !(module.image_type == "featured_img" and content.post_list_summary_featured_image)%}
+    <span class="post-tag"> Blog </span>
+  {% endif %}
+  <div class="content-wrapper hs-row-flex hs-jus-start hs-align-end">
+    <div class="intro">
+      <h1><div class="title">{{ content.name }}</div></h1>
+      <div class="blog-author-box hs-row-flex hs-jus-start hs-align-center">
+        <a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}" target="_blank" class="hs-row-flex">
+          <span class="blog-author-avatar" style="background-image: url('{{ content.blog_author.avatar }}');"></span>
+        </a>
+         <div class="blog-author">
+           <p class="author-name"><a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}" target="_blank" class="hs-row-flex">{{ content.blog_author.display_name }}</a></p>
+           <p class="publish-date">{{ content.publish_date_localized }}</p>
+         </div>
+        
+      </div>
+    </div>
+    {% if !(module.image_type == "custom_img" && module.background_image.src) and !(module.image_type == "featured_img" and content.post_list_summary_featured_image)%}
+      <img class="blog-post-banner-img" src="{{ get_asset_url('../../images/paper.png') }}" alt="Blog post banner image"/>
+    {% endif %}
+  </div>
+</div>
+{% endif %}

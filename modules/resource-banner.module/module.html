@@ -1,0 +1,66 @@
+{% if module.section_title or module.section_tag or module.banner_image.src or module.background_image.src %}
+<div class="resource-banner hs-row-flex hs-jus-center hs-align-start {% if !module.section_title %} no-title {% endif %}">
+  <div class="resource-banner-bg" style="background-image: url({{ module.background_image.src }});"></div>
+  {% if module.section_tag %}
+    {% set tagLength = module.section_tag|trim|length %}
+    <span class="bg-tag {% if tagLength > 5 %} bg-tag-small1 {% endif %}  {% if tagLength > 7 %} bg-tag-small2 {% endif %}  {% if tagLength > 10 %} bg-tag-small3 {% endif %}">{{module.section_tag}}</span>
+  {% endif %}
+  {% if !blog_author %}
+    {% if module.banner_style == 'normal' %}
+      <div class="content-wrapper center-content-wrapper hs-row-flex hs-jus-center hs-align-center {% if !module.section_title %} hs-align-end {% endif %}">
+        {%if module.section_title %}
+          <div class="intro">
+            <h1><div class="title">{{ module.section_title }}</div></h1>
+          </div>
+        {% endif %}
+        {%if module.banner_image.src %}
+          <img class="resource-banner-img" src="{{module.banner_image.src }}" width="{{ module.banner_image.width|divide(2) }}" alt="{{module.banner_image.alt }}"/>
+        {% endif %}
+      </div>
+    {% else %}
+      <div class="content-wrapper left-content-wrapper hs-col-flex hs-jus-end hs-align-start ">
+        {%if module.banner_image.src %}
+          <img class="resource-banner-img" src="{{module.banner_image.src }}" width="{{ module.banner_image.width|divide(2) }}" alt="{{module.banner_image.alt }}"/>
+        {% endif %}
+        <div class="intro">
+          <h1><div class="title">{{ module.section_title }}</div></h1>
+        </div>
+        <div class="banner-buttons row-flex full-width">
+          {% for item in module.buttons %}
+            <div class="banner-btn button button-{{ item.style }}">
+              {% if item.type == "std" %}
+              {% set href = item.link.url.href %}
+              {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+              {% endif %}
+              <a href="{{ href }}"
+                {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+                {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+                >
+                <span> {{ item.text }}
+                {% if item.show_narrow %}
+                    <svg height="18" version="1.1" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M826.24 535.893333l-212.48 213.333334a33.706667 33.706667 0 0 1-23.893333 10.24c-8.533333 0-17.066667-3.413333-23.893334-10.24a34.005333 34.005333 0 0 1 0-48.64l154.453334-155.306667H222.08c-18.773333 0-34.133333-15.36-34.133333-34.133333 0-18.773333 15.36-34.133333 34.133333-34.133334h498.346667l-154.453334-155.306666a34.005333 34.005333 0 0 1 0-48.64c13.653333-13.653333 34.986667-13.653333 48.64 0l212.48 213.333333c12.8 14.506667 12.8 36.693333-0.853333 49.493333z" p-id="4717"></path>
+                    </svg>
+                  {% endif %}
+                  </span>
+              </a>
+              {% endif %}
+              {% if item.type == "cta" %}
+              {% cta guid="{{ item.cta }}" %}
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  {% else %}
+    <div class="content-wrapper left-content-wrapper hs-col-flex hs-jus-end hs-align-start">
+      <img class="resource-banner-img author-img" src="{{ get_asset_url('../../images/author-img.png') }}" alt="Banner Image"/>
+      <div class="intro">
+        <h1><div class="title">Blog Author</div></h1>
+      </div>
+    </div>
+  {% endif %}
+</div>
+{% endif %}

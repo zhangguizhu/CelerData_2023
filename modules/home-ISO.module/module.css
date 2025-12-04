@@ -1,0 +1,198 @@
+.home-iso-wrap {
+  min-height: 550px;
+  position: relative;
+  z-index: 2;
+  background: #fff;
+}
+/* .home-iso-wrap:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+  radial-gradient(closest-side, rgba(194, 215, 245, 1), rgba(223, 236, 255, 0)), 
+  radial-gradient(closest-side, rgba(200, 252, 255, 1), rgba(214, 253, 255, 0)), 
+  radial-gradient(closest-side, rgba(211, 188, 255, 1), rgba(241, 234, 255, 0)), 
+  radial-gradient(closest-side, rgba(238, 251, 255, 1), rgba(238, 251, 255, 0)),
+  radial-gradient(closest-side, rgba(184, 213, 255, 1), rgba(223, 236, 255, 0));
+  background-size: 
+    130vmax 130vmax,
+    80vmax 80vmax,
+    90vmax 90vmax,
+    110vmax 110vmax,
+    90vmax 90vmax;
+  background-position:
+    -80vmax -80vmax,
+    60vmax -30vmax,
+    10vmax 10vmax,
+    -30vmax -10vmax,
+    50vmax 50vmax;
+  background-repeat: no-repeat;
+  animation: 15s movement linear infinite;
+  z-index: 0;
+} */
+/* @keyframes movement {
+  0%, 100% {
+    background-size: 
+      130vmax 130vmax,
+      80vmax 80vmax,
+      90vmax 90vmax,
+      110vmax 110vmax,
+      90vmax 90vmax;
+    background-position:
+      -50vmax -50vmax,
+      60vmax -30vmax,
+      10vmax 10vmax,
+      -30vmax -10vmax,
+      50vmax 50vmax;
+  }
+  25% {
+    background-size: 
+      100vmax 100vmax,
+      90vmax 90vmax,
+      100vmax 100vmax,
+      90vmax 90vmax,
+      60vmax 60vmax;
+    background-position:
+      20vmax -50vmax,
+      50vmax -40vmax,
+      0vmax -20vmax,
+      -40vmax -20vmax,
+      0vmax 20vmax;
+  }
+  50% {
+    background-size: 
+      80vmax 80vmax,
+      110vmax 110vmax,
+      80vmax 80vmax,
+      60vmax 60vmax,
+      80vmax 80vmax;
+    background-position:
+      30vmax 10vmax,
+      40vmax -30vmax,
+      10vmax 0vmax,
+      0vmax 10vmax,
+      -30vmax -50vmax;
+  }
+  75% {
+    background-size: 
+      90vmax 90vmax,
+      90vmax 90vmax,
+      100vmax 100vmax,
+      90vmax 90vmax,
+      70vmax 70vmax;
+    background-position:
+      -20vmax 0vmax,
+      50vmax -30vmax,
+      20vmax 0vmax,
+      -10vmax 10vmax,
+      -30vmax -60vmax;
+  }
+} */
+/* @keyframes movement {
+  0%, 100% {
+    background-size: 
+      130vmax 130vmax,
+      80vmax 80vmax,
+      90vmax 90vmax,
+      110vmax 110vmax,
+      80vmax 90vmax;
+    background-position:
+      -80vmax -80vmax,
+      60vmax -30vmax,
+      -10vmax -10vmax,
+      -30vmax -10vmax,
+      50vmax 50vmax;
+  }
+  25% {
+    background-size: 
+      100vmax 100vmax,
+      90vmax 90vmax,
+      100vmax 100vmax,
+      90vmax 90vmax,
+      30vmax 60vmax;
+    background-position:
+      -60vmax -80vmax,
+      20vmax -40vmax,
+      0vmax 20vmax,
+      -40vmax -20vmax,
+      40vmax 60vmax;
+  }
+  50% {
+    background-size: 
+      80vmax 80vmax,
+      110vmax 110vmax,
+      80vmax 80vmax,
+      60vmax 60vmax,
+      30vmax 20vmax;
+    background-position:
+      -50vmax -50vmax,
+      20vmax -20vmax,
+      10vmax -10vmax,
+      20vmax 10vmax,
+      30vmax 70vmax;
+  }
+  75% {
+    background-size: 
+      90vmax 90vmax,
+      90vmax 90vmax,
+      100vmax 100vmax,
+      90vmax 90vmax,
+      70vmax 70vmax;
+    background-position:
+      -20vmax 0vmax,
+      30vmax 0vmax,
+      0vmax -30vmax,
+      -10vmax 10vmax,
+      40vmax 60vmax;
+  }
+} */
+.home-iso-wrap .content-wrapper {
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.home-iso-wrap .content-wrapper .img-box {
+  flex-basis: 50%;
+  padding: 0 40px;
+}
+.home-iso-wrap .content-wrapper .img-box img {
+  width: 100%;
+}
+.home-iso-wrap .content-wrapper .home-iso-right {
+  flex-basis: 50%;
+  padding: 49px;
+}
+
+@media (max-width: 767px){
+  .home-iso-wrap {
+    height: auto;
+    padding: 20px 10px;
+  }
+  .home-iso-wrap .content-wrapper {
+    flex-wrap: wrap;
+  }
+  .home-iso-wrap .content-wrapper .img-box{
+    flex-basis: 72%;
+    height: auto;
+    padding: 20px 20px 0;
+    margin: 0 auto;
+  }
+  .home-iso-wrap .content-wrapper .home-iso-right {
+    flex-basis: 100%;
+    padding: 20px 0;
+  }
+}
+
+
+
+
+
+
+
+
+

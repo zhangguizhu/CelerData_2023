@@ -1,0 +1,23 @@
+<div class="header-right-content">
+  {% for item in module.buttons %}
+        <div class="button button-{{ item.style }}">
+          {% if item.type == "std" %}
+          {% set href = item.link.url.href %}
+          {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          <a href="{{ href }}"
+             {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+             {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+             >
+             <span> {{ item.text }}</span>
+          </a>
+          {% endif %}
+          {% if item.type == "cta" %}
+          {% cta guid="{{ item.cta }}" %}
+          {% endif %}
+        </div>
+        {% endfor %}
+</div>
+
+

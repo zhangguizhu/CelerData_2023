@@ -1,0 +1,10 @@
+{
+  "global" : false,
+  "content_types" : [ "BLOG_LISTING" ],
+  "master_language" : "en",
+  "host_template_types" : [ "BLOG_LISTING" ],
+  "module_id" : 115158510151,
+  "label" : "Glossary Blog listings",
+  "icon" : "../../../StarRocks_May2022/images/module-icons/blog.svg",
+  "is_available_for_new_content" : true
+}

@@ -1,0 +1,89 @@
+[ {
+  "id" : "5eb0f40c-63f7-99ec-d7a1-1de763a9307c",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Our Journey"
+}, {
+  "id" : "e269e4ad-5241-30bf-765a-538cf0d8527f",
+  "name" : "datas",
+  "label" : "Datas",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "57a636c7-097d-5aff-525d-3e48c95ea9bd",
+    "name" : "top_point",
+    "label" : "Top Point",
+    "required" : false,
+    "locked" : false,
+    "placeholder" : "xaxis,yaxis",
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "0,0"
+  }, {
+    "id" : "0c67693d-be1c-51c5-daff-5b1ea95d9dc1",
+    "name" : "yaxis_value",
+    "label" : "Value",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null
+  }, {
+    "id" : "64ba8e9f-53bf-0960-9bdb-ab89b87d7f66",
+    "name" : "text_on_the_right",
+    "label" : "Text On The Right",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "8af0c892-5a52-8256-a845-ed6a1ab895af",
+    "name" : "height",
+    "label" : "Height",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 50
+  }, {
+    "id" : "fa5c7c75-f5f2-ed1c-5286-0396732e3e41",
+    "name" : "xaxis_label",
+    "label" : "Label",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "84e894e0-825b-b0f1-656b-992b9cb2f3d9",
+    "name" : "label_position",
+    "label" : "Label Position",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+} ]

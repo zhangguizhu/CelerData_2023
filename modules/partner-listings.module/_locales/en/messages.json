@@ -1,0 +1,287 @@
+{
+  "field_group.default.logo.alt" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "field_group.default.logo.loading" : {
+    "message" : "lazy",
+    "description" : null,
+    "placeholders" : null
+  },
+  "field_group.default.logo.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "field_group.default.logo.src" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "filter_tags.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "filter_tags.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "filter_tags.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "filter_tags.label" : {
+    "message" : "Filter Tags",
+    "description" : null,
+    "placeholders" : null
+  },
+  "filter_tags.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "filter_tags.validation_regex" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "partner-listings",
+    "description" : "",
+    "placeholders" : null
+  },
+  "partner_items.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.default.logo.alt" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.default.logo.loading" : {
+    "message" : "lazy",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.default.logo.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.default.logo.src" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.description.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.description.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.description.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.description.label" : {
+    "message" : "Rich text",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.description.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.filter_tags.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.filter_tags.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.filter_tags.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.filter_tags.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.filter_tags.placeholder" : {
+    "message" : "Split with ','",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.filter_tags.validation_regex" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.logo.default.alt" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.logo.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.logo.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.logo.label" : {
+    "message" : "Logo",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.logo.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.name" : {
+    "message" : "partner-listings",
+    "description" : "",
+    "placeholders" : null
+  },
+  "partner_items.partner_name.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.partner_name.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.partner_name.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.partner_name.label" : {
+    "message" : "Text",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.partner_name.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.partner_name.validation_regex" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.partner_website.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.partner_website.default.no_follow" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.partner_website.default.url.content_id" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.partner_website.default.url.href" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.partner_website.default.url.type" : {
+    "message" : "EXTERNAL",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.partner_website.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.partner_website.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.partner_website.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.partner_website.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "partner_items.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "show_filter.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "show_filter.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "show_filter.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "show_filter.label" : {
+    "message" : "Boolean",
+    "description" : null,
+    "placeholders" : null
+  },
+  "show_filter.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  }
+}

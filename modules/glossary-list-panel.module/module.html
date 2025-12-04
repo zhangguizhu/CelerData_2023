@@ -1,0 +1,107 @@
+{% macro post_formatter_standard(blog_post, index, count) %}
+  <div class="glossary-link">
+    <a href="{{ blog_post.absolute_url }}" class="hs-row-flex">
+        <svg width="22" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.3846 1H5.61538C4.11538 1 3.13462 1.80769 2.84615 3.30769L1 12.0769V18.5385C1.00213 19.2723 1.29457 19.9754 1.81344 20.4942C2.33231 21.0131 3.03544 21.3056 3.76923 21.3077H22.2308C22.9646 21.3056 23.6677 21.0131 24.1866 20.4942C24.7054 19.9754 24.9979 19.2723 25 18.5385V12.0769L23.1538 3.30769C22.8654 1.75 21.8269 1 20.3846 1Z" stroke="#65DAFF" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M1 12.0769H9.30769C9.30769 13.0561 9.6967 13.9953 10.3891 14.6877C11.0816 15.3802 12.0207 15.7692 13 15.7692C13.9793 15.7692 14.9184 15.3802 15.6109 14.6877C16.3033 13.9953 16.6923 13.0561 16.6923 12.0769H25M6.53846 4.69226H19.4615M5.61538 8.38457H20.3846" stroke="#65DAFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="link-text">{{ blog_post.name }}</span>
+    </a>
+  </div>
+{% endmacro %}
+
+<div class="glossary-list-panel-wrap">
+  <div class="glossary-panel-title">
+    <a href="/glossary">{{ module.title }} 
+      <svg height="18" version="1.1" viewbox="0 0 1024 1024" width="18" xmlns="http://www.w3.org/2000/svg">
+        <path d="M826.24 535.893333l-212.48 213.333334a33.706667 33.706667 0 0 1-23.893333 10.24c-8.533333 0-17.066667-3.413333-23.893334-10.24a34.005333 34.005333 0 0 1 0-48.64l154.453334-155.306667H222.08c-18.773333 0-34.133333-15.36-34.133333-34.133333 0-18.773333 15.36-34.133333 34.133333-34.133334h498.346667l-154.453334-155.306666a34.005333 34.005333 0 0 1 0-48.64c13.653333-13.653333 34.986667-13.653333 48.64 0l212.48 213.333333c12.8 14.506667 12.8 36.693333-0.853333 49.493333z" p-id="4717"></path>
+      </svg>
+    </a>
+  </div>
+  <div class="glossary-link-list hs-col-flex">
+    {% if module.custom_list %}
+      {% for item in module.items %}
+        <div class="glossary-link">
+          {% set href = item.link.url.href %}
+          {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          <a href="{{ href }}" class="hs-row-flex"
+              {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+              {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+              >
+              <svg width="22" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.3846 1H5.61538C4.11538 1 3.13462 1.80769 2.84615 3.30769L1 12.0769V18.5385C1.00213 19.2723 1.29457 19.9754 1.81344 20.4942C2.33231 21.0131 3.03544 21.3056 3.76923 21.3077H22.2308C22.9646 21.3056 23.6677 21.0131 24.1866 20.4942C24.7054 19.9754 24.9979 19.2723 25 18.5385V12.0769L23.1538 3.30769C22.8654 1.75 21.8269 1 20.3846 1Z" stroke="#65DAFF" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M1 12.0769H9.30769C9.30769 13.0561 9.6967 13.9953 10.3891 14.6877C11.0816 15.3802 12.0207 15.7692 13 15.7692C13.9793 15.7692 14.9184 15.3802 15.6109 14.6877C16.3033 13.9953 16.6923 13.0561 16.6923 12.0769H25M6.53846 4.69226H19.4615M5.61538 8.38457H20.3846" stroke="#65DAFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="link-text">{{ item.text }}</span>
+          </a>
+        </div>
+      {% endfor %}
+    {% else %}
+        {%- if group.id %}
+          {% set blog_id = group.id %}
+        {% else %}
+          {% set blog_id = module.filter.blog_id|default('default')  %}
+        {% endif -%}
+        {%- set limit = 5 -%}
+
+        {%- if module.filter.type_of_filter == 'related' %}
+          {%- set filter_tags = [] -%}
+          {%- for tag in module.filter.tags -%}
+            {% if tag %}{%- do filter_tags.append(tag) -%}{% endif %}
+          {%- endfor -%}
+          {% set tags_total_list = '' %}
+          {% if content.topic_list && (content.topic_list + filter_tags)|length > 0 %}
+            {% set tags_total_list = (content.topic_list + filter_tags)|join(', ')|default('') %}
+          {% elif filter_tags|length > 0 %}
+            {% set tags_total_list = filter_tags|join(', ')|default('') %}
+          {% endif %}
+          {% if content.blog_post_author.display_name && module.filter.author_s %}
+            {% set authors_total = content.blog_post_author.display_name + ', ' + module.filter.author_s %}
+          {% else %}
+            {% set authors_total = module.filter.author_s|default('')  %}
+          {% endif %}
+          {% set post_override = module.filter.force_post_s|default('') %}
+          {% related_blog_posts blog_ids="{{ blog_id }}", tags="{{ tags_total_list }}", blog_authors="{{ authors_total }}", blog_post_ids="", blog_post_override="{{ post_override }}", post_formatter="post_formatter_standard", limit="{{limit}}"  %} 
+        {% else %}
+          {%- set posts = [] -%}
+          {%- if module.filter.type_of_filter == 'popular' %}
+            {% set posts = blog_popular_posts(blog_id, limit, module.filter.popular_tag, module.filter.popular_time_frame) %}
+          {% elif module.filter.type_of_filter == 'recent' %}
+            {% set posts = blog_recent_posts(blog_id, limit) %}
+          {% elif module.filter.type_of_filter == 'recent_by_tags' %}
+            {%- set recent_filter_tags = [] -%}
+            {%- for tag in module.filter.recent_tags -%}
+              {% if tag %}{%- do recent_filter_tags.append(tag) -%}{% endif %}
+            {%- endfor -%}
+            {% set tags_total_array = '' %}
+            {% if content.topic_list && (content.topic_list + recent_filter_tags)|length > 0 %}
+              {% set tags_total_array = (content.topic_list + recent_filter_tags) %}
+            {% elif recent_filter_tags|length > 0 %}
+              {% set tags_total_array = recent_filter_tags %}
+            {% endif %}
+            {% set posts = blog_recent_tag_posts(blog_id, tags_total_array, limit) %}
+          {% elif module.filter.type_of_filter == 'recent_by_author' %}
+            {% set author_slug = module.filter.recent_author %}
+            {% if author_slug|trim|length == 0 && content.blog_post_author.slug %}
+              {% set author_slug = content.blog_post_author.slug %}
+            {% endif %}
+            {% set posts = blog_recent_author_posts(blog_id, author_slug, limit) %}
+          {% endif -%}
+          {% set is_skipped_post = false %}
+
+            {%- for post in posts %}
+              {% if content.absolute_url != post.absolute_url %}
+                {% if (!is_skipped_post && loop.index < limit) || is_skipped_post %}
+                  {% set tmp = post_formatter_standard(post, loop.index, loop.length) %}
+                  {{ tmp }}
+                {% endif %}
+              {% else %}
+                {% set is_skipped_post = true %}
+              {% endif %}
+            {% endfor -%}
+        {% endif -%}
+    {% endif %}
+  </div>
+</div>

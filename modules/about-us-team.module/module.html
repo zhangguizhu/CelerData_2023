@@ -1,0 +1,27 @@
+{% if module.title %}
+<div class="about-us-team">
+  <span class="title">{{ module.title }}</span>
+  <span class="content">{{ module.content }}</span>
+  <div class="teammates-container-1">
+    {% for teammate in module.main_founder %}
+    <div class="teammate-card">
+      <img src="{{ teammate.avatar.src }}" alt="{{ teammate.full_name }}">
+      <span class="teammate-name">{{ teammate.full_name }}</span>
+      <span class="teammate-position">{{ teammate.position }}</span>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="teammates-container-2">
+    {% for teammate in module.teammate_card %}
+    <div class="teammate-card">
+      <img src="{{ teammate.avatar.src }}" alt="{{ teammate.full_name }}">
+      <span class="teammate-name">{{ teammate.full_name }}</span>
+      <span class="teammate-position">{{ teammate.position }}</span>
+    </div>
+    {% endfor %}
+  </div>
+  <div style="margin-top: 60px; text-align: center;">
+    {% cta guid="{{ module.cta }}" %}
+  </div>
+</div>
+{% endif %}

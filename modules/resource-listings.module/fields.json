@@ -1,0 +1,227 @@
+[ {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa36",
+  "name" : "section_title",
+  "label" : "Section Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "5f9ea1d0-e8cc-d9a6-0ba2-d5c5ed4cfa361",
+  "name" : "section_content",
+  "label" : "Section Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "a38ce86c-0093-ba22-601d-c9b91ad7cf52822",
+  "name" : "item_groups",
+  "label" : "Resource Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "c95b4e9b-fa12-d9bc-61af-0c5a0f2d12c5",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "0a4ed21d-b545-573a-c672-ba41f6ceb36d",
+    "name" : "show_way",
+    "label" : "Introduction Way",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "img-way", "Show Images" ], [ "video-way", "Show Video" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "img-way"
+  }, {
+    "picker" : "video",
+    "id" : "a916898a-9d0b-da1e-d0c9-28737680faa2",
+    "name" : "file_video",
+    "label" : "File",
+    "required" : true,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "0a4ed21d-b545-573a-c672-ba41f6ceb36d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "video-way",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "file",
+    "display_width" : null,
+    "default" : "https://21782839.fs1.hubspotusercontent-na1.net/hubfs/21782839/StarRocks%20Introduction_subtitle.mp4"
+  }, {
+    "id" : "72c4eabb-8d62-03f9-74fb-f26f789986bd",
+    "name" : "poster_img",
+    "label" : "Poster Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "0a4ed21d-b545-573a-c672-ba41f6ceb36d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "video-way",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://celerdata.com/hubfs/celerdata_2023/poster.png",
+      "alt" : "Poster Image",
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "72c4eabb-8d62-03f9-74fb-f26f789986bd2",
+    "name" : "intro_img",
+    "label" : "Introduction Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "0a4ed21d-b545-573a-c672-ba41f6ceb36d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "img-way",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://21782839.fs1.hubspotusercontent-na1.net/hubfs/21782839/SR%20v%20CH%20AD%20TR%20(1).webp",
+      "alt" : "Resource Image",
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "cc8c95de-1980-3c09-d340-85a469f03b50",
+    "name" : "intro_to_title",
+    "label" : "Intro To Title",
+    "required" : false,
+    "locked" : false,
+    "placeholder" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "c95b4e9b-fa12-d9bc-61af-0c5a0f2d12c5",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "StarRocks Versus ClickHouse, Apache Druid®, and Trino"
+  }, {
+    "id" : "c30bc71d-5e3f-d89e-eddb-65ea4f42e80a",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "53569399-8407-5134-a17c-f4ce278bfe79",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "8f56a11d-2fb1-d81a-c6c7-fabace032e5311",
+    "name" : "link_botton",
+    "label" : "Link as a button",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "button_text",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "8f56a11d-2fb1-d81a-c6c7-fabace032e5311",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Read More"
+  }, {
+    "id" : "c5b7056e-690a-ef68-5f34-581fefafc8ae",
+    "name" : "filtering",
+    "label" : "Filtering",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "14c4634b-29b9-f4a3-0b77-3218165d5e29",
+      "name" : "cats",
+      "label" : "Categories",
+      "help_text" : "For filtering the image boxes.\nComma separated categories can be configured here. If image boxes shall be grouped in the same category, make sure to specify the same category names",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : ""
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : { }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "content" : "",
+    "title" : "",
+    "icon_img" : ""
+  }
+} ]
