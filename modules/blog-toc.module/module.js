@@ -5,14 +5,16 @@ $("document").ready(function($){
   const headers = blogContent.querySelectorAll('h2, h3');
 
   headers.forEach((header, index) => {
-    const id = `header-${index}`;
-    header.id = id;
+    if((header.textContent || '').trim() !== '') {
+      const id = `header-${index}`;
+      header.id = id;
 
-    const li = document.createElement('li');
-    li.innerHTML = `<a href="#${id}">${header.textContent}</a>`;
-    li.classList.add(header.tagName.toLowerCase());
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="#${id}">${header.textContent}</a>`;
+      li.classList.add(header.tagName.toLowerCase());
 
-    toc.appendChild(li);
+      toc.appendChild(li);
+    }
   });
 
   let aClick = '';
