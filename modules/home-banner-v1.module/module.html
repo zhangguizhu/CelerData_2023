@@ -13,14 +13,16 @@
         <div class="keywords-list-box swiper-container">
           <div class="swiper-wrapper">
             {% for item in module.features %}
-                <div class="keywords-item swiper-slide title  {% if titleLength > 60 %} smaller-title {% endif %}">{{ item.content }}</div>
+                <div class="keywords-item swiper-slide">
+                  <span class="keywords-item-content">{{ item.content }}</span>
+                </div>
               {% endfor %}
           </div>
         </div>
       {% endif %}
 
       <p class="desc">{{ module.content }}</p>
-      <div class="banner-buttons row-flex full-width">
+      <div class="banner-buttons row-flex full-width {% if !module.content %} mt-more {% endif %}">
         {% for item in module.buttons %}
         <div class="banner-btn button button-{{ item.style }}">
           {% if item.type == "std" %}

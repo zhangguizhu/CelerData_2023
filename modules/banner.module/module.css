@@ -29,6 +29,23 @@
   flex-basis: 50%;
   max-width: 580px;
 }
+.page-banner .banner-content .bannner-features-list {
+  color: #000;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 32px;
+}
+.page-banner .banner-content .bannner-features-list .banner-feature-item{
+  position: relative;
+  margin-top: 18px;
+  justify-content: flex-start;
+}
+.page-banner .banner-content .bannner-features-list .banner-feature-item{
+  margin-top: 16px;
+}
+.page-banner .banner-content .bannner-features-list .banner-feature-item svg{
+  margin-right: 20px;
+}
 .page-banner .banner-content .banner-label {
   display: inline-block;
   font-size: 0.3em;
@@ -47,8 +64,8 @@
 }
 .page-banner .title {
   color: #000;
-  font-size: 72px;
-  line-height: 87px;
+  font-size: 64px;
+  line-height: 78px;
   font-weight: 700;
   max-width: 790px;
 }
@@ -58,7 +75,6 @@
   line-height: 32px;
   margin-top: 14px;
   font-weight: 400;
-  min-height: 64px;
 }
 .page-banner .banner-btn {
   padding: 0;
@@ -81,7 +97,7 @@
   display: none;
 }
 .page-banner .banner-buttons {
-  margin: 27px 0 0;
+  margin: 40px 0 0;
   justify-content: flex-start;
   flex-wrap: wrap;
 }
@@ -109,8 +125,18 @@
 }
 @media (max-width: 1200px){ 
   .page-banner .title {
-    font-size: 50px;
-    line-height: 60px;
+    font-size: 48px;
+    line-height: 58px;
+  }
+  .page-banner .banner-content .bannner-features-list {
+    font-size: 18px;
+    margin-top: 30px;
+  }
+  .page-banner .banner-content .bannner-features-list .banner-feature-item{
+    margin-top: 12px;
+  }
+  .page-banner .banner-content .bannner-features-list .banner-feature-item svg{
+    margin-right: 16px;
   }
   .page-banner .provider-img .provider-item {
     margin-right: 28px;
@@ -152,6 +178,13 @@
   .page-banner .title {
     font-size: 36px;
     line-height: 46px;
+  }
+  .page-banner .banner-content .bannner-features-list {
+    font-size: 15px;
+    margin-top: 30px;
+  }
+  .page-banner .banner-content .bannner-features-list .banner-feature-item svg{
+    margin-right: 12px;
   }
   .page-banner .desc {
     width: 100%;

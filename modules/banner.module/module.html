@@ -12,6 +12,19 @@
         {% endif %}
       </h1>
       <p class="desc">{{ module.content }}</p>
+      {% if module.features %}
+        <div class="bannner-features-list">
+            {% for item in module.features %}
+                <div class="banner-feature-item row-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="11.5" fill="#EFFBFF" stroke="#03A544"/>
+                  <path d="M5.5 11.5L10.5 16.5L18.5 8" stroke="#03A544" stroke-width="3"/>
+                </svg>
+                <span class="banner-feature-item-content">{{ item.content }}</span>
+                </div>
+              {% endfor %}
+        </div>
+      {% endif %}
       <div class="banner-buttons row-flex full-width">
         {% for item in module.buttons %}
         <div class="banner-btn button button-{{ item.style }}">

@@ -1,258 +1,329 @@
-[ {
-  "id" : "c179d57f-262b-e1d9-404b-4d85ffd1f702",
-  "name" : "background_image",
-  "label" : "Background Image",
-  "required" : false,
-  "locked" : false,
-  "responsive" : true,
-  "resizable" : false,
-  "show_loading" : false,
-  "type" : "image",
-  "display_width" : null,
-  "default" : {
-    "size_type" : "auto",
-    "alt" : "Banner Background Image",
-    "loading" : "lazy",
-    "width" : 2657,
-    "height" : 700,
-    "max_width" : 2657,
-    "max_height" : 700
-  }
-}, {
-  "id" : "87e17a91-46ff-75b8-1b94-3fdd9053f925",
-  "name" : "banner_image",
-  "label" : "Banner Image",
-  "required" : false,
-  "locked" : false,
-  "responsive" : true,
-  "resizable" : false,
-  "show_loading" : false,
-  "type" : "image",
-  "display_width" : null,
-  "default" : {
-    "src" : "https://celerdata.com/hubfs/celerdata_2023/product-banner.png",
-    "alt" : "Banner Image",
-    "width" : 1694,
-    "height" : 1090,
-    "max_width" : 1694,
-    "max_height" : 1090
-  }
-}, {
-  "id" : "5eb0f40c-63f7-99ec-d7a1-1de763a9307c",
-  "name" : "title",
-  "label" : "Title",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Modernize Your Databases"
-}, {
-  "id" : "30cdb5e4-5192-41df-6c82-2619c7f336d8",
-  "name" : "banner_label",
-  "label" : "Banner Label",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null
-}, {
-  "id" : "f514a5d4-3ec8-47c2-0f9d-983eabdd5b2f",
-  "name" : "content",
-  "label" : "Content",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "On-premises or the cloud, CelerData makes delivering real-time analytics easy."
-}, {
-  "id" : "88d2ac55-4bde-2745-37a5-b1946fea6b72",
-  "name" : "buttons",
-  "label" : "Buttons",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : null,
-    "max" : null,
-    "sorting_label_field" : "39a02d67-41d7-077f-646f-d945839eacdf",
-    "default" : null
+[
+  {
+    "id": "c179d57f-262b-e1d9-404b-4d85ffd1f702",
+    "name": "background_image",
+    "label": "Background Image",
+    "required": false,
+    "locked": false,
+    "responsive": true,
+    "resizable": false,
+    "show_loading": false,
+    "type": "image",
+    "display_width": null,
+    "default": {
+      "size_type": "auto",
+      "alt": "Banner Background Image",
+      "loading": "lazy",
+      "width": 2657,
+      "height": 700,
+      "max_width": 2657,
+      "max_height": 700
+    }
   },
-  "children" : [ {
-    "id" : "10fe49c7-e85e-4dec-e0e8-ec82f901e9a0",
-    "name" : "type",
-    "label" : "Type",
-    "required" : false,
-    "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "std", "Standard" ], [ "cta", "Call To Action" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "display_width" : null,
-    "default" : "std"
-  }, {
-    "id" : "ee1c4a9a-f4bd-b0af-1b2a-88aadad24db9",
-    "name" : "style",
-    "label" : "Style",
-    "required" : true,
-    "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "primary", "Primary" ], [ "secondary", "Secondary" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "display_width" : null,
-    "default" : "primary"
-  }, {
-    "id" : "39a02d67-41d7-077f-646f-d945839eacdf",
-    "name" : "text",
-    "label" : "Text",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : "10fe49c7-e85e-4dec-e0e8-ec82f901e9a0",
-      "controlling_field_path" : null,
-      "controlling_value_regex" : "std",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
+  {
+    "id": "87e17a91-46ff-75b8-1b94-3fdd9053f925",
+    "name": "banner_image",
+    "label": "Banner Image",
+    "required": false,
+    "locked": false,
+    "responsive": true,
+    "resizable": false,
+    "show_loading": false,
+    "type": "image",
+    "display_width": null,
+    "default": {
+      "src": "https://celerdata.com/hubfs/celerdata_2023/product-banner.png",
+      "alt": "Banner Image",
+      "width": 1694,
+      "height": 1090,
+      "max_width": 1694,
+      "max_height": 1090
+    }
+  },
+  {
+    "id": "5eb0f40c-63f7-99ec-d7a1-1de763a9307c",
+    "name": "title",
+    "label": "Title",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Modernize Your Databases"
+  },
+  {
+    "id": "30cdb5e4-5192-41df-6c82-2619c7f336d8",
+    "name": "banner_label",
+    "label": "Banner Label",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null
+  },
+  {
+    "id": "f514a5d4-3ec8-47c2-0f9d-983eabdd5b2f",
+    "name": "content",
+    "label": "Content",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "On-premises or the cloud, CelerData makes delivering real-time analytics easy."
+  },
+  {
+    "id": "88d2ac55-4bde-2745-37a5-b1946fea6b73",
+    "name": "features",
+    "label": "Animation Features",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": null,
+      "max": null,
+      "sorting_label_field": "39a02d67-41d7-077f-646f-d945839eacd1",
+      "default": null
     },
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Button"
-  }, {
-    "id" : "53569399-8407-5134-a17c-f4ce278bfe79",
-    "name" : "link",
-    "label" : "Link",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : "10fe49c7-e85e-4dec-e0e8-ec82f901e9a0",
-      "controlling_field_path" : null,
-      "controlling_value_regex" : "std",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
+    "children": [
+      {
+        "id": "39a02d67-41d7-077f-646f-d945839eacd1",
+        "name": "content",
+        "label": "Content",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "Keyword"
+      }
+    ],
+    "type": "group",
+    "display_width": null
+  },
+  {
+    "id": "88d2ac55-4bde-2745-37a5-b1946fea6b72",
+    "name": "buttons",
+    "label": "Buttons",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": null,
+      "max": null,
+      "sorting_label_field": "39a02d67-41d7-077f-646f-d945839eacdf",
+      "default": null
     },
-    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
-    "show_advanced_rel_options" : false,
-    "type" : "link",
-    "display_width" : null,
-    "default" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
+    "children": [
+      {
+        "id": "10fe49c7-e85e-4dec-e0e8-ec82f901e9a0",
+        "name": "type",
+        "label": "Type",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          [
+            "std",
+            "Standard"
+          ],
+          [
+            "cta",
+            "Call To Action"
+          ]
+        ],
+        "multiple": false,
+        "reordering_enabled": true,
+        "preset": null,
+        "type": "choice",
+        "display_width": null,
+        "default": "std"
       },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
-  }, {
-    "id" : "dd72aeda-c6df-c717-93bc-d0e6ce1bd24e",
-    "name" : "cta",
-    "label" : "CTA",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : "10fe49c7-e85e-4dec-e0e8-ec82f901e9a0",
-      "controlling_field_path" : null,
-      "controlling_value_regex" : "cta",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "type" : "cta",
-    "display_width" : null
-  }, {
-    "id" : "8f56a11d-2fb1-d81a-c6c7-fabace032e53",
-    "name" : "show_narrow",
-    "label" : "Show Button Narrow",
-    "required" : false,
-    "locked" : false,
-    "display" : "toggle",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : false
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "display_width" : null,
-  "default" : [ ]
-}, {
-  "id" : "365daa71-7c4c-a468-274e-19ef21bd9a70",
-  "name" : "logos",
-  "label" : "Proviler Logos",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : null,
-    "max" : null,
-    "sorting_label_field" : "3975476d-dfd1-89c7-7797-55ab4fe8062e",
-    "default" : null
+      {
+        "id": "ee1c4a9a-f4bd-b0af-1b2a-88aadad24db9",
+        "name": "style",
+        "label": "Style",
+        "required": true,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          [
+            "primary",
+            "Primary"
+          ],
+          [
+            "secondary",
+            "Secondary"
+          ]
+        ],
+        "multiple": false,
+        "reordering_enabled": true,
+        "preset": null,
+        "type": "choice",
+        "display_width": null,
+        "default": "primary"
+      },
+      {
+        "id": "39a02d67-41d7-077f-646f-d945839eacdf",
+        "name": "text",
+        "label": "Text",
+        "required": false,
+        "locked": false,
+        "visibility": {
+          "controlling_field": "10fe49c7-e85e-4dec-e0e8-ec82f901e9a0",
+          "controlling_field_path": null,
+          "controlling_value_regex": "std",
+          "property": null,
+          "operator": "EQUAL",
+          "access": null
+        },
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "Button"
+      },
+      {
+        "id": "53569399-8407-5134-a17c-f4ce278bfe79",
+        "name": "link",
+        "label": "Link",
+        "required": false,
+        "locked": false,
+        "visibility": {
+          "controlling_field": "10fe49c7-e85e-4dec-e0e8-ec82f901e9a0",
+          "controlling_field_path": null,
+          "controlling_value_regex": "std",
+          "property": null,
+          "operator": "EQUAL",
+          "access": null
+        },
+        "supported_types": [
+          "EXTERNAL",
+          "CONTENT",
+          "FILE",
+          "EMAIL_ADDRESS",
+          "BLOG"
+        ],
+        "show_advanced_rel_options": false,
+        "type": "link",
+        "display_width": null,
+        "default": {
+          "url": {
+            "content_id": null,
+            "type": "EXTERNAL",
+            "href": ""
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      },
+      {
+        "id": "dd72aeda-c6df-c717-93bc-d0e6ce1bd24e",
+        "name": "cta",
+        "label": "CTA",
+        "required": false,
+        "locked": false,
+        "visibility": {
+          "controlling_field": "10fe49c7-e85e-4dec-e0e8-ec82f901e9a0",
+          "controlling_field_path": null,
+          "controlling_value_regex": "cta",
+          "property": null,
+          "operator": "EQUAL",
+          "access": null
+        },
+        "type": "cta",
+        "display_width": null
+      },
+      {
+        "id": "8f56a11d-2fb1-d81a-c6c7-fabace032e53",
+        "name": "show_narrow",
+        "label": "Show Button Narrow",
+        "required": false,
+        "locked": false,
+        "display": "toggle",
+        "type": "boolean",
+        "display_width": null,
+        "default": false
+      }
+    ],
+    "tab": "CONTENT",
+    "expanded": false,
+    "group_occurrence_meta": null,
+    "type": "group",
+    "display_width": null,
+    "default": []
   },
-  "children" : [ {
-    "id" : "3975476d-dfd1-89c7-7797-55ab4fe8062e",
-    "name" : "image",
-    "label" : "Image",
-    "required" : false,
-    "locked" : false,
-    "responsive" : true,
-    "resizable" : false,
-    "show_loading" : false,
-    "type" : "image",
-    "display_width" : null,
-    "default" : {
-      "size_type" : "auto",
-      "src" : "",
-      "alt" : "",
-      "loading" : "lazy"
-    }
-  }, {
-    "id" : "soon_bolean",
-    "name" : "soon_bolean",
-    "label" : "On The Way",
-    "required" : false,
-    "locked" : false,
-    "display" : "toggle",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : false
-  }, {
-    "id" : "desc_image",
-    "name" : "desc_image",
-    "label" : "Soon Image",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : "soon_bolean",
-      "controlling_field_path" : null,
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
+  {
+    "id": "365daa71-7c4c-a468-274e-19ef21bd9a70",
+    "name": "logos",
+    "label": "Proviler Logos",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": null,
+      "max": null,
+      "sorting_label_field": "3975476d-dfd1-89c7-7797-55ab4fe8062e",
+      "default": null
     },
-    "responsive" : true,
-    "resizable" : false,
-    "show_loading" : false,
-    "type" : "image",
-    "display_width" : null,
-    "default" : {
-      "size_type" : "auto",
-      "src" : "https://celerdata.com/hubfs/celerdata_2023/soon.png",
-      "alt" : null,
-      "loading" : "lazy"
-    }
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "display_width" : null,
-  "default" : [ ]
-} ]
+    "children": [
+      {
+        "id": "3975476d-dfd1-89c7-7797-55ab4fe8062e",
+        "name": "image",
+        "label": "Image",
+        "required": false,
+        "locked": false,
+        "responsive": true,
+        "resizable": false,
+        "show_loading": false,
+        "type": "image",
+        "display_width": null,
+        "default": {
+          "size_type": "auto",
+          "src": "",
+          "alt": "",
+          "loading": "lazy"
+        }
+      },
+      {
+        "id": "soon_bolean",
+        "name": "soon_bolean",
+        "label": "On The Way",
+        "required": false,
+        "locked": false,
+        "display": "toggle",
+        "type": "boolean",
+        "display_width": null,
+        "default": false
+      },
+      {
+        "id": "desc_image",
+        "name": "desc_image",
+        "label": "Soon Image",
+        "required": false,
+        "locked": false,
+        "visibility": {
+          "controlling_field": "soon_bolean",
+          "controlling_field_path": null,
+          "controlling_value_regex": "true",
+          "property": null,
+          "operator": "EQUAL",
+          "access": null
+        },
+        "responsive": true,
+        "resizable": false,
+        "show_loading": false,
+        "type": "image",
+        "display_width": null,
+        "default": {
+          "size_type": "auto",
+          "src": "https://celerdata.com/hubfs/celerdata_2023/soon.png",
+          "alt": null,
+          "loading": "lazy"
+        }
+      }
+    ],
+    "tab": "CONTENT",
+    "expanded": false,
+    "group_occurrence_meta": null,
+    "type": "group",
+    "display_width": null,
+    "default": []
+  }
+]
