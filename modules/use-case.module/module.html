@@ -1,0 +1,73 @@
+<!-- jinja -->
+<div class="use-case-wrapper" {% if module.background_color %}style="background-color: {{ module.background_color.color }}; opacity: {{ module.background_color.opacity * 0.01 }};"{% endif %}>
+  <div class="use-case-container">
+    <div class="use-case-content hs-row-flex hs-jus-between {% if module.layout == 'text_right' %}reverse-layout{% endif %}">
+      <!-- Left Section -->
+      <div class="use-case-left">
+        {% if module.title %}
+          <h2 class="use-case-title">{{ module.title }}</h2>
+        {% endif %}
+        {% if module.content %}
+          <p class="use-case-description">{{ module.content }}</p>
+        {% endif %}
+        
+        {% if module.stat_cards %}
+          {% set bg_colors = ['#D1F4FF', '#E7EEFF', '#D0F5FA', '#E7EEFF'] %}
+          <div class="use-case-stats hs-row-flex">
+            {% for stat in module.stat_cards %}
+              {% set bg = bg_colors[loop.index0 % bg_colors|length] %}
+              <div class="use-case-stat-card" style="background-color: {{ bg }};">
+                {% if stat.stat_text %}
+                  <div class="stat-number">{{ stat.stat_text }}</div>
+                {% endif %}
+                {% if stat.stat_label %}
+                  <div class="stat-label">{{ stat.stat_label }}</div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+        
+        {% if module.buttons %}
+          <div class="use-case-button-wrap">
+          {% for item in module.buttons %}
+            {% if item.type == "std" %}
+              {% set href = item.link.url.href %}
+              {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+              {% endif %}
+              <div class="banner-btn button button-{{ item.style }}">
+              <a href="{{ href }}"
+                 {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+                 {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}>
+                <span>{{ item.text }}</span>
+                <svg height="16" version="1.1" viewBox="0 0 1024 1024" width="16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M826.24 535.893333l-212.48 213.333334a33.706667 33.706667 0 0 1-23.893333 10.24c-8.533333 0-17.066667-3.413333-23.893334-10.24a34.005333 34.005333 0 0 1 0-48.64l154.453334-155.306667H222.08c-18.773333 0-34.133333-15.36-34.133333-34.133333 0-18.773333 15.36-34.133333 34.133333-34.133334h498.346667l-154.453334-155.306666a34.005333 34.005333 0 0 1 0-48.64c13.653333-13.653333 34.986667-13.653333 48.64 0l212.48 213.333333c12.8 14.506667 12.8 36.693333-0.853333 49.493333z" fill="currentColor"></path>
+                </svg>
+              </a>
+              </div>
+            {% endif %}
+            {% if item.type == "cta" %}
+              {% cta guid="{{ item.cta }}" %}
+            {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      
+      <!-- Right Section -->
+      {% if module.right_card %}
+        <div class="use-case-right">
+          <div class="use-case-right-card">
+            {% if module.right_card.img.src %}
+              <div class="right-card-img">
+                <img src="{{ module.right_card.img.src }}" alt="{{ module.right_card.img.alt }}" />
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+

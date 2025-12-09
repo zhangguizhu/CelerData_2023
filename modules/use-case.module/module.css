@@ -1,0 +1,255 @@
+.use-case-wrapper {
+  width: 100%;
+  padding: 77px 0;
+  box-sizing: border-box;
+}
+
+.use-case-wrapper .use-case-container {
+  max-width: 1650px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 135px;
+  box-sizing: border-box;
+}
+
+.use-case-wrapper .use-case-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 52px;
+}
+.use-case-wrapper .use-case-content.reverse-layout {
+  flex-direction: row-reverse;
+}
+
+/* Left Section */
+.use-case-wrapper .use-case-left {
+  flex: 1;
+  max-width: 697px;
+}
+
+.use-case-wrapper .use-case-title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 58px;
+  color: #000;
+  margin: 0 0 17px 0;
+}
+
+.use-case-wrapper .use-case-description {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #000;
+  margin: 0 0 32px 0;
+}
+
+.use-case-wrapper .use-case-stats {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 40px;
+  flex-wrap: nowrap;
+}
+
+.use-case-wrapper .use-case-stat-card {
+  padding: 12px 10px;
+  width: 100%;
+  border-radius: 8px;
+  padding: 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.use-case-wrapper .use-case-stat-card .stat-number {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.use-case-wrapper .use-case-stat-card .stat-label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000;
+  text-align: center;
+}
+
+.use-case-wrapper .use-case-button-wrap {
+  margin-top: 40px;
+}
+
+.use-case-wrapper .use-case-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: white;
+  border: 1px solid #000;
+  border-radius: 27px;
+  padding: 15px 30px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  min-width: 198px;
+  height: 54px;
+  box-sizing: border-box;
+}
+
+.use-case-wrapper .use-case-button:hover {
+  background: #000;
+  color: white;
+}
+
+.use-case-wrapper .use-case-button svg {
+  flex-shrink: 0;
+}
+
+.use-case-wrapper .use-case-button:hover svg path {
+  fill: white;
+}
+
+/* Right Section */
+.use-case-wrapper .use-case-right {
+  flex: 1;
+  max-width: 953px;
+}
+
+
+.use-case-wrapper .use-case-right-card {
+  background: #fff;
+  padding: 50px 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border-radius: 24px;
+  border: 1px solid #D8D8EB;
+}
+
+.use-case-wrapper .right-card-img {
+  margin-bottom: 28px;
+}
+
+.use-case-wrapper .right-card-img img {
+  border-radius: 20px;
+  max-width: 100%;
+}
+
+.use-case-wrapper .right-card-title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 58px;
+  color: #fff;
+  margin: 0 0 20px 0;
+  max-width: 501px;
+}
+
+@media (max-width: 1400px) {
+  .use-case-wrapper .use-case-container {
+    padding: 0 60px;
+  }
+  
+  .use-case-wrapper .use-case-content {
+    gap: 40px;
+  }
+  
+  .use-case-wrapper .right-card-title {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .use-case-wrapper .use-case-content {
+    flex-direction: column;
+  }
+  .use-case-wrapper .use-case-content.reverse-layout {
+    flex-direction: column-reverse;
+  }
+  .use-case-wrapper .use-case-left {
+    max-width: 100%;
+  }
+  
+  .use-case-wrapper .use-case-right {
+    max-width: 100%;
+  }
+  
+  .use-case-wrapper .use-case-stats {
+    justify-content: flex-start;
+  }
+  
+  .use-case-wrapper .use-case-stat-card {
+    flex: 0 0 calc(33.333% - 6px);
+  }
+}
+
+@media (max-width: 767px) {
+  .use-case-wrapper {
+    padding: 40px 0;
+  }
+  
+  .use-case-wrapper .use-case-container {
+    padding: 0 20px;
+  }
+  
+  .use-case-wrapper .use-case-content {
+    gap: 30px;
+  }
+  
+  .use-case-wrapper .use-case-title {
+    font-size: 36px;
+    line-height: 46px;
+  }
+  
+  .use-case-wrapper .use-case-description {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  
+  .use-case-wrapper .use-case-stats {
+    gap: 12px;
+  }
+  
+  
+  .use-case-wrapper .use-case-button {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .use-case-wrapper .use-case-right-card {
+    padding: 30px 20px;
+  }
+  
+  .use-case-wrapper .right-card-title {
+    font-size: 28px;
+    line-height: 38px;
+    max-width: 100%;
+  }
+  
+  .use-case-wrapper .right-card-graphic {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+  }
+
+  .use-case-wrapper .right-card-graphic-box {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+}
+
