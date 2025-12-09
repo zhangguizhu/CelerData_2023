@@ -204,6 +204,18 @@ button, .button {
   font-weight: {{ theme.buttons.button_font.variant }};
   line-height: 46px;
 }
+@media (max-width: 1400px){
+  button, .button {
+    font-size: 15px;
+    line-height: 40px;
+  }
+}
+@media (max-width: 768px){
+  button, .button {
+    font-size: 14px;
+    line-height: 38px;
+  }
+}
 .button-primary {
   background-color: {{ primary_color }};
   color: {{ button_font_color }};

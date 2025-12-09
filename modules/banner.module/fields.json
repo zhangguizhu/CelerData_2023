@@ -75,7 +75,7 @@
   {
     "id": "88d2ac55-4bde-2745-37a5-b1946fea6b73",
     "name": "features",
-    "label": "Animation Features",
+    "label": "Features",
     "required": false,
     "locked": false,
     "occurrence": {
