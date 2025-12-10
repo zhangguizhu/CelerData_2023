@@ -1,0 +1,38 @@
+<!-- jinja -->
+<div class="animation-bg-box use-case-analytics-wrapper">
+  <div class="use-case-analytics-container">
+  <div class="hs-col-flex hs-align-center hs-align-start title-left-wrap ">
+      {% if module.title %}
+        <h3 class="sec-title">{{ module.title }}</h2>
+      {% endif %}
+      
+      {% if module.description %}
+        <div class="sec-content">{{ module.description }}</div>
+      {% endif %}
+    </div>
+    {% if module.columns %}
+      <div class="use-case-analytics-columns">
+        {% for column in module.columns %}
+          <div class="use-case-analytics-column">
+            {% if column.items %}
+              <div class="use-case-analytics-items">
+                {% for item in column.items %}
+                  <div class="use-case-analytics-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="12" r="11.5" fill="#EFFBFF" stroke="#03A544"/>
+                      <path d="M5.5 11.5L10.5 16.5L18.5 8" stroke="#03A544" stroke-width="3"/>
+                    </svg>
+                    {% if item.item_text %}
+                      <div class="use-case-analytics-item-text">{{ item.item_text }}</div>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+

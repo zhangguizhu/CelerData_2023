@@ -1,0 +1,105 @@
+[
+  {
+    "id": "5eb0f40c-63f7-99ec-d7a1-1de763a9308c",
+    "name": "title",
+    "label": "Section Title",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Customer-Facing Analytics Use Cases"
+  },
+  {
+    "id": "f514a5d4-3ec8-47c2-0f9d-983eabdd5b3f",
+    "name": "description",
+    "label": "Section Description",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Customer-facing analytics powers real-time products across industries, including:"
+  },
+  {
+    "id": "a38ce86c-0093-ba22-601d-c9b91ad7cf52823",
+    "name": "columns",
+    "label": "Columns",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": null,
+      "max": null,
+      "sorting_label_field": "c95b4e9b-fa12-d9bc-61af-0c5a0f2d12c6",
+      "default": null
+    },
+    "children": [
+      {
+        "id": "c95b4e9b-fa12-d9bc-61af-0c5a0f2d12c6",
+        "name": "column_title",
+        "label": "Column Title",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": ""
+      },
+      {
+        "id": "a38ce86c-0093-ba22-601d-c9b91ad7cf52824",
+        "name": "items",
+        "label": "Items",
+        "required": false,
+        "locked": false,
+        "occurrence": {
+          "min": null,
+          "max": null,
+          "sorting_label_field": "c30bc71d-5e3f-d89e-eddb-65ea4f42e80b",
+          "default": null
+        },
+        "children": [
+          {
+            "id": "c30bc71d-5e3f-d89e-eddb-65ea4f42e80b",
+            "name": "item_text",
+            "label": "Item Text",
+            "required": false,
+            "locked": false,
+            "allow_new_line": false,
+            "type": "text",
+            "display_width": null,
+            "default": "User-facing dashboards"
+          },
+          {
+            "id": "72c4eabb-8d62-03f9-74fb-f26f789986be",
+            "name": "icon_img",
+            "label": "Icon Image",
+            "required": false,
+            "locked": false,
+            "responsive": true,
+            "resizable": false,
+            "show_loading": false,
+            "type": "image",
+            "display_width": null,
+            "default": {
+              "size_type": "auto",
+              "alt": "Check icon",
+              "loading": "lazy"
+            }
+          }
+        ],
+        "tab": "CONTENT",
+        "expanded": false,
+        "group_occurrence_meta": null,
+        "type": "group",
+        "display_width": null,
+        "default": []
+      }
+    ],
+    "tab": "CONTENT",
+    "expanded": false,
+    "group_occurrence_meta": null,
+    "type": "group",
+    "display_width": null,
+    "default": []
+  }
+]
