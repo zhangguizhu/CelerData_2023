@@ -1,0 +1,13 @@
+[
+  {
+    "id": "b8e3f6b5-017d-4f0f-a27c-6b07e8e2c3d2",
+    "name": "author_title",
+    "label": "Author Title",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Celerdata COO"
+  }
+]

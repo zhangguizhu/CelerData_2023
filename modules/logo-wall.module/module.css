@@ -1,0 +1,112 @@
+.logos-wall-wrap {
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+  padding-top: 40px;
+  max-width: 1596px;
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0 auto;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 10%, rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0) 100%);
+  gap: 16px;
+  padding: 140px 0 60px;
+}
+.logos-wall-wrap .logo-item  {
+  text-align: center;
+  flex-shrink: 0;
+  padding: 0 20px;
+  border: 1px solid #f0f0f0;
+
+}
+.logos-wall-wrap .logo-item img {
+    width: 170px;
+    height: auto;
+  }
+
+
+
+.logos-wall-wrap.carousel-park .carousel {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: fit-content;
+    animation-play-state: running;
+    animation: carousel-running 30s linear infinite;
+    align-items: center;
+    gap: 16px;
+    align-items: stretch;
+}
+
+.logos-wall-wrap.carousel-park .carousel:hover {
+  animation-play-state: paused;
+}
+
+.logos-wall-wrap.carousel-park .carousel.reverse {
+  animation: carousel-reverse-running 30s linear infinite;
+}
+
+.logos-wall-wrap.carousel-park .carousel.reverse:hover {
+  animation-play-state: paused;
+}
+
+/* Different animation speeds for variety */
+.logos-wall-wrap.carousel-park .carousel[data-row="2"] {
+  animation-duration: 35s;
+}
+
+.logos-wall-wrap.carousel-park .carousel[data-row="3"] {
+  animation-duration: 25s;
+}
+
+.logos-wall-wrap.carousel-park .carousel[data-row="4"] {
+  animation-duration: 40s;
+}
+
+.logos-wall-wrap.carousel-park .carousel.reverse[data-row="2"] {
+  animation-duration: 35s;
+}
+
+.logos-wall-wrap.carousel-park .carousel.reverse[data-row="3"] {
+  animation-duration: 25s;
+}
+
+.logos-wall-wrap.carousel-park .carousel.reverse[data-row="4"] {
+  animation-duration: 40s;
+}
+
+@keyframes carousel-running {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes carousel-reverse-running {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 1200px){
+  .logos-wall-wrap .logo-item img {
+    width: 150px;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px){
+  .logos-wall-wrap {
+    padding: 120px 0 40px;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 20%, rgb(0, 0, 0) 80%, rgba(0, 0, 0, 0) 100%);
+  }
+  .logos-wall-wrap .logo-item img {
+    width: 120px;
+    height: auto;
+  }
+}

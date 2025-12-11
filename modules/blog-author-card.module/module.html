@@ -1,0 +1,48 @@
+<!-- jinja -->
+<div class="blog-author-card">
+  <div class="author-card-inner">
+    {% if content.blog_author.avatar %}
+      <div class="blog-header__author-avatar" style="background-image: url('{{ content.blog_author.avatar }}');"></div>
+    {% endif %}
+
+    <div class="author-content">
+      {% if content.blog_author.display_name%}
+        <div class="author-name">{{ content.blog_author.display_name}}</div>
+      {% endif %}
+      {% if module.author_title %}
+        <div class="author-title">{{ module.author_title }}</div>
+      {% endif %}
+
+      {% if content.blog_author.has_social_profiles %}
+        <div class="author-social">
+        {% if content.blog_author.website %}
+          <a href="{{ content.blog_author.website }}" target="_blank">
+            {% icon name="link" style="SOLID" width="10" %}
+          </a>
+        {% endif %}
+        {% if content.blog_author.facebook %}
+          <a href="{{ content.blog_author.facebook }}" target="_blank">
+            {% icon name="facebook-f" style="SOLID" width="10" %}
+          </a>
+        {% endif %}
+        {% if content.blog_author.linkedin %}
+          <a href="{{ content.blog_author.linkedin }}" target="_blank">
+            {% icon name="linkedin-in" style="SOLID" width="10" %}
+          </a>
+        {% endif %}
+        {% if content.blog_author.twitter %}
+          <a href="{{ content.blog_author.twitter }}" target="_blank">
+            {% icon name="twitter" style="SOLID" width="10" %}
+          </a>
+        {% endif %}
+        </div>
+      {% endif %}
+
+      {% if content.blog_author.bio  %}
+        <div class="author-bio">
+          {{ content.blog_author.bio  }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

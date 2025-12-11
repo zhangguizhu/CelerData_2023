@@ -1,0 +1,16 @@
+{% if module.logos %}
+  {% set num_rows = module.rows|int|default(2) %}
+  <div class="logos-wall-wrap carousel-park" data-rows="{{ num_rows }}">
+    {% for item in module.logos %}
+      <div class="logo-item-source col-flex" data-index="{{ loop.index0 }}" style="display: none;">
+        {% if item.image.src %}
+        <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" width="190" height="85">
+        {% endif %}
+      </div>
+    {% endfor %}
+    <div class="align-center carousel" data-row="1"></div>
+    <div class="align-center carousel reverse" data-row="2"></div>
+    <div class="align-center carousel" data-row="3"></div>
+    <div class="align-center carousel reverse" data-row="4"></div>
+  </div>
+{% endif %}
