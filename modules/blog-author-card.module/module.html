@@ -1,48 +1,95 @@
-<!-- jinja -->
-<div class="blog-author-card">
-  <div class="author-card-inner">
+<div class="blog-author-card-wrap">
+  <div class="content-wrapper">
+    <div class="author-card-container">
+      <div class="author-img-box">
     {% if content.blog_author.avatar %}
-      <div class="blog-header__author-avatar" style="background-image: url('{{ content.blog_author.avatar }}');"></div>
-    {% endif %}
-
-    <div class="author-content">
-      {% if content.blog_author.display_name%}
-        <div class="author-name">{{ content.blog_author.display_name}}</div>
-      {% endif %}
-      {% if module.author_title %}
-        <div class="author-title">{{ module.author_title }}</div>
-      {% endif %}
-
-      {% if content.blog_author.has_social_profiles %}
-        <div class="author-social">
-        {% if content.blog_author.website %}
-          <a href="{{ content.blog_author.website }}" target="_blank">
-            {% icon name="link" style="SOLID" width="10" %}
-          </a>
+          <div class="author-avatar" style="background-image: url('{{ content.blog_author.avatar }}');">
+          </div>
         {% endif %}
-        {% if content.blog_author.facebook %}
-          <a href="{{ content.blog_author.facebook }}" target="_blank">
-            {% icon name="facebook-f" style="SOLID" width="10" %}
+        <div class="author-links">
+        {% if content.blog_author.has_social_profiles && content.blog_author.linkedin -%}
+          <a href="{{ content.blog_author.linkedin }}" target="_blank" rel="noopener" class="social-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="32" height="32" rx="8" fill="#8C93A6"/>
+              <g clip-path="url(#clip0_2588_490913)">
+              <path d="M11.4102 13.0361H8.2627V24.5771H11.4102V13.0361Z" fill="white"/>
+              <path d="M9.83607 11.6931C10.8501 11.6931 11.6721 10.8664 11.6721 9.84656C11.6721 8.82673 10.8501 8 9.83607 8C8.82203 8 8 8.82673 8 9.84656C8 10.8664 8.82203 11.6931 9.83607 11.6931Z" fill="white"/>
+              <path d="M23.9996 24.5771H20.8521V18.6911C20.8521 15.1554 16.6554 15.4282 16.6554 18.6911V24.5771H13.5078V13.0361H16.6554V14.8826C18.1242 12.1652 23.9996 11.9659 23.9996 17.4846V24.5771Z" fill="white"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_2588_490913">
+              <rect width="16" height="16.5771" fill="white" transform="translate(8 8)"/>
+              </clipPath>
+              </defs>
+            </svg>
           </a>
-        {% endif %}
-        {% if content.blog_author.linkedin %}
-          <a href="{{ content.blog_author.linkedin }}" target="_blank">
-            {% icon name="linkedin-in" style="SOLID" width="10" %}
+        {%- endif %}
+        {% if content.blog_author.has_social_profiles && content.blog_author.twitter -%}
+          <a href="{{ content.blog_author.twitter }}" target="_blank" rel="noopener" class="social-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="32" height="32" rx="8" fill="#8C93A6"/>
+              <g clip-path="url(#clip0_2588_490919)">
+              <path d="M23.9996 10.8733C23.3998 11.1375 22.7638 11.3105 22.1129 11.3867C22.7991 10.9777 23.3132 10.3332 23.5596 9.57335C22.9135 9.95319 22.2081 10.2214 21.4729 10.3667C20.9774 9.84053 20.3222 9.4924 19.6089 9.37616C18.8955 9.25992 18.1638 9.38207 17.5268 9.72368C16.8899 10.0653 16.3833 10.6073 16.0856 11.2659C15.7878 11.9245 15.7154 12.6628 15.8796 13.3667C14.5741 13.3001 13.2972 12.9601 12.1316 12.3687C10.9659 11.7772 9.9375 10.9476 9.1129 9.93335C8.69345 10.6566 8.56476 11.5123 8.75294 12.3269C8.94111 13.1415 9.43207 13.854 10.1262 14.32C9.61427 14.2963 9.11466 14.1549 8.66624 13.9067C8.65997 14.676 8.92323 15.4232 9.41033 16.0187C9.89743 16.6142 10.5776 17.0203 11.3329 17.1667C10.8503 17.2985 10.3437 17.3167 9.8529 17.22C10.0618 17.8728 10.4699 18.4438 11.0199 18.8527C11.5699 19.2617 12.2343 19.488 12.9196 19.5C12.237 20.031 11.4564 20.4221 10.6224 20.6509C9.78846 20.8797 8.91754 20.9417 8.05957 20.8333C9.54075 21.7966 11.2661 22.317 13.0329 22.3333C14.2975 22.3423 15.5506 22.0927 16.7153 21.5998C17.8799 21.107 18.9315 20.3813 19.8056 19.4673C20.6796 18.5533 21.3576 17.4703 21.798 16.2848C22.2383 15.0993 22.4317 13.8363 22.3662 12.5733C23.0063 12.107 23.5592 11.5316 23.9996 10.8733Z" fill="white"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_2588_490919">
+              <rect width="16" height="13" fill="white" transform="translate(8 9.33337)"/>
+              </clipPath>
+              </defs>
+            </svg>
           </a>
-        {% endif %}
-        {% if content.blog_author.twitter %}
-          <a href="{{ content.blog_author.twitter }}" target="_blank">
-            {% icon name="twitter" style="SOLID" width="10" %}
+        {%- endif %}
+        {% if content.blog_author.has_social_profiles && content.blog_author.facebook -%}
+          <a href="{{ content.blog_author.facebook }}" target="_blank" rel="noopener" class="social-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="32" height="32" rx="8" fill="#8C93A6"/>
+              <g clip-path="url(#clip0_2588_490923)">
+              <path d="M13.333 13.3333H11.333V16H13.333V24H16.6663V16H19.093L19.333 13.3333H16.6663V12.22C16.6663 11.5867 16.793 11.3333 17.4063 11.3333H19.333V8H16.793C14.3997 8 13.333 9.05333 13.333 11.0733V13.3333Z" fill="white"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_2588_490923">
+              <rect width="8" height="16" fill="white" transform="translate(11.333 8)"/>
+              </clipPath>
+              </defs>
+            </svg>
           </a>
-        {% endif %}
+        {%- endif %}
+        {% if content.blog_author.website -%}
+          <a href="{{ content.blog_author.website }}" target="_blank" rel="noopener" class="social-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="32" height="32" rx="8" fill="#8C93A6"/>
+              <g clip-path="url(#clip0_2588_490927)">
+              <path d="M12.1267 15.1467C12.4114 14.8611 12.7345 14.6165 13.0867 14.42C14.0278 13.9025 15.129 13.7571 16.1722 14.0127C17.2154 14.2682 18.1246 14.9061 18.72 15.8L17.22 17.3334C17.0741 16.9981 16.8488 16.7034 16.5635 16.4747C16.2782 16.246 15.9416 16.0901 15.5826 16.0205C15.2237 15.951 14.8532 15.9698 14.5031 16.0754C14.153 16.181 13.834 16.3702 13.5733 16.6267L10.7067 19.4667C10.2876 19.8857 10.0522 20.4541 10.0522 21.0467C10.0522 21.6393 10.2876 22.2077 10.7067 22.6267C11.1257 23.0457 11.6941 23.2812 12.2867 23.2812C12.8793 23.2812 13.4476 23.0457 13.8667 22.6267L14.7534 21.74C15.5536 22.0569 16.415 22.189 17.2733 22.1267L15.3334 24.08C14.5271 24.8863 13.4336 25.3392 12.2934 25.3392C11.1531 25.3392 10.0596 24.8863 9.25335 24.08C8.44709 23.2738 7.99414 22.1803 7.99414 21.04C7.99414 19.8998 8.44709 18.8063 9.25335 18L12.1267 15.1467ZM16.6667 10.5867L14.7267 12.54C15.5851 12.4777 16.4465 12.6099 17.2467 12.9267L18.1334 12.04C18.5524 11.621 19.1207 11.3856 19.7134 11.3856C20.306 11.3856 20.8743 11.621 21.2934 12.04C21.7124 12.4591 21.9478 13.0274 21.9478 13.62C21.9478 14.2127 21.7124 14.781 21.2934 15.2L18.42 18.0667C18.2126 18.2743 17.9663 18.439 17.6952 18.5514C17.4241 18.6638 17.1335 18.7216 16.84 18.7216C16.5465 18.7216 16.2559 18.6638 15.9848 18.5514C15.7137 18.439 15.4674 18.2743 15.26 18.0667C15.062 17.8745 14.8995 17.6488 14.78 17.4L13.28 18.8667C13.4323 19.1082 13.6112 19.3318 13.8134 19.5334C14.3623 20.0889 15.0547 20.4813 15.8134 20.6667C16.8547 20.9217 17.9539 20.7766 18.8934 20.26C19.2445 20.0619 19.5673 19.8175 19.8534 19.5334L22.72 16.6667C23.1192 16.2692 23.4363 15.797 23.653 15.277C23.8697 14.7571 23.9819 14.1995 23.9831 13.6361C23.9844 13.0728 23.8746 12.5147 23.6602 11.9938C23.4458 11.4729 23.1308 10.9993 22.7334 10.6C22.3359 10.2008 21.8637 9.8838 21.3437 9.66707C20.8237 9.45035 20.2661 9.33816 19.7028 9.33692C19.1394 9.33569 18.5814 9.44542 18.0604 9.65986C17.5395 9.87429 17.0659 10.1892 16.6667 10.5867Z" fill="white"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_2588_490927">
+              <rect width="16" height="16" fill="white" transform="translate(8 9.33337)"/>
+              </clipPath>
+              </defs>
+            </svg>
+          </a>
+        {%- endif %}
+        {% if content.blog_author.email -%}
+          <a href="mailto:{{ content.blog_author.email }}" target="_blank" class="social-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="32" height="32" rx="8" fill="#8C93A6"/>
+              <g clip-path="url(#clip0_5562_1459)">
+              <path d="M22.3999 10H9.60007C9.17613 10.0012 8.7699 10.1702 8.4701 10.4699C8.1703 10.7697 8.0013 11.1759 8 11.5998V21.2C8.0013 21.624 8.1703 22.0302 8.4701 22.3299C8.7699 22.6297 9.17613 22.7986 9.60007 22.7999H22.3999C22.8239 22.7986 23.2301 22.6297 23.5299 22.3299C23.8297 22.0302 23.9987 21.624 24 21.2V11.5998C23.9987 11.1759 23.8297 10.7697 23.5299 10.4699C23.2301 10.1702 22.8239 10.0012 22.3999 10ZM22.3999 13.2001L15.9999 17.2L9.60007 13.2001V11.5998L15.9999 15.5999L22.3999 11.5998V13.2001Z" fill="white"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_5562_1459">
+              <rect width="16" height="12.7999" fill="white" transform="translate(8 10)"/>
+              </clipPath>
+              </defs>
+          </svg>
+          </a>
+        {%- endif %}
         </div>
-      {% endif %}
-
-      {% if content.blog_author.bio  %}
-        <div class="author-bio">
-          {{ content.blog_author.bio  }}
-        </div>
-      {% endif %}
+      </div>
+      <div class="author-intro-box">
+        <p class="author-name">{{ content.blog_author.display_name }}</p>
+        <div class="author-bio">{{ content.blog_author.bio }}</div>
+      </div>
     </div>
   </div>
 </div>
