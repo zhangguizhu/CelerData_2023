@@ -16,7 +16,7 @@
             <p class="card-content">{{ card.content }}</p>
           {% endif %}
           {% if card.button %}
-            <div class="card-button-wrap">
+            <div class="card-button-wrap row-flex">
               {% if card.button.type == "std" %}
                 {% set href = card.button.link.url.href %}
                 {% if card.button.link.url.type is equalto "EMAIL_ADDRESS" %}
