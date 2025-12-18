@@ -1,6 +1,5 @@
 .industry-cards-wrapper {
   width: 100%;
-  background-color: #fff;
   padding: 0 0 50px 0;
 }
 
@@ -51,9 +50,9 @@
   padding-bottom: 24px;
 }
 
-.industry-cards-wrapper  .card-logo img {
+.industry-cards-wrapper .card-logo img {
   max-width: 200px;
-  height: 52px;
+  height: 60px;
   object-fit: contain;
 }
 
