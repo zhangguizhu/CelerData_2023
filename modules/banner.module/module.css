@@ -28,6 +28,7 @@
 .page-banner .banner-content {
   flex-basis: 50%;
   max-width: 580px;
+  padding-right: 20px;
 }
 .page-banner .banner-content .bannner-features-list {
   color: #000;
