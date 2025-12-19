@@ -1,5 +1,5 @@
 <!-- jinja -->
-<div class="use-case-wrapper" {% if module.background_color %}style="background-color: {{ module.background_color.color }}; opacity: {{ module.background_color.opacity * 0.01 }};"{% endif %}>
+<div id="{{module.section_id ||  name }}" class="use-case-wrapper" {% if module.background_color %}style="background-color: {{ module.background_color.color }}; opacity: {{ module.background_color.opacity * 0.01 }};"{% endif %}>
   <div class="use-case-container">
     <div class="use-case-content hs-row-flex hs-jus-between {% if module.layout == 'text_right' %}reverse-layout{% endif %}">
       <!-- Left Section -->

@@ -1,5 +1,17 @@
 [
   {
+    "id": "5f9ea1d0-e8cc-d9a6-0ba2-d5c5",
+    "name": "section_id",
+    "label": "ID",
+    "help_text": "Customize the current module id, which can be used to some text CTA links, and click the links scroll the page to this module.",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+  },
+  {
     "id": "5eb0f40c-63f7-99ec-d7a1-1de763a9307c",
     "name": "title",
     "label": "Title",
