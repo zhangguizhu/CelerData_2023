@@ -262,15 +262,22 @@
     width: 200px;
   }
   .home-banner-v1 .title {
-    font-size: 36px;
-    line-height: 46px;
+    font-size: 30px;
+    line-height: 42px;
   }
   .home-banner-v1 .title.smaller-title {
     font-size: 28px;
     line-height: 42px;
   }
   .home-banner-v1 .keywords-list-box .keywords-item-content{
-    font-size: 28px;
+    font-size: 24px;
+  }
+  .home-banner-v1 .keywords-list-box {
+    height: 100px;
+    margin-top: -10px;
+  }
+  .home-banner-v1 .keywords-list-box .swiper-slide {
+    height: 100px;
   }
   .home-banner-v1 .keywords-list-box .keywords-item-content:after {
     bottom: 16px;
@@ -311,3 +318,19 @@
   }
 }
 
+@media (max-width: 380px){
+  .home-banner-v1 .title.smaller-title {
+    font-size: 23px;
+    line-height: 38px;
+  }
+  .home-banner-v1 .keywords-list-box .keywords-item-content{
+    font-size: 18px;
+  }
+  .home-banner-v1 .keywords-list-box {
+    height: 80px;
+    margin-top: 0;
+  }
+  .home-banner-v1 .keywords-list-box .swiper-slide {
+    height: 80px;
+  }
+}
