@@ -1,0 +1,177 @@
+{# 语言显示名称宏 #}
+{% macro get_language_name(lang_code) %}
+  {% if lang_code == 'en' or lang_code == 'en-us' %}
+    English
+  {% elif lang_code == 'ja' or lang_code == 'ja-jp' %}
+    日本語
+  {% elif lang_code == 'zh' or lang_code == 'zh-cn' %}
+    中文
+  {% else %}
+    {{ lang_code | upper }}
+  {% endif %}
+{% endmacro %}
+
+{% set base_url = request.scheme ~ "://" ~ request.domain %}
+
+{% if content.translated_content %}
+  {% set current_language = content.language | default(content.slug | split('/') | first) %}
+  {% set all_languages = [] %}
+
+  {# 添加当前页面语言 #}
+  {% do all_languages.append({
+    "language": current_language,
+    "slug": content.slug,
+    "url": content.absolute_url|regex_replace("\\?.*$", ""),
+    "is_current": true
+  }) %}
+
+  {# 添加其他语言变体 #}
+  {% for lang, page in content.translated_content.items() %}
+    {% do all_languages.append({
+      "language": lang,
+      "slug": page.slug,
+      "url": page.absolute_url|regex_replace("\\?.*$", ""),
+      "is_current": false
+    }) %}
+  {% endfor %}
+
+<div class="lang-dropdown">
+  <button class="lang-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+    <span class="globe-icon">🌐</span>
+    <span class="current-lang">
+      {{ get_language_name(current_language) }}
+    </span>
+    <span class="arrow">
+      <svg width="6" height="4" viewBox="0 0 6 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0.353553" y1="0.353539" x2="3.35355" y2="3.35354" stroke="currentColor"/>
+        <line y1="-0.5" x2="4.24264" y2="-0.5" transform="matrix(-0.707107 0.707107 0.707107 0.707107 6 0.707092)" stroke="currentColor"/>
+      </svg>
+    </span>
+  </button>
+
+  <div class="lang-menu" role="menu">
+    <div class="lang-menu-header">LANGUAGE</div>
+    <div class="lang-menu-items">
+      {% for item in all_languages %}
+        {% if item.is_current %}
+          <span
+            class="lang-item active disabled"
+            data-lang="{{ item.language }}"
+            role="menuitem"
+            data-url="{{ item.url }}"
+            aria-current="true"
+          >
+            {{ get_language_name(item.language) }}
+          </span>
+        {% else %}
+          <a
+            href="#"
+            data-url="{{ item.url }}"
+            class="lang-item"
+            data-lang="{{ item.language }}"
+            role="menuitem"
+            onclick="window.location.href=this.dataset.url; return false;"
+          >
+            {{ get_language_name(item.language) }}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<script>
+(function() {
+  'use strict';
+  
+  document.addEventListener('DOMContentLoaded', function () {
+    const langDropdowns = document.querySelectorAll('.lang-dropdown');
+    
+    langDropdowns.forEach(function(dropdown) {
+      const trigger = dropdown.querySelector('.lang-trigger');
+      const menu = dropdown.querySelector('.lang-menu');
+      const items = dropdown.querySelectorAll('.lang-item');
+      let isOpen = false;
+      let isMobileMode = false;
+      
+      // 检测是否为移动设备
+      function isMobile() {
+        return window.innerWidth <= 767;
+      }
+      
+      // 切换菜单
+      function toggleMenu(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        isOpen = !isOpen;
+        dropdown.classList.toggle('active', isOpen);
+        trigger.setAttribute('aria-expanded', isOpen);
+      }
+      
+      // 关闭菜单
+      function closeMenu() {
+        if (isOpen) {
+          isOpen = false;
+          dropdown.classList.remove('active');
+          trigger.setAttribute('aria-expanded', 'false');
+        }
+      }
+      
+      // 点击外部关闭菜单
+      function handleOutsideClick(e) {
+        if (!dropdown.contains(e.target)) {
+          closeMenu();
+        }
+      }
+      
+      // 初始化移动端事件
+      function initMobileEvents() {
+        if (!isMobileMode) {
+          isMobileMode = true;
+          trigger.addEventListener('click', toggleMenu);
+          document.addEventListener('click', handleOutsideClick);
+        }
+      }
+      
+      // 移除移动端事件
+      function removeMobileEvents() {
+        if (isMobileMode) {
+          isMobileMode = false;
+          closeMenu();
+          trigger.removeEventListener('click', toggleMenu);
+          document.removeEventListener('click', handleOutsideClick);
+        }
+      }
+      
+      // 响应窗口大小变化
+      function handleResize() {
+        if (isMobile()) {
+          initMobileEvents();
+        } else {
+          removeMobileEvents();
+        }
+      }
+      
+      // 初始化
+      handleResize();
+      window.addEventListener('resize', handleResize);
+      
+      // 保存语言偏好到cookie
+      items.forEach(function(item) {
+        // 跳过禁用的项（当前语言）
+        if (item.classList.contains('disabled')) {
+          return;
+        }
+        
+        item.addEventListener('click', function () {
+          const lang = this.dataset.lang;
+          if (lang) {
+            document.cookie = 'preferred_language=' + lang + '; path=/; max-age=' + (60 * 60 * 24 * 365);
+          }
+        });
+      });
+    });
+  });
+})();
+</script>

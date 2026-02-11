@@ -2,6 +2,9 @@
 templateType: global_partial
 label: Website header
 -->
+
+{% include '../../templates/partials/hreflang-seo.html' %}
+
 <div class="custom-header">
   <header class="header">
     <div class="header__container content-wrapper">
@@ -19,6 +22,7 @@ label: Website header
       <div class="header-right">
       {% module "header_right_content" path="../../modules/header-right-content", label="Header Right Content" %}
       </div>
+      {% include '../../templates/partials/language_switcher.html' %}
     </div>
   </header>
 </div>

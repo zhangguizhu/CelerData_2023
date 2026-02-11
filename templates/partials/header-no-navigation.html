@@ -2,6 +2,9 @@
 templateType: global_partial
 label: Header no navigation
 -->
+
+{% include '../../templates/partials/hreflang-seo.html' %}
+
 <div class="custom-header">
   <header class="header no-navigation">
     <div class="hs-row-flex hs-jus-between hs-align-center content-wrapper">
@@ -15,6 +18,7 @@ label: Header no navigation
       <div class="header-right">
       {% module "header_right_content" path="../../modules/header-right-content", label="Header Right Content" %}
       </div>
+      {% include '../../templates/partials/language_switcher.html' %}
     </div>
   </header>
 </div>

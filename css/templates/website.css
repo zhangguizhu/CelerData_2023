@@ -518,7 +518,7 @@ div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner #hs-en-cookie-
 }
 
 @media (max-width: 768px){
-  .header-right-content {
+  .header-right, .header-right-content {
     display: none;
   }
   .active_wrap{

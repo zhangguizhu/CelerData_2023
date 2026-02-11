@@ -1,0 +1,27 @@
+<!--
+templateType: global_partial
+label: Hreflang SEO Tags
+-->
+
+<!-- hreflang: SEO -->
+{% if content.translated_content %}
+  <link
+    rel="alternate"
+    hreflang="{{ content.language | default('en') }}"
+    href="{{ content.absolute_url }}"
+  />
+  
+  {% for lang, translation in content.translated_content.items() %}
+    <link
+      rel="alternate"
+      hreflang="{{ lang }}"
+      href="{{ translation.absolute_url }}"
+    />
+  {% endfor %}
+
+  <link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://celerdata.com/"
+  />
+{% endif %}
