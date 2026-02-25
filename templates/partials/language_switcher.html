@@ -11,8 +11,7 @@
   {% endif %}
 {% endmacro %}
 
-{% set base_url = request.scheme ~ "://" ~ request.domain %}
-
+<div class="lang-dropdown-wrapper">
 {% if content.translated_content %}
   {% set current_language = content.language | default(content.slug | split('/') | first) %}
   {% set all_languages = [] %}
@@ -84,6 +83,7 @@
   </div>
 </div>
 {% endif %}
+</div>
 
 <script>
 (function() {
