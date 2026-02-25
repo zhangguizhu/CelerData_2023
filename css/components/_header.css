@@ -357,7 +357,7 @@ body.noBanner .fixed-logo {
 
 @media (max-width: 899px) and (min-width: 768px){
   header.header .header__container{
-    padding: 0 12px;
+    padding: 0 10px;
   }
 }
 
